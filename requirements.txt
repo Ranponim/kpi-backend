@@ -1,0 +1,34 @@
+
+# FastAPI 및 웹 프레임워크
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+python-multipart
+
+# 데이터베이스
+pymongo
+motor
+psycopg2-binary
+
+# 데이터 분석 및 통계
+pandas
+numpy
+scipy
+matplotlib
+
+# HTTP 요청
+requests
+
+# 성능 모니터링
+psutil
+
+# Host 필터링 및 검증을 위한 추가 의존성
+validators
+dnspython
+
+# 테스트 (개발용)
+pytest
+pytest-asyncio
+

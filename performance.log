@@ -1,0 +1,277 @@
+2025-08-25 03:16:58,926 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-25 03:19:09,892 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: testclient
+2025-08-25 03:19:09,894 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.002s - ╦ч╦П╦╝ ╨╞х╜: +0.06MB - гЖюГ ╦ч╦П╦╝: 479.6MB - юю╢Д е╘╠Б: 117B
+2025-08-25 03:19:09,899 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: /health - Client: testclient
+2025-08-25 03:19:13,974 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: /health - ╩Себ: 200 - ╪р©Д╫ц╟ё: 4.075s - ╦ч╦П╦╝ ╨╞х╜: +1.88MB - гЖюГ ╦ч╦П╦╝: 481.6MB - юю╢Д е╘╠Б: 664B
+2025-08-25 03:19:13,974 - performance - WARNING - ╢ю╦╟ API ©Дц╩ ╟╗аЖ - URL: /health - ╪р©Д╫ц╟ё: 4.075s - цжюШх╜ гй©Д
+2025-08-25 03:19:13,984 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: /api/test-endpoint - Client: testclient
+2025-08-25 03:19:13,985 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: /api/test-endpoint - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.00MB - гЖюГ ╦ч╦П╦╝: 481.7MB - юю╢Д е╘╠Б: 57B
+2025-08-28 15:49:08,696 - performance - INFO - MongoDB Л└╠К┼╔ К╙╗К▀┬М└╟К╖│ М≥°Л└╠М≥■
+2025-08-28 15:49:14,505 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: OPTIONS - URL: /api/kpi/query - Client: 172.18.0.1
+2025-08-28 15:49:14,507 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: OPTIONS - URL: /api/kpi/query - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.002s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 181.4MB - Л²▒К▀╣ М│╛Й╦╟: 2B
+2025-08-28 15:49:14,510 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
+2025-08-28 15:49:14,540 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/kpi/query - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.030s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.93MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.3MB - Л²▒К▀╣ М│╛Й╦╟: 305B
+2025-08-28 15:49:14,544 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
+2025-08-28 15:49:14,554 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/kpi/query - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.010s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.3MB - Л²▒К▀╣ М│╛Й╦╟: 305B
+2025-08-28 15:49:16,581 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: OPTIONS - URL: /api/master/pegs - Client: 172.18.0.1
+2025-08-28 15:49:16,582 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: OPTIONS - URL: /api/master/hosts - Client: 172.18.0.1
+2025-08-28 15:49:16,584 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: OPTIONS - URL: /api/master/nes-by-host - Client: 172.18.0.1
+2025-08-28 15:49:16,586 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: OPTIONS - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
+2025-08-28 15:49:16,586 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: OPTIONS - URL: /api/master/pegs - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.006s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.3MB - Л²▒К▀╣ М│╛Й╦╟: 2B
+2025-08-28 15:49:16,587 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: OPTIONS - URL: /api/master/hosts - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.005s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.3MB - Л²▒К▀╣ М│╛Й╦╟: 2B
+2025-08-28 15:49:16,589 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: OPTIONS - URL: /api/master/nes-by-host - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.005s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.3MB - Л²▒К▀╣ М│╛Й╦╟: 2B
+2025-08-28 15:49:16,591 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
+2025-08-28 15:49:16,592 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
+2025-08-28 15:49:16,592 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: OPTIONS - URL: /api/master/cells-by-host-ne - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.006s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.3MB - Л²▒К▀╣ М│╛Й╦╟: 2B
+2025-08-28 15:49:16,593 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
+2025-08-28 15:49:16,595 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
+2025-08-28 15:49:16,623 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/hosts - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.032s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.43MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 180B
+2025-08-28 15:49:16,624 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/nes-by-host - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.033s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.43MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 176B
+2025-08-28 15:49:16,625 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/pegs - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.032s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.43MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 131B
+2025-08-28 15:49:16,627 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/cells-by-host-ne - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.031s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 184B
+2025-08-28 15:49:21,690 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: OPTIONS - URL: /api/master/test-connection - Client: 172.18.0.1
+2025-08-28 15:49:21,692 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: OPTIONS - URL: /api/master/test-connection - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.001s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 2B
+2025-08-28 15:49:21,694 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/test-connection - Client: 172.18.0.1
+2025-08-28 15:49:21,702 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/test-connection - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.008s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 71B
+2025-08-28 15:50:28,579 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: GET - URL: / - Client: 172.18.0.1
+2025-08-28 15:50:28,584 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: GET - URL: / - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.005s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 117B
+2025-08-28 15:50:28,676 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: GET - URL: /favicon.ico - Client: 172.18.0.1
+2025-08-28 15:50:28,678 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: GET - URL: /favicon.ico - Л┐│М┐°: 404 - Л├▄Л ■Л▀°Й╟└: 0.002s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 22B
+2025-08-28 15:50:35,249 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
+2025-08-28 15:50:35,284 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/kpi/query - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.036s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 305B
+2025-08-28 15:50:35,288 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
+2025-08-28 15:50:35,299 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/kpi/query - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.011s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 305B
+2025-08-28 15:50:37,662 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
+2025-08-28 15:50:37,665 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
+2025-08-28 15:50:37,684 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
+2025-08-28 15:50:37,685 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
+2025-08-28 15:50:37,686 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/pegs - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.024s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 131B
+2025-08-28 15:50:37,706 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/hosts - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.041s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 180B
+2025-08-28 15:50:37,707 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/nes-by-host - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.023s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 176B
+2025-08-28 15:50:37,708 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/cells-by-host-ne - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.023s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 184B
+2025-08-28 15:53:35,519 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/test-connection - Client: 172.18.0.1
+2025-08-28 15:53:35,536 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/test-connection - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.017s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 71B
+2025-08-28 15:53:40,162 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
+2025-08-28 15:53:40,175 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/kpi/query - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.012s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 305B
+2025-08-28 15:53:40,179 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
+2025-08-28 15:53:40,189 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/kpi/query - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.010s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 305B
+2025-08-28 15:53:40,235 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: GET - URL: / - Client: 172.18.0.1
+2025-08-28 15:53:40,237 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: GET - URL: / - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.002s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 117B
+2025-08-28 15:53:40,838 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: GET - URL: / - Client: 172.18.0.1
+2025-08-28 15:53:40,840 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: GET - URL: / - Л┐│М┐°: 200 - Л├▄Л ■Л▀°Й╟└: 0.001s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 117B
+2025-08-28 15:53:49,060 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
+2025-08-28 15:53:49,061 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
+2025-08-28 15:53:49,063 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
+2025-08-28 15:53:49,069 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
+2025-08-28 15:53:49,074 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/pegs - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.014s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 131B
+2025-08-28 15:53:49,076 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/hosts - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.015s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 180B
+2025-08-28 15:53:49,086 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/nes-by-host - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.022s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 176B
+2025-08-28 15:53:49,087 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/cells-by-host-ne - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.018s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 184B
+2025-08-28 15:54:59,406 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
+2025-08-28 15:54:59,414 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
+2025-08-28 15:54:59,415 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
+2025-08-28 15:54:59,416 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
+2025-08-28 15:54:59,416 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/pegs - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.010s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 131B
+2025-08-28 15:54:59,432 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/hosts - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.018s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 180B
+2025-08-28 15:54:59,433 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/nes-by-host - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.018s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 176B
+2025-08-28 15:54:59,434 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/cells-by-host-ne - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.018s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 184B
+2025-08-28 15:55:06,910 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
+2025-08-28 15:55:06,911 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
+2025-08-28 15:55:06,912 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
+2025-08-28 15:55:06,913 - performance - INFO - Л ■Л╡╜ Л▀°Л·▒ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
+2025-08-28 15:55:06,930 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/pegs - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.020s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 131B
+2025-08-28 15:55:06,936 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/hosts - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.025s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 180B
+2025-08-28 15:55:06,937 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/nes-by-host - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.025s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 176B
+2025-08-28 15:55:06,938 - performance - INFO - Л ■Л╡╜ Л≥└Кё▄ - Method: POST - URL: /api/master/cells-by-host-ne - Л┐│М┐°: 400 - Л├▄Л ■Л▀°Й╟└: 0.025s - К╘■К╙╗К╕╛ КЁ─М≥■: +0.00MB - М≤└Л·╛ К╘■К╙╗К╕╛: 182.8MB - Л²▒К▀╣ М│╛Й╦╟: 184B
+2025-08-28 15:55:14,736 - performance - INFO - MongoDB Л└╠К┼╔ К╙╗К▀┬М└╟К╖│ М≥°Л└╠М≥■
+2025-08-31 11:07:27,375 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:07:48,480 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:08:03,793 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 11:08:03,795 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.002s - ╦ч╦П╦╝ ╨╞х╜: +0.02MB - гЖюГ ╦ч╦П╦╝: 171.5MB - юю╢Д е╘╠Б: 117B
+2025-08-31 11:14:09,647 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:14:42,937 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:15:41,112 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:15:41,900 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:15:51,822 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:16:08,226 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:16:09,060 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:16:09,171 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:19:26,573 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:19:26,577 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:19:26,707 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:19:36,221 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:20:16,209 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:20:16,224 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:20:16,290 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 11:20:16,879 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 12:27:14,236 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 12:27:14,245 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.010s - ╦ч╦П╦╝ ╨╞х╜: +3.12MB - гЖюГ ╦ч╦П╦╝: 66.9MB - юю╢Д е╘╠Б: 117B
+2025-08-31 12:56:47,348 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 199.45.155.97
+2025-08-31 12:56:47,349 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.002s - ╦ч╦П╦╝ ╨╞х╜: +0.04MB - гЖюГ ╦ч╦П╦╝: 65.8MB - юю╢Д е╘╠Б: 117B
+2025-08-31 12:56:47,824 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: /favicon.ico - Client: 199.45.155.97
+2025-08-31 12:56:47,825 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: /favicon.ico - ╩Себ: 404 - ╪р©Д╫ц╟ё: 0.002s - ╦ч╦П╦╝ ╨╞х╜: +0.15MB - гЖюГ ╦ч╦П╦╝: 65.9MB - юю╢Д е╘╠Б: 22B
+2025-08-31 12:56:55,232 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 199.45.155.97
+2025-08-31 12:56:55,233 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.01MB - гЖюГ ╦ч╦П╦╝: 65.9MB - юю╢Д е╘╠Б: 117B
+2025-08-31 13:36:35,189 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 64.62.197.227
+2025-08-31 13:36:35,191 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.02MB - гЖюГ ╦ч╦П╦╝: 66.0MB - юю╢Д е╘╠Б: 117B
+2025-08-31 13:36:50,779 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 13:36:50,780 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.01MB - гЖюГ ╦ч╦П╦╝: 66.0MB - юю╢Д е╘╠Б: 117B
+2025-08-31 13:36:53,701 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: /favicon.ico - Client: 64.62.197.228
+2025-08-31 13:36:53,703 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: /favicon.ico - ╩Себ: 404 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.01MB - гЖюГ ╦ч╦П╦╝: 66.0MB - юю╢Д е╘╠Б: 22B
+2025-08-31 13:36:56,698 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 64.62.197.230
+2025-08-31 13:36:56,700 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.02MB - гЖюГ ╦ч╦П╦╝: 66.0MB - юю╢Д е╘╠Б: 117B
+2025-08-31 14:23:53,563 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:23:53,574 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:23:53,577 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:24:24,457 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:24:24,472 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:24:24,487 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:29:17,514 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:29:51,273 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:29:51,421 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:29:51,593 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:29:51,628 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:29:51,676 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:31:40,897 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:32:02,451 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:32:02,486 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:32:02,641 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:32:02,720 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:32:02,721 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:32:02,827 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:33:44,072 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:34:04,962 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:34:05,153 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:34:05,181 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:34:05,314 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:34:05,316 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:34:05,487 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:34:05,707 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:23,316 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:23,320 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:23,521 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:23,522 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:23,679 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:23,838 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:24,298 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:32,458 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:32,468 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:32,511 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:32,590 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:32,818 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:32,921 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:32,998 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:44,659 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:44,888 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:45,037 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:45,038 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:45,394 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:45,465 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:35:45,493 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:50,513 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:50,660 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:50,699 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:50,757 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:50,917 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:51,055 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:51,285 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:55,302 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:55,353 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:55,436 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:55,574 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:55,949 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:56,181 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:37:56,182 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:39:56,761 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:39:57,091 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:39:57,123 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:39:57,306 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:39:57,477 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:39:57,523 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:39:57,557 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:07,305 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:55,064 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:55,484 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:55,698 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:55,884 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:55,984 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:56,011 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:56,027 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:40:56,115 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:41:09,284 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:36,984 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:36,992 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:37,039 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:37,105 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:37,111 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:37,282 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:37,424 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:37,477 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:37,651 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 14:43:39,408 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,258 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,307 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,358 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,411 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,434 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,551 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,551 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,588 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,711 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:06:33,713 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,127 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,367 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,371 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,384 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,577 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,577 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,586 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,658 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,663 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:08:52,864 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:41,982 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:41,992 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:42,039 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:42,112 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:42,417 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:42,493 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:42,609 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:43,035 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:43,040 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:10:43,072 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:23:55,930 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 15:23:55,932 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.002s - ╦ч╦П╦╝ ╨╞х╜: +0.02MB - гЖюГ ╦ч╦П╦╝: 171.5MB - юю╢Д е╘╠Б: 117B
+2025-08-31 15:36:16,506 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:39:10,974 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:39:57,010 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:40:48,148 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:41:30,764 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 15:42:34,622 - performance - INFO - MongoDB ╪╨╢и ╦П╢оем╦╣ х╟╪╨х╜
+2025-08-31 16:06:59,654 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 93.123.109.26
+2025-08-31 16:06:59,656 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.002s - ╦ч╦П╦╝ ╨╞х╜: +0.09MB - гЖюГ ╦ч╦П╦╝: 171.7MB - юю╢Д е╘╠Б: 117B
+2025-08-31 16:07:00,274 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: /favicon.ico - Client: 93.123.109.26
+2025-08-31 16:07:00,276 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: /favicon.ico - ╩Себ: 404 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.01MB - гЖюГ ╦ч╦П╦╝: 171.8MB - юю╢Д е╘╠Б: 22B
+2025-08-31 16:55:04,408 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 16:55:04,411 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.003s - ╦ч╦П╦╝ ╨╞х╜: +2.90MB - гЖюГ ╦ч╦П╦╝: 64.7MB - юю╢Д е╘╠Б: 117B
+2025-08-31 18:22:55,285 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: /.well-known/security.txt - Client: 147.185.132.240
+2025-08-31 18:22:55,287 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: /.well-known/security.txt - ╩Себ: 404 - ╪р©Д╫ц╟ё: 0.003s - ╦ч╦П╦╝ ╨╞х╜: +2.81MB - гЖюГ ╦ч╦П╦╝: 57.2MB - юю╢Д е╘╠Б: 22B
+2025-08-31 18:31:37,390 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 18:31:37,392 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.002s - ╦ч╦П╦╝ ╨╞х╜: +0.38MB - гЖюГ ╦ч╦П╦╝: 58.0MB - юю╢Д е╘╠Б: 117B
+2025-08-31 20:37:20,388 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 20:37:20,392 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.005s - ╦ч╦П╦╝ ╨╞х╜: +3.02MB - гЖюГ ╦ч╦П╦╝: 57.3MB - юю╢Д е╘╠Б: 117B
+2025-08-31 21:44:31,128 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 21:44:31,133 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.005s - ╦ч╦П╦╝ ╨╞х╜: +2.99MB - гЖюГ ╦ч╦П╦╝: 57.2MB - юю╢Д е╘╠Б: 117B
+2025-08-31 23:35:32,679 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-08-31 23:35:32,692 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.015s - ╦ч╦П╦╝ ╨╞х╜: +3.38MB - гЖюГ ╦ч╦П╦╝: 20.0MB - юю╢Д е╘╠Б: 117B
+2025-08-31 23:48:59,322 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 20.163.15.178
+2025-08-31 23:48:59,333 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.011s - ╦ч╦П╦╝ ╨╞х╜: +0.06MB - гЖюГ ╦ч╦П╦╝: 20.5MB - юю╢Д е╘╠Б: 117B
+2025-09-01 00:54:59,741 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 162.142.125.123
+2025-09-01 00:54:59,749 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.009s - ╦ч╦П╦╝ ╨╞х╜: +3.84MB - гЖюГ ╦ч╦П╦╝: 20.9MB - юю╢Д е╘╠Б: 117B
+2025-09-01 00:55:10,007 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 162.142.125.123
+2025-09-01 00:55:10,008 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.02MB - гЖюГ ╦ч╦П╦╝: 21.3MB - юю╢Д е╘╠Б: 117B
+2025-09-01 00:55:11,199 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: /favicon.ico - Client: 162.142.125.123
+2025-09-01 00:55:11,201 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: /favicon.ico - ╩Себ: 404 - ╪р©Д╫ц╟ё: 0.003s - ╦ч╦П╦╝ ╨╞х╜: +0.22MB - гЖюГ ╦ч╦П╦╝: 21.6MB - юю╢Д е╘╠Б: 22B
+2025-09-01 00:55:15,187 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 162.142.125.123
+2025-09-01 00:55:15,189 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.00MB - гЖюГ ╦ч╦П╦╝: 21.8MB - юю╢Д е╘╠Б: 117B
+2025-09-01 01:09:11,504 - performance - INFO - ©Дц╩ ╫цюш - Method: GET - URL: / - Client: 149.86.227.49
+2025-09-01 01:09:11,505 - performance - INFO - ©Дц╩ ©о╥А - Method: GET - URL: / - ╩Себ: 200 - ╪р©Д╫ц╟ё: 0.001s - ╦ч╦П╦╝ ╨╞х╜: +0.01MB - гЖюГ ╦ч╦П╦╝: 22.0MB - юю╢Д е╘╠Б: 117B
