@@ -302,9 +302,9 @@ class AnalysisResultModel(AnalysisResultBase):
                 {}                                        # 기본값
             )
 
-            # analysis 필드가 None인 경우 실제 분석 결과로 초기화
+            # analysis 필드가 None인 경우 빈 딕셔너리로 초기화 (프론트엔드 호환성)
             if "analysis" not in data or data["analysis"] is None:
-                data["analysis"] = actual_data
+                data["analysis"] = {}
 
             # data 필드가 None인 경우 실제 분석 결과로 초기화
             if "data" not in data or data["data"] is None:
