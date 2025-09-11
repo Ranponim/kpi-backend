@@ -282,6 +282,11 @@ class AnalysisResultModel(AnalysisResultBase):
             if "metadata" not in data:
                 data["metadata"] = AnalysisMetadata().model_dump()
 
+            # metadata.analysis_type이 있으면 최상위 analysis_type을 덮어쓰기
+            if "metadata" in data and "analysis_type" in data["metadata"]:
+                data["analysis_type"] = data["metadata"]["analysis_type"]
+                logger.info(f"metadata.analysis_type을 최상위 analysis_type으로 복사: {data['metadata']['analysis_type']}")
+
             # 분석 결과가 없는 경우 빈 객체로 초기화
             if "analysis_result" not in data:
                 data["analysis_result"] = None
