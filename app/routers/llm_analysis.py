@@ -157,6 +157,7 @@ async def execute_llm_analysis(
                     "status": "completed" if analysis_result.get("status") == "success" else "error",
                     "results": analysis_result,
                     "completed_at": datetime.utcnow(),
+                    "analysis_type": "llm_analysis",  # LLM 분석 완료 시 analysis_type 명시적 설정
                     # 원본 PostgreSQL 스키마에서 추출한 정보 추가
                     "ne_id": source_meta.get("ne_id"),
                     "cell_id": source_meta.get("cell_id"),
