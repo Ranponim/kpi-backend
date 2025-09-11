@@ -283,9 +283,30 @@ class AnalysisResultModel(AnalysisResultBase):
                 data["metadata"] = AnalysisMetadata().model_dump()
 
             # metadata.analysis_type이 있으면 최상위 analysis_type을 덮어쓰기
-            if "metadata" in data and "analysis_type" in data["metadata"]:
-                data["analysis_type"] = data["metadata"]["analysis_type"]
-                logger.info(f"metadata.analysis_type을 최상위 analysis_type으로 복사: {data['metadata']['analysis_type']}")
+            metadata = data.get("metadata", {})
+            metadata_analysis_type = metadata.get("analysis_type") if metadata else None
+            
+            logger.info(f"from_mongo 메타데이터 분석", extra={
+                "has_metadata": bool(metadata),
+                "metadata_analysis_type": metadata_analysis_type,
+                "current_analysis_type": data.get("analysis_type"),
+                "metadata_keys": list(metadata.keys()) if metadata else []
+            })
+            
+            # metadata.analysis_type이 존재하고 유효한 값인 경우에만 복사
+            if (metadata and 
+                metadata_analysis_type and 
+                metadata_analysis_type != "standard" and
+                metadata_analysis_type != ""):
+                data["analysis_type"] = metadata_analysis_type
+                logger.info(f"metadata.analysis_type을 최상위 analysis_type으로 복사: {metadata_analysis_type}")
+            else:
+                logger.warning(f"metadata.analysis_type 복사 조건 불만족", extra={
+                    "metadata_exists": bool(metadata),
+                    "metadata_analysis_type": metadata_analysis_type,
+                    "is_standard": metadata_analysis_type == "standard",
+                    "is_empty": metadata_analysis_type == ""
+                })
 
             # 분석 결과가 없는 경우 빈 객체로 초기화
             if "analysis_result" not in data:
@@ -315,7 +336,8 @@ class AnalysisResultModel(AnalysisResultBase):
             if "data" not in data or data["data"] is None:
                 data["data"] = actual_data
 
-            return cls(**data)
+            # Pydantic 모델 생성 시 명시적으로 analysis_type 전달하여 기본값 우선순위 문제 해결
+            return cls(analysis_type=data.get("analysis_type", "standard"), **data)
 
         except Exception as e:
             logger.error(f"AnalysisResultModel 변환 중 오류: {e}", extra={
