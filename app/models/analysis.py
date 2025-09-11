@@ -294,13 +294,19 @@ class AnalysisResultModel(AnalysisResultBase):
             if "status" not in data:
                 data["status"] = "pending"
 
-            # analysis 필드가 None인 경우 빈 딕셔너리로 초기화
+            # analysis 필드가 None인 경우 실제 분석 결과로 초기화
             if "analysis" not in data or data["analysis"] is None:
-                data["analysis"] = {}
+                actual_data = (
+                    data.get("results") or                    # LLM 분석 결과
+                    data.get("results_overview") or           # 요약 결과
+                    data.get("analysis_raw_compact") or       # 압축된 원본
+                    {}                                        # 기본값
+                )
+                data["analysis"] = actual_data
 
-            # data 필드가 None인 경우 analysis 필드 값으로 초기화하거나 빈 딕셔너리로 설정
+            # data 필드가 None인 경우 빈 딕셔너리로 초기화 (기본값 유지)
             if "data" not in data or data["data"] is None:
-                data["data"] = data.get("analysis", {})
+                data["data"] = {}
 
             return cls(**data)
 
