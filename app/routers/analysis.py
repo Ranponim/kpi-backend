@@ -536,9 +536,12 @@ async def get_analysis_result(result_id: PyObjectId, includeRaw: bool = Query(Fa
             if cached_result:
                 req_logger.info("캐시된 분석 결과 상세 반환", extra={
                     "result_id": str(result_id),
-                    "cache_hit": True
+                    "cache_hit": True,
+                    "cached_analysis_type": cached_result.get("analysis_type"),
+                    "cached_metadata_analysis_type": cached_result.get("metadata", {}).get("analysis_type")
                 })
-                return AnalysisResultModel.parse_obj(cached_result)
+                # 캐시에서 가져온 데이터도 from_mongo 메서드를 사용하여 일관된 로직 적용
+                return AnalysisResultModel.from_mongo(cached_result)
         
         # 문서 조회
         document = await collection.find_one({"_id": result_id})
