@@ -203,10 +203,16 @@ class AnalysisResultBase(BaseModel):
     completed_at: Optional[datetime] = Field(None, description="완료 시간")
     error_message: Optional[str] = Field(None, description="오류 메시지")
     
-    # 기존 필드와의 호환성을 위해 유지
-    analysis: Optional[Dict[str, Any]] = Field(
-        None,
+    # 기존 필드와의 호환성을 위해 유지 - 기본값 제공으로 ResponseValidationError 방지
+    analysis: Dict[str, Any] = Field(
+        default_factory=dict,
         description="레거시 분석 데이터 (호환성 유지용)"
+    )
+    
+    # 프론트엔드 호환성을 위한 data 필드 추가
+    data: Dict[str, Any] = Field(
+        default_factory=dict,
+        description="분석 결과 데이터 (프론트엔드 호환성용)"
     )
     
     model_config = ConfigDict(
@@ -287,6 +293,14 @@ class AnalysisResultModel(AnalysisResultBase):
             # 상태 필드가 없는 경우 기본값 설정
             if "status" not in data:
                 data["status"] = "pending"
+
+            # analysis 필드가 None인 경우 빈 딕셔너리로 초기화
+            if "analysis" not in data or data["analysis"] is None:
+                data["analysis"] = {}
+
+            # data 필드가 None인 경우 analysis 필드 값으로 초기화하거나 빈 딕셔너리로 설정
+            if "data" not in data or data["data"] is None:
+                data["data"] = data.get("analysis", {})
 
             return cls(**data)
 
