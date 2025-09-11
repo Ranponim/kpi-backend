@@ -529,26 +529,11 @@ async def get_analysis_result(result_id: PyObjectId, includeRaw: bool = Query(Fa
             "include_raw": includeRaw
         })
         
-        # 캐시 확인 (includeRaw=True인 경우는 캐시하지 않음)
-        cache_manager = await get_cache_manager()
-        if not includeRaw:
-            cached_result = await cache_manager.get_cached_analysis_detail(str(result_id))
-            if cached_result:
-                req_logger.info("캐시된 분석 결과 상세 반환", extra={
-                    "result_id": str(result_id),
-                    "cache_hit": True,
-                    "cached_analysis_type": cached_result.get("analysis_type"),
-                    "cached_metadata_analysis_type": cached_result.get("metadata", {}).get("analysis_type"),
-                    "cached_keys": list(cached_result.keys())
-                })
-                # 캐시에서 가져온 데이터도 from_mongo 메서드를 사용하여 일관된 로직 적용
-                analysis_model = AnalysisResultModel.from_mongo(cached_result)
-                req_logger.info("캐시 데이터 from_mongo 변환 완료", extra={
-                    "result_id": str(result_id),
-                    "final_analysis_type": analysis_model.analysis_type,
-                    "final_metadata_analysis_type": analysis_model.metadata.analysis_type
-                })
-                return analysis_model
+        # 캐시 제거: 항상 DB에서 직접 조회하여 데이터 일관성 보장
+        req_logger.info("DB에서 직접 조회 (캐시 제거됨)", extra={
+            "result_id": str(result_id),
+            "include_raw": includeRaw
+        })
         
         # 문서 조회
         document = await collection.find_one({"_id": result_id})
@@ -592,16 +577,7 @@ async def get_analysis_result(result_id: PyObjectId, includeRaw: bool = Query(Fa
         })
         analysis_model = AnalysisResultModel.from_mongo(document)
         
-        # 캐시에 저장 (includeRaw=False인 경우만)
-        # 원본 MongoDB 데이터를 캐시에 저장하여 from_mongo 로직이 항상 적용되도록 함
-        if not includeRaw:
-            req_logger.info("캐시 저장 데이터 구조", extra={
-                "result_id": str(result_id),
-                "document_analysis_type": document.get("analysis_type"),
-                "document_metadata_analysis_type": document.get("metadata", {}).get("analysis_type"),
-                "document_keys": list(document.keys())
-            })
-            await cache_manager.cache_analysis_detail(str(result_id), document)
+        # 캐시 제거: 캐시 저장 로직 제거하여 데이터 일관성 보장
         
         req_logger.info("분석 결과 상세 조회 완료", extra={
             "result_id": str(result_id),
@@ -609,7 +585,7 @@ async def get_analysis_result(result_id: PyObjectId, includeRaw: bool = Query(Fa
             "cell_id": analysis_model.cell_id,
             "analysis_type": analysis_model.analysis_type,
             "include_raw": includeRaw,
-            "cached": not includeRaw
+            "cache_disabled": True
         })
         
         return AnalysisResultResponse(
