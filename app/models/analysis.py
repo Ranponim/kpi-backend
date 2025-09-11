@@ -337,7 +337,10 @@ class AnalysisResultModel(AnalysisResultBase):
                 data["data"] = actual_data
 
             # Pydantic 모델 생성 시 명시적으로 analysis_type 전달하여 기본값 우선순위 문제 해결
-            return cls(analysis_type=data.get("analysis_type", "standard"), **data)
+            # data에서 analysis_type을 제거하고 명시적으로 전달하여 중복 전달 오류 방지
+            data_copy = data.copy()
+            analysis_type_value = data_copy.pop("analysis_type", "standard")
+            return cls(analysis_type=analysis_type_value, **data_copy)
 
         except Exception as e:
             logger.error(f"AnalysisResultModel 변환 중 오류: {e}", extra={
