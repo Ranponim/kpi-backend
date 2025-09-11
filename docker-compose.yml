@@ -1,0 +1,56 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: kpi-postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-pass}
+      POSTGRES_DB: ${DB_NAME:-netperf}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d:ro
+
+  mongo:
+    image: mongo:7
+    container_name: kpi-mongo
+    environment:
+      MONGO_INITDB_DATABASE: kpi
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+    command: --bind_ip_all --port 27017 --noauth
+
+  backend:
+    build:
+      context: ./kpi_dashboard/backend
+    image: kpi-backend:latest
+    container_name: kpi-backend
+    depends_on:
+      - mongo
+      - postgres
+    environment:
+      # FastAPI/분석 영구 저장용 Mongo URL 전달
+      MONGO_URL: mongodb://mongo:27017
+      MONGO_DB_NAME: ${MONGO_DB_NAME:-kpi}
+      # PostgreSQL 연결 정보 (KPI 데이터 조회용)
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: pass
+      DB_NAME: netperf
+      # MCP 분석기 연동 (옵션)
+      MCP_ANALYZER_URL: ${MCP_ANALYZER_URL:-}
+      MCP_API_KEY: ${MCP_API_KEY:-}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8000:8000"
+
+volumes:
+  mongodata:
+  pgdata:
+
+
