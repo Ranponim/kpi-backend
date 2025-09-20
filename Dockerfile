@@ -8,9 +8,20 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 # 시스템 의존성 설치 (curl for health checks)
+# Install system dependencies for PostgreSQL, matplotlib, and debugging tools
 RUN apt-get update && apt-get install -y \
-    curl \
+    gcc \
+    libpq-dev \
+    bash \
+    procps \
+    net-tools \
+    tcpdump \
+    build-essential \
+    libfreetype6-dev \
+    libpng-dev \
+    g++ \
     && rm -rf /var/lib/apt/lists/*
+
 
 # 필요한 파일만 먼저 복사하여 캐시 레이어 극대화
 COPY requirements.txt /app/requirements.txt
