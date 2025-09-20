@@ -37,6 +37,21 @@ from .preference import (
     PreferenceExportResponse,
     PreferenceImportResponse
 )
+from .mahalanobis import (
+    KpiDataInput,
+    AnalysisOptionsInput,
+    AbnormalKpiDetail,
+    ScreeningAnalysis,
+    DrilldownAnalysis,
+    AnalysisResult,
+    MahalanobisAnalysisResult,
+    MannWhitneyTestInput,
+    KolmogorovSmirnovTestInput,
+    StatisticalTestResult,
+    StatisticalTestResponse,
+    validate_kpi_data,
+    log_analysis_request
+)
 
 __all__ = [
     "PyObjectId",
@@ -69,5 +84,19 @@ __all__ = [
     "UserPreferenceCreateResponse",
     "UserPreferenceUpdateResponse",
     "PreferenceExportResponse",
-    "PreferenceImportResponse"
+    "PreferenceImportResponse",
+    # Mahalanobis models
+    "KpiDataInput",
+    "AnalysisOptionsInput",
+    "AbnormalKpiDetail",
+    "ScreeningAnalysis",
+    "DrilldownAnalysis",
+    "AnalysisResult",
+    "MahalanobisAnalysisResult",
+    "MannWhitneyTestInput",
+    "KolmogorovSmirnovTestInput",
+    "StatisticalTestResult",
+    "StatisticalTestResponse",
+    "validate_kpi_data",
+    "log_analysis_request"
 ]

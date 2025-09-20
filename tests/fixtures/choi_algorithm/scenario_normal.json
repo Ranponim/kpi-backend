@@ -1,0 +1,119 @@
+{
+  "scenario_name": "normal_case",
+  "description": "정상적인 KPI 분석 시나리오 - Similar 판정 예상",
+  "input_data": {
+    "ems_ip": "192.168.1.100",
+    "ne_list": ["NE001", "NE002"]
+  },
+  "cell_ids": ["cell_001", "cell_002"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_001": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_001",
+        "pre_samples": [
+          1000.0, 1050.0, 1100.0, 1080.0, 1020.0, 1060.0, 1090.0, 1040.0,
+          1070.0, 1030.0
+        ],
+        "post_samples": [
+          1020.0, 1070.0, 1120.0, 1100.0, 1040.0, 1080.0, 1110.0, 1060.0,
+          1090.0, 1050.0
+        ],
+        "unit": "Kbps"
+      },
+      {
+        "peg_name": "AirMacDLThruMax",
+        "cell_id": "cell_001",
+        "pre_samples": [
+          1200.0, 1250.0, 1300.0, 1280.0, 1220.0, 1260.0, 1290.0, 1240.0,
+          1270.0, 1230.0
+        ],
+        "post_samples": [
+          1220.0, 1270.0, 1320.0, 1300.0, 1240.0, 1280.0, 1310.0, 1260.0,
+          1290.0, 1250.0
+        ],
+        "unit": "Kbps"
+      },
+      {
+        "peg_name": "ConnNoAvg",
+        "cell_id": "cell_001",
+        "pre_samples": [
+          10.0, 12.0, 11.0, 13.0, 9.0, 11.5, 12.5, 10.5, 11.8, 9.5
+        ],
+        "post_samples": [
+          10.2, 12.3, 11.1, 13.2, 9.1, 11.7, 12.7, 10.7, 12.0, 9.7
+        ],
+        "unit": "count"
+      }
+    ],
+    "cell_002": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_002",
+        "pre_samples": [
+          1500.0, 1550.0, 1600.0, 1580.0, 1520.0, 1560.0, 1590.0, 1540.0,
+          1570.0, 1530.0
+        ],
+        "post_samples": [
+          1520.0, 1570.0, 1620.0, 1600.0, 1540.0, 1580.0, 1610.0, 1560.0,
+          1590.0, 1550.0
+        ],
+        "unit": "Kbps"
+      },
+      {
+        "peg_name": "AirMacDLThruMax",
+        "cell_id": "cell_002",
+        "pre_samples": [
+          1700.0, 1750.0, 1800.0, 1780.0, 1720.0, 1760.0, 1790.0, 1740.0,
+          1770.0, 1730.0
+        ],
+        "post_samples": [
+          1720.0, 1770.0, 1820.0, 1800.0, 1740.0, 1780.0, 1810.0, 1760.0,
+          1790.0, 1750.0
+        ],
+        "unit": "Kbps"
+      },
+      {
+        "peg_name": "ConnNoAvg",
+        "cell_id": "cell_002",
+        "pre_samples": [
+          15.0, 17.0, 16.0, 18.0, 14.0, 16.5, 17.5, 15.5, 16.8, 14.5
+        ],
+        "post_samples": [
+          15.2, 17.3, 16.1, 18.2, 14.1, 16.7, 17.7, 15.7, 17.0, 14.7
+        ],
+        "unit": "count"
+      }
+    ]
+  },
+  "expected_outcomes": {
+    "filtering": {
+      "filter_ratio_range": [0.6, 0.8],
+      "should_trigger_50_percent_rule": false,
+      "warning_message": null
+    },
+    "abnormal_detection": {
+      "expected_anomalies": [],
+      "display_results": {
+        "Range": false,
+        "ND": false,
+        "Zero": false,
+        "New": false,
+        "High Delta": false
+      }
+    },
+    "kpi_analysis": {
+      "AirMacDLThruAvg": {
+        "expected_judgement": "OK",
+        "expected_detail": "Similar",
+        "traffic_classification": "high"
+      }
+    }
+  }
+}

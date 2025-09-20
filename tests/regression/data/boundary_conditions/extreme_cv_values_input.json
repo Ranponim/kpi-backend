@@ -1,0 +1,39 @@
+{
+  "scenario_name": "extreme_cv_values",
+  "description": "극한 CV 값으로 High Variation 판정 경계 테스트",
+  "test_purpose": "CV > β4 조건의 정확한 경계와 High Variation 판정 로직 검증",
+  "input_data": {
+    "ems_ip": "192.168.100.8",
+    "ne_list": ["NVGNB#100008"]
+  },
+  "cell_ids": ["cell_extreme_cv_001"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_extreme_cv_001": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_extreme_cv_001",
+        "pre_samples": [
+          100.0, 1000.0, 200.0, 900.0, 150.0, 950.0, 250.0, 850.0, 180.0, 920.0
+        ],
+        "post_samples": [
+          120.0, 1020.0, 220.0, 920.0, 170.0, 970.0, 270.0, 870.0, 200.0, 940.0
+        ],
+        "unit": "Kbps",
+        "comment": "극심한 변동성으로 CV > β4=10 달성 - High Variation 예상"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": true,
+    "expected_filter_ratio_range": [0.3, 0.7],
+    "expected_anomalies": [],
+    "expected_kpi_judgements": ["High Variation"],
+    "performance_max_ms": 50
+  }
+}

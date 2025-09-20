@@ -1,0 +1,110 @@
+{
+  "scenario_name": "delta_levels_case",
+  "description": "Delta 계층 분석 시나리오 - Low/Medium/High Delta와 High Variation",
+  "input_data": {
+    "ems_ip": "192.168.1.102",
+    "ne_list": ["NE005", "NE006"]
+  },
+  "cell_ids": ["cell_005", "cell_006"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_005": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_005",
+        "pre_samples": [
+          800.0, 820.0, 840.0, 830.0, 810.0, 825.0, 835.0, 815.0, 828.0, 812.0
+        ],
+        "post_samples": [
+          920.0, 940.0, 960.0, 950.0, 930.0, 945.0, 955.0, 935.0, 948.0, 932.0
+        ],
+        "unit": "Kbps",
+        "comment": "저트래픽 (< β0=1000), δ=15% (β2=10 < 15 ≤ 2*β2=20) - Low Delta 예상"
+      },
+      {
+        "peg_name": "AirMacULThruAvg",
+        "cell_id": "cell_005",
+        "pre_samples": [
+          1200.0, 1220.0, 1240.0, 1230.0, 1210.0, 1225.0, 1235.0, 1215.0,
+          1228.0, 1212.0
+        ],
+        "post_samples": [
+          1440.0, 1464.0, 1488.0, 1476.0, 1452.0, 1470.0, 1482.0, 1458.0,
+          1473.0, 1454.0
+        ],
+        "unit": "Kbps",
+        "comment": "고트래픽 (> β0=1000), δ=20% (2*β1=10 < 20 ≤ β3=500) - Medium Delta 예상"
+      }
+    ],
+    "cell_006": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_006",
+        "pre_samples": [
+          100.0, 500.0, 200.0, 600.0, 150.0, 550.0, 250.0, 650.0, 180.0, 580.0
+        ],
+        "post_samples": [
+          120.0, 520.0, 220.0, 620.0, 170.0, 570.0, 270.0, 670.0, 200.0, 600.0
+        ],
+        "unit": "Kbps",
+        "comment": "높은 변동성 (CV > β4=10) - High Variation 예상"
+      },
+      {
+        "peg_name": "ConnNoAvg",
+        "cell_id": "cell_006",
+        "pre_samples": [5.0, 5.2, 5.1, 5.3, 4.9, 5.15, 5.25, 5.05, 5.18, 4.95],
+        "post_samples": [
+          35.0, 36.4, 35.7, 37.1, 34.3, 36.05, 36.75, 35.35, 36.26, 34.65
+        ],
+        "unit": "count",
+        "comment": "δ=600% (> β3=500) - High Delta 예상"
+      }
+    ]
+  },
+  "expected_outcomes": {
+    "filtering": {
+      "filter_ratio_range": [0.5, 0.7],
+      "should_trigger_50_percent_rule": false,
+      "warning_message": null
+    },
+    "abnormal_detection": {
+      "expected_anomalies": ["High Delta"],
+      "display_results": {
+        "Range": false,
+        "ND": false,
+        "Zero": false,
+        "New": false,
+        "High Delta": true
+      }
+    },
+    "kpi_analysis": {
+      "AirMacDLThruAvg_cell_005": {
+        "expected_judgement": "NOK",
+        "expected_detail": "Low Delta",
+        "traffic_classification": "low",
+        "delta_range": [10, 20]
+      },
+      "AirMacULThruAvg_cell_005": {
+        "expected_judgement": "NOK",
+        "expected_detail": "Medium Delta",
+        "traffic_classification": "high",
+        "delta_range": [10, 500]
+      },
+      "AirMacDLThruAvg_cell_006": {
+        "expected_judgement": "NOK",
+        "expected_detail": "High Variation",
+        "cv_threshold": 10.0
+      },
+      "ConnNoAvg_cell_006": {
+        "expected_judgement": "NOK",
+        "expected_detail": "High Delta",
+        "delta_value": 600
+      }
+    }
+  }
+}

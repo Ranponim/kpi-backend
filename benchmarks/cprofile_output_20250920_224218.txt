@@ -1,0 +1,95 @@
+=== Choi Algorithm cProfile Output ===
+
+=== BY_CUMULATIVE_TIME ===
+         19323 function calls in 0.010 seconds
+
+   Ordered by: cumulative time
+   List reduced from 193 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.010    0.010 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:109(process_peg_data)
+        1    0.000    0.000    0.005    0.005 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:283(_run_filtering)
+        1    0.000    0.000    0.005    0.005 D:\Coding\kpi_dashboard\backend\app\services\choi_filtering_service.py:44(apply)
+        1    0.000    0.000    0.003    0.003 D:\Coding\kpi_dashboard\backend\app\services\choi_filtering_service.py:468(_calculate_medians)
+       90    0.000    0.000    0.003    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_function_base_impl.py:3934(median)
+        1    0.000    0.000    0.003    0.003 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:317(_aggregation)
+       90    0.000    0.000    0.003    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_function_base_impl.py:3855(_ureduce)
+       90    0.000    0.000    0.002    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_function_base_impl.py:4023(_median)
+       60    0.000    0.000    0.002    0.000 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:526(_calculate_basic_stats)
+        1    0.000    0.000    0.002    0.002 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:405(_run_judgement)
+      210    0.000    0.000    0.002    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\fromnumeric.py:3734(mean)
+        1    0.000    0.000    0.002    0.002 D:\Coding\kpi_dashboard\backend\app\services\choi_judgement_service.py:88(apply)
+      210    0.000    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:117(_mean)
+        1    0.000    0.000    0.001    0.001 D:\Coding\kpi_dashboard\backend\app\services\choi_judgement_service.py:146(detect_abnormal_stats)
+        5    0.000    0.000    0.001    0.000 D:\Coding\kpi_dashboard\backend\app\services\anomaly_detectors.py:112(detect)
+        1    0.000    0.000    0.001    0.001 D:\Coding\kpi_dashboard\backend\app\services\choi_filtering_service.py:311(_preprocess_data)
+       60    0.000    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\fromnumeric.py:3868(std)
+       60    0.000    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:220(_std)
+      540    0.001    0.000    0.001    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+       60    0.001    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:150(_var)
+
+
+
+
+=== BY_SELF_TIME ===
+         19323 function calls in 0.010 seconds
+
+   Ordered by: internal time
+   List reduced from 193 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      540    0.001    0.000    0.001    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+       60    0.001    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:150(_var)
+     4421    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+      210    0.000    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:117(_mean)
+       60    0.000    0.000    0.001    0.000 D:\Coding\kpi_dashboard\backend\app\services\choi_filtering_service.py:384(_remove_neighbor_zero_samples)
+       90    0.000    0.000    0.002    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_function_base_impl.py:4023(_median)
+      270    0.000    0.000    0.000    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:75(_count_reduce_items)
+      125    0.000    0.000    0.000    0.000 {method 'validate_python' of 'pydantic_core._pydantic_core.SchemaValidator' objects}
+        1    0.000    0.000    0.003    0.003 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:317(_aggregation)
+     4503    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+       60    0.000    0.000    0.002    0.000 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:526(_calculate_basic_stats)
+       90    0.000    0.000    0.000    0.000 {method 'partition' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 D:\Coding\kpi_dashboard\backend\app\services\choi_filtering_service.py:536(_normalize_by_median)
+      600    0.000    0.000    0.000    0.000 {built-in method numpy.asanyarray}
+      210    0.000    0.000    0.002    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\fromnumeric.py:3734(mean)
+        1    0.000    0.000    0.003    0.003 D:\Coding\kpi_dashboard\backend\app\services\choi_filtering_service.py:468(_calculate_medians)
+        1    0.000    0.000    0.000    0.000 D:\Coding\kpi_dashboard\backend\app\services\choi_filtering_service.py:117(_apply_threshold_filtering)
+       90    0.000    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_utils_impl.py:645(_median_nancheck)
+        1    0.000    0.000    0.000    0.000 D:\Coding\kpi_dashboard\backend\app\services\peg_processing_service.py:186(_data_retrieval)
+       90    0.000    0.000    0.003    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\lib\_function_base_impl.py:3855(_ureduce)
+
+
+
+
+=== BY_CALL_COUNT ===
+         19323 function calls in 0.010 seconds
+
+   Ordered by: call count
+   List reduced from 193 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     4503    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+     4421    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+      810    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+      810    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+      600    0.000    0.000    0.000    0.000 {built-in method numpy.asanyarray}
+      540    0.001    0.000    0.001    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+      516    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+      360    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+      330    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+      270    0.000    0.000    0.000    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:75(_count_reduce_items)
+      270    0.000    0.000    0.000    0.000 {built-in method numpy.lib.array_utils.normalize_axis_index}
+      240    0.000    0.000    0.000    0.000 D:\Coding\kpi_dashboard\backend\app\models\judgement.py:111(validate_samples)
+      240    0.000    0.000    0.000    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\pydantic\_internal\_decorators_v1.py:102(wrapper2)
+      216    0.000    0.000    0.000    0.000 C:\Python313\Lib\logging\__init__.py:1764(isEnabledFor)
+      210    0.000    0.000    0.001    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\_methods.py:117(_mean)
+      210    0.000    0.000    0.002    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\fromnumeric.py:3734(mean)
+      210    0.000    0.000    0.000    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\fromnumeric.py:3729(_mean_dispatcher)
+      189    0.000    0.000    0.000    0.000 {built-in method builtins.sum}
+      180    0.000    0.000    0.000    0.000 C:\Users\aruca\AppData\Roaming\Python\Python313\site-packages\numpy\_core\numerictypes.py:293(issubclass_)
+      180    0.000    0.000    0.000    0.000 D:\Coding\kpi_dashboard\backend\app\services\anomaly_detectors.py:631(<genexpr>)
+
+
+
+

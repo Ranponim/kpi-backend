@@ -1,0 +1,41 @@
+{
+  "scenario_name": "basic_similar_judgement",
+  "description": "기본적인 Similar 판정 시나리오 - 고트래픽, 작은 변화량",
+  "test_purpose": "정상적인 Similar 판정 로직 검증 (β1 임계값 적용)",
+  "input_data": {
+    "ems_ip": "192.168.100.1",
+    "ne_list": ["NVGNB#100001"]
+  },
+  "cell_ids": ["cell_regression_001"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_regression_001": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_regression_001",
+        "pre_samples": [
+          1200.0, 1210.0, 1220.0, 1215.0, 1205.0, 1225.0, 1230.0, 1200.0,
+          1218.0, 1212.0
+        ],
+        "post_samples": [
+          1240.0, 1250.0, 1260.0, 1255.0, 1245.0, 1265.0, 1270.0, 1240.0,
+          1258.0, 1252.0
+        ],
+        "unit": "Kbps",
+        "comment": "고트래픽 (> β0=1000), δ=3.3% (< β1=5, < β5=3) - Similar 예상"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": true,
+    "expected_filter_ratio_range": [0.7, 1.0],
+    "expected_anomalies": [],
+    "expected_kpi_judgements": ["Similar"],
+    "performance_max_ms": 50
+  }
+}

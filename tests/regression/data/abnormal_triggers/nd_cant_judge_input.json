@@ -1,0 +1,49 @@
+{
+  "scenario_name": "nd_cant_judge",
+  "description": "ND 포함으로 인한 Can't Judge 판정 시나리오",
+  "test_purpose": "ND 데이터 포함 시 Can't Judge 판정 로직 검증",
+  "input_data": {
+    "ems_ip": "192.168.100.2",
+    "ne_list": ["NVGNB#100002"]
+  },
+  "cell_ids": ["cell_regression_002"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_regression_002": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_regression_002",
+        "pre_samples": [
+          1000.0,
+          null,
+          1100.0,
+          null,
+          1050.0,
+          1080.0,
+          null,
+          1040.0,
+          1070.0,
+          1030.0
+        ],
+        "post_samples": [
+          1020.0, 1070.0, 1120.0, 1100.0, 1040.0, 1080.0, 1110.0, 1060.0,
+          1090.0, 1050.0
+        ],
+        "unit": "Kbps",
+        "comment": "Pre 기간에 30% ND 포함 - Can't Judge 예상"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": true,
+    "expected_filter_ratio_range": [0.3, 0.8],
+    "expected_anomalies": ["ND"],
+    "expected_kpi_judgements": ["Can't Judge"],
+    "performance_max_ms": 50
+  }
+}

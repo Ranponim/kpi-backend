@@ -1,0 +1,56 @@
+{
+  "scenario_name": "improve_degrade_detection",
+  "description": "Improve/Degrade 분포 분리 탐지 시나리오",
+  "test_purpose": "Positive KPI에서 분포 완전 분리 기반 Improve/Degrade 판정 검증",
+  "input_data": {
+    "ems_ip": "192.168.100.5",
+    "ne_list": ["NVGNB#100005"]
+  },
+  "cell_ids": ["cell_improve_001", "cell_degrade_001"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_improve_001": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_improve_001",
+        "pre_samples": [
+          900.0, 910.0, 920.0, 915.0, 905.0, 925.0, 930.0, 900.0, 918.0, 912.0
+        ],
+        "post_samples": [
+          1100.0, 1110.0, 1120.0, 1115.0, 1105.0, 1125.0, 1130.0, 1100.0,
+          1118.0, 1112.0
+        ],
+        "unit": "Kbps",
+        "comment": "Positive KPI Improve: max(pre)=930 < min(post)=1100, 분포 완전 분리"
+      }
+    ],
+    "cell_degrade_001": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_degrade_001",
+        "pre_samples": [
+          1500.0, 1510.0, 1520.0, 1515.0, 1505.0, 1525.0, 1530.0, 1500.0,
+          1518.0, 1512.0
+        ],
+        "post_samples": [
+          1200.0, 1210.0, 1220.0, 1215.0, 1205.0, 1225.0, 1230.0, 1200.0,
+          1218.0, 1212.0
+        ],
+        "unit": "Kbps",
+        "comment": "Positive KPI Degrade: min(pre)=1500 > max(post)=1230, 분포 완전 분리"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": true,
+    "expected_filter_ratio_range": [0.8, 1.0],
+    "expected_anomalies": [],
+    "expected_kpi_judgements": ["Improve", "Degrade"],
+    "performance_max_ms": 100
+  }
+}

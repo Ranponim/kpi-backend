@@ -277,6 +277,19 @@ def setup_logging(
     logger.info(f"로깅 시스템 초기화 완료 - 환경: {environment}, 레벨: {log_level}")
 
 
+def get_logger(name: str) -> logging.Logger:
+    """
+    지정된 이름의 로거를 반환합니다.
+    
+    Args:
+        name: 로거 이름
+        
+    Returns:
+        logging.Logger: 설정된 로거 인스턴스
+    """
+    return logging.getLogger(name)
+
+
 def get_request_logger(request_id: str) -> logging.LoggerAdapter:
     """
     요청별 로거를 생성합니다.

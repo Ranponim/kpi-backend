@@ -1,0 +1,137 @@
+{
+  "timestamp": "2025-09-20 22:23:58.038243",
+  "processing_time_ms": null,
+  "algorithm_version": "1.0.0",
+  "filtering": {
+    "valid_time_slots": {
+      "cell_boundary_001": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "cell_boundary_002": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    "filter_ratio": 1.0,
+    "warning_message": null,
+    "preprocessing_stats": {
+      "total_samples_before": 40,
+      "total_samples_after": 40,
+      "removed_by_neighbor_zero": 0,
+      "removed_by_dl_ul_zero": 0,
+      "removal_ratio": 0.0
+    },
+    "median_values": {
+      "cell_boundary_001": {
+        "AirMacDLThruAvg": {
+          "pre_median": 1200.0,
+          "post_median": 1260.0,
+          "overall_median": 1230.0,
+          "pre_sample_count": 10,
+          "post_sample_count": 10
+        }
+      },
+      "cell_boundary_002": {
+        "AirMacDLThruAvg": {
+          "pre_median": 800.0,
+          "post_median": 880.0,
+          "overall_median": 840.0,
+          "pre_sample_count": 10,
+          "post_sample_count": 10
+        }
+      }
+    }
+  },
+  "abnormal_detection": {
+    "range_violations": {
+      "Range": []
+    },
+    "new_statistics": {
+      "New": []
+    },
+    "nd_anomalies": {
+      "ND": []
+    },
+    "zero_anomalies": {
+      "Zero": []
+    },
+    "high_delta_anomalies": {
+      "High Delta": []
+    },
+    "display_results": {
+      "Range": true,
+      "ND": true,
+      "Zero": true,
+      "New": true,
+      "High Delta": true
+    }
+  },
+  "kpi_judgement": {},
+  "ui_summary": {},
+  "overall_summary": {
+    "processing_completed": true,
+    "algorithm_version": "1.0.0",
+    "total_warnings": 0
+  },
+  "config_used": {
+    "filtering_thresholds": {
+      "min": 0.87,
+      "max": 1.13
+    },
+    "alpha_0": 2,
+    "beta_values": {
+      "beta_0": 1000.0,
+      "beta_1": 5.0,
+      "beta_2": 10.0,
+      "beta_3": 500.0
+    },
+    "config_version": "1.0.0"
+  },
+  "total_cells_analyzed": 0,
+  "total_pegs_analyzed": 0,
+  "processing_warnings": [],
+  "regression_metadata": {
+    "generated_at": "2025-09-20T22:23:58.038480",
+    "algorithm_version": "1.0.0",
+    "input_file": "beta_threshold_boundaries_input.json",
+    "scenario_category": "boundary_conditions",
+    "test_purpose": "β1, β2, β3, β4, β5 임계값의 경계 조건에서 정확한 판정 검증"
+  }
+}

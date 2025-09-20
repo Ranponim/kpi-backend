@@ -146,24 +146,52 @@ async def execute_llm_analysis(
         if analysis_result is None:
             raise RuntimeError("LLM 분석 결과를 가져오지 못했습니다. MCP_ANALYZER_URL 설정 또는 실제 분석 로직이 필요합니다.")
 
-        # MongoDB 상태 업데이트 - 원본 스키마 정보 포함
+        # MongoDB 상태 업데이트 - 스키마 정합성 반영 및 중복 제거
         db = get_database()
         source_meta = analysis_result.get("source_metadata", {})
         
+        # 중복 제거: results 별칭 필드 제거하고 정규화된 구조로 저장
+        normalized_result = analysis_result.copy()
+        if "results" in normalized_result and "llm_analysis" in normalized_result:
+            # results는 llm_analysis의 별칭이므로 제거
+            del normalized_result["results"]
+            logger.info("중복 필드 제거: results 별칭 삭제됨")
+        
+        # 요청 파라미터 구성 (민감정보 마스킹)
+        masked_db = {
+            "host": db_config.get("host"),
+            "port": db_config.get("port"),
+            "user": db_config.get("user"),
+            "password": "***" if db_config.get("password") else None,
+            "dbname": db_config.get("dbname"),
+            "table": db_config.get("table")
+        }
+        request_params = {
+            "db": masked_db,
+            "time_ranges": {
+                "n_minus_1": n_minus_1,
+                "n": n
+            }
+        }
+        
+        # 스키마 정합성에 맞춘 저장: analysis(원문), analysis_raw_compact(전체 컨텍스트), 상태/타입/타임스탬프
+        to_set = {
+            "status": "completed" if analysis_result.get("status") == "success" else "error",
+            "analysis": normalized_result.get("llm_analysis", {}),  # 원문 LLM 분석을 그대로 저장
+            "analysis_raw_compact": normalized_result,               # 전체 컨텍스트 보존
+            "completed_at": datetime.utcnow(),
+            "analysis_type": "llm_analysis",
+            "request_params": request_params,
+            # 선택: 대표 식별자 (스키마에 존재하는 필드)
+            "ne_id": source_meta.get("ne_id"),
+            "cell_id": source_meta.get("cell_id"),
+            # 메타데이터 갱신
+            "metadata.updated_at": datetime.utcnow()
+        }
+        
         await db.analysis_results.update_one(
             {"analysis_id": analysis_id},
-            {
-                "$set": {
-                    "status": "completed" if analysis_result.get("status") == "success" else "error",
-                    "results": analysis_result,
-                    "completed_at": datetime.utcnow(),
-                    "analysis_type": "llm_analysis",  # LLM 분석 완료 시 analysis_type 명시적 설정
-                    # 원본 PostgreSQL 스키마에서 추출한 정보 추가
-                    "ne_id": source_meta.get("ne_id"),
-                    "cell_id": source_meta.get("cell_id"),
-                    "source_metadata": source_meta
-                }
-            }
+            {"$set": to_set}
         )
         
         logger.info(f"LLM 분석 처리 완료: {analysis_id}")
@@ -205,8 +233,12 @@ async def get_llm_analysis_result(analysis_id: str):
         if '_id' in result:
             result['_id'] = str(result['_id'])
         
-        # results 필드가 dict인 경우 list로 변환 (Pydantic 호환성)
-        if 'results' in result and isinstance(result['results'], dict):
+        # 새로운 정규화된 구조에서 응답 구성 (중복 제거)
+        # 하위 호환성을 위해 results 필드를 llm_analysis로 매핑
+        if 'llm_analysis' in result and 'results' not in result:
+            result['results'] = [result['llm_analysis']]  # API 호환성을 위한 배열 형태
+        elif 'results' in result and isinstance(result['results'], dict):
+            # 기존 저장된 데이터와의 호환성
             result['results'] = [result['results']]
         
         return AnalysisResultModel(**result)

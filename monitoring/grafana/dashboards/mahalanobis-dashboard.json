@@ -1,0 +1,233 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Mahalanobis Analysis API Dashboard",
+    "tags": ["mahalanobis", "kpi", "monitoring"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "API 요청 수",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(mahalanobis_api_requests_total[5m])",
+            "legendFormat": "{{method}} {{endpoint}} {{status}}"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": 2,
+        "title": "API 응답 시간",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(mahalanobis_api_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "95th percentile"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(mahalanobis_api_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "50th percentile"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        }
+      },
+      {
+        "id": 3,
+        "title": "마할라노비스 분석 수",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(mahalanobis_analysis_total[5m])",
+            "legendFormat": "{{status}}"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        }
+      },
+      {
+        "id": 4,
+        "title": "분석 처리 시간",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(mahalanobis_analysis_duration_seconds_bucket[5m]))",
+            "legendFormat": "95th percentile"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(mahalanobis_analysis_duration_seconds_bucket[5m]))",
+            "legendFormat": "50th percentile"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        }
+      },
+      {
+        "id": 5,
+        "title": "캐시 성능",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "mahalanobis_cache_hit_rate_percent",
+            "legendFormat": "Cache Hit Rate %"
+          },
+          {
+            "expr": "rate(mahalanobis_cache_hits_total[5m])",
+            "legendFormat": "Cache Hits"
+          },
+          {
+            "expr": "rate(mahalanobis_cache_misses_total[5m])",
+            "legendFormat": "Cache Misses"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        }
+      },
+      {
+        "id": 6,
+        "title": "KPI 처리 통계",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(mahalanobis_kpi_count_bucket[5m]))",
+            "legendFormat": "95th percentile KPI count"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(mahalanobis_abnormal_kpi_count_bucket[5m]))",
+            "legendFormat": "95th percentile abnormal KPI count"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        }
+      },
+      {
+        "id": 7,
+        "title": "시스템 리소스",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "mahalanobis_system_cpu_usage_percent",
+            "legendFormat": "CPU Usage %"
+          },
+          {
+            "expr": "mahalanobis_system_memory_usage_percent",
+            "legendFormat": "Memory Usage %"
+          },
+          {
+            "expr": "mahalanobis_system_disk_usage_percent",
+            "legendFormat": "Disk Usage %"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 24
+        }
+      },
+      {
+        "id": 8,
+        "title": "캐시 상태",
+        "type": "table",
+        "targets": [
+          {
+            "expr": "mahalanobis_cache_size_bytes",
+            "legendFormat": "Cache Size"
+          },
+          {
+            "expr": "mahalanobis_cache_entries_total",
+            "legendFormat": "Cache Entries"
+          },
+          {
+            "expr": "mahalanobis_cache_hit_rate_percent",
+            "legendFormat": "Hit Rate %"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 24
+        }
+      },
+      {
+        "id": 9,
+        "title": "에러율",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(mahalanobis_api_requests_total{status=~\"5..\"}[5m]) / rate(mahalanobis_api_requests_total[5m]) * 100",
+            "legendFormat": "Error Rate %"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 32
+        }
+      },
+      {
+        "id": 10,
+        "title": "성능 요약",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(mahalanobis_api_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "95th percentile response time"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 32
+        }
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "templating": {
+      "list": []
+    },
+    "annotations": {
+      "list": []
+    },
+    "refresh": "30s",
+    "schemaVersion": 27,
+    "version": 0,
+    "links": []
+  }
+}
+
+

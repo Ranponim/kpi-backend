@@ -1,0 +1,378 @@
+{
+  "timestamp": "2025-09-20T22:42:18.664452",
+  "phase_breakdown": {
+    "filtering": {
+      "avg_time_ms": 2.358,
+      "min_time_ms": 2.203,
+      "max_time_ms": 2.547,
+      "measurements": 3
+    },
+    "aggregation": {
+      "avg_time_ms": 3.755,
+      "min_time_ms": 3.644,
+      "max_time_ms": 3.894,
+      "measurements": 3
+    },
+    "derivation": {
+      "avg_time_ms": 3.796,
+      "min_time_ms": 3.68,
+      "max_time_ms": 3.871,
+      "measurements": 3
+    },
+    "judgement": {
+      "avg_time_ms": 4.534,
+      "min_time_ms": 4.389,
+      "max_time_ms": 4.64,
+      "measurements": 3
+    }
+  },
+  "hotspots": {
+    "by_cumulative_time": [
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:process_peg_data",
+        "cumulative_time_ms": 10.338,
+        "call_count": 1,
+        "time_per_call_ms": 0.035
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_run_filtering",
+        "cumulative_time_ms": 5.25,
+        "call_count": 1,
+        "time_per_call_ms": 0.025
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:apply",
+        "cumulative_time_ms": 5.223,
+        "call_count": 1,
+        "time_per_call_ms": 0.033
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_calculate_medians",
+        "cumulative_time_ms": 3.05,
+        "call_count": 1,
+        "time_per_call_ms": 0.225
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_aggregation",
+        "cumulative_time_ms": 2.744,
+        "call_count": 1,
+        "time_per_call_ms": 0.321
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_calculate_basic_stats",
+        "cumulative_time_ms": 2.267,
+        "call_count": 60,
+        "time_per_call_ms": 0.005
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_run_judgement",
+        "cumulative_time_ms": 1.802,
+        "call_count": 1,
+        "time_per_call_ms": 0.01
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_judgement_service.py:apply",
+        "cumulative_time_ms": 1.585,
+        "call_count": 1,
+        "time_per_call_ms": 0.024
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_judgement_service.py:detect_abnormal_stats",
+        "cumulative_time_ms": 1.356,
+        "call_count": 1,
+        "time_per_call_ms": 0.025
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:detect",
+        "cumulative_time_ms": 1.189,
+        "call_count": 5,
+        "time_per_call_ms": 0.006
+      }
+    ],
+    "by_self_time": [
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_remove_neighbor_zero_samples",
+        "self_time_ms": 0.44,
+        "call_count": 60,
+        "time_per_call_ms": 0.007
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_aggregation",
+        "self_time_ms": 0.321,
+        "call_count": 1,
+        "time_per_call_ms": 0.321
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_calculate_basic_stats",
+        "self_time_ms": 0.298,
+        "call_count": 60,
+        "time_per_call_ms": 0.005
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_normalize_by_median",
+        "self_time_ms": 0.247,
+        "call_count": 1,
+        "time_per_call_ms": 0.247
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_calculate_medians",
+        "self_time_ms": 0.225,
+        "call_count": 1,
+        "time_per_call_ms": 0.225
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_apply_threshold_filtering",
+        "self_time_ms": 0.224,
+        "call_count": 1,
+        "time_per_call_ms": 0.224
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_data_retrieval",
+        "self_time_ms": 0.185,
+        "call_count": 1,
+        "time_per_call_ms": 0.185
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_remove_zero_sum_samples",
+        "self_time_ms": 0.121,
+        "call_count": 40,
+        "time_per_call_ms": 0.003
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_preprocess_data",
+        "self_time_ms": 0.108,
+        "call_count": 1,
+        "time_per_call_ms": 0.108
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:_calculate_delta",
+        "self_time_ms": 0.103,
+        "call_count": 30,
+        "time_per_call_ms": 0.003
+      }
+    ],
+    "by_call_frequency": [
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\models\\judgement.py:validate_samples",
+        "call_count": 240,
+        "total_time_ms": 0.019,
+        "avg_time_per_call_us": 0.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:<genexpr>",
+        "call_count": 180,
+        "total_time_ms": 0.014,
+        "avg_time_per_call_us": 0.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:_calculate_basic_stats",
+        "call_count": 60,
+        "total_time_ms": 0.298,
+        "avg_time_per_call_us": 5.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_remove_neighbor_zero_samples",
+        "call_count": 60,
+        "total_time_ms": 0.44,
+        "avg_time_per_call_us": 7.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py:_remove_zero_sum_samples",
+        "call_count": 40,
+        "total_time_ms": 0.121,
+        "avg_time_per_call_us": 3.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:_calculate_delta",
+        "call_count": 30,
+        "total_time_ms": 0.103,
+        "avg_time_per_call_us": 3.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:_check_range_violations",
+        "call_count": 30,
+        "total_time_ms": 0.058,
+        "avg_time_per_call_us": 2.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:_analyze_zero_pattern",
+        "call_count": 30,
+        "total_time_ms": 0.051,
+        "avg_time_per_call_us": 2.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:_analyze_nd_pattern",
+        "call_count": 30,
+        "total_time_ms": 0.036,
+        "avg_time_per_call_us": 1.0
+      },
+      {
+        "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py:is_new_peg",
+        "call_count": 30,
+        "total_time_ms": 0.003,
+        "avg_time_per_call_us": 0.0
+      }
+    ]
+  },
+  "call_frequencies": {
+    "total_function_calls": 906,
+    "unique_functions": 73,
+    "avg_calls_per_function": 12.4,
+    "max_calls_single_function": 240,
+    "high_frequency_functions": [
+      {
+        "function": "validate_samples",
+        "call_count": 240,
+        "total_time_ms": 0.019,
+        "avg_time_per_call_us": 0.0
+      },
+      {
+        "function": "<genexpr>",
+        "call_count": 180,
+        "total_time_ms": 0.014,
+        "avg_time_per_call_us": 0.0
+      },
+      {
+        "function": "_calculate_basic_stats",
+        "call_count": 60,
+        "total_time_ms": 0.298,
+        "avg_time_per_call_us": 5.0
+      },
+      {
+        "function": "_remove_neighbor_zero_samples",
+        "call_count": 60,
+        "total_time_ms": 0.44,
+        "avg_time_per_call_us": 7.0
+      },
+      {
+        "function": "_remove_zero_sum_samples",
+        "call_count": 40,
+        "total_time_ms": 0.121,
+        "avg_time_per_call_us": 3.0
+      },
+      {
+        "function": "_calculate_delta",
+        "call_count": 30,
+        "total_time_ms": 0.103,
+        "avg_time_per_call_us": 3.0
+      },
+      {
+        "function": "_check_range_violations",
+        "call_count": 30,
+        "total_time_ms": 0.058,
+        "avg_time_per_call_us": 2.0
+      },
+      {
+        "function": "_analyze_zero_pattern",
+        "call_count": 30,
+        "total_time_ms": 0.051,
+        "avg_time_per_call_us": 2.0
+      },
+      {
+        "function": "_analyze_nd_pattern",
+        "call_count": 30,
+        "total_time_ms": 0.036,
+        "avg_time_per_call_us": 1.0
+      },
+      {
+        "function": "is_new_peg",
+        "call_count": 30,
+        "total_time_ms": 0.003,
+        "avg_time_per_call_us": 0.0
+      }
+    ],
+    "call_distribution": {
+      "functions_called_once": 51,
+      "functions_called_2_10": 8,
+      "functions_called_10_plus": 14
+    }
+  },
+  "memory_profile": {
+    "initial_memory_mb": 80.219,
+    "final_memory_mb": 80.664,
+    "memory_increase_mb": 0.445,
+    "peak_traced_memory_mb": 0.427,
+    "current_traced_memory_mb": 0.056,
+    "cells_processed": 20,
+    "memory_per_cell_mb": 0.0223,
+    "top_memory_users": [
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py\", line 413",
+        "size_mb": 0.005,
+        "count": 61
+      },
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py\", line 419",
+        "size_mb": 0.005,
+        "count": 55
+      },
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py\", line 514",
+        "size_mb": 0.004,
+        "count": 60
+      },
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\benchmarks\\choi_profiler.py\", line 358",
+        "size_mb": 0.001,
+        "count": 21
+      },
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py\", line 509",
+        "size_mb": 0.001,
+        "count": 60
+      },
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py\", line 501",
+        "size_mb": 0.001,
+        "count": 60
+      },
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\app\\services\\choi_filtering_service.py\", line 493",
+        "size_mb": 0.001,
+        "count": 60
+      },
+      {
+        "file": "  File \"D:\\Coding\\kpi_dashboard\\backend\\app\\services\\anomaly_detectors.py\", line 423",
+        "size_mb": 0.001,
+        "count": 13
+      }
+    ],
+    "memory_snapshots": [
+      {
+        "phase": "initial",
+        "memory_mb": 80.2265625
+      },
+      {
+        "phase": "final",
+        "memory_mb": 80.6640625
+      }
+    ]
+  },
+  "optimization_recommendations": [
+    {
+      "type": "cumulative_time_optimization",
+      "priority": "high",
+      "function": "D:\\Coding\\kpi_dashboard\\backend\\app\\services\\peg_processing_service.py:process_peg_data",
+      "current_time_ms": 10.338,
+      "recommendation": "이 함수의 알고리즘 복잡도를 검토하고 numpy 벡터화 적용을 고려하세요.",
+      "potential_improvement": "20-50% 성능 향상 가능"
+    },
+    {
+      "type": "memory_optimization",
+      "priority": "low",
+      "recommendation": "현재 메모리 사용량이 효율적이지만, 대용량 데이터 처리 시 numpy 배열 재사용을 고려하세요.",
+      "potential_improvement": "메모리 사용량 10-20% 감소 가능"
+    },
+    {
+      "type": "algorithmic_optimization",
+      "priority": "low",
+      "recommendation": "필터링 단계가 주요 병목이므로, 조기 종료 조건이나 병렬 처리를 고려하세요.",
+      "potential_improvement": "대용량 데이터에서 30-50% 성능 향상 가능"
+    }
+  ],
+  "full_workflow_summary": {
+    "total_execution_time_ms": 10.324239730834961,
+    "cells_analyzed": 10,
+    "function_count": 73
+  }
+}

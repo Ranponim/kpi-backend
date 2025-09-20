@@ -1,277 +1,82 @@
-2025-08-25 03:16:58,926 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-25 03:19:09,892 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: testclient
-2025-08-25 03:19:09,894 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.06MB - ÇöÀç ¸Ş¸ğ¸®: 479.6MB - ÀÀ´ä Å©±â: 117B
-2025-08-25 03:19:09,899 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /health - Client: testclient
-2025-08-25 03:19:13,974 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /health - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 4.075s - ¸Ş¸ğ¸® º¯È­: +1.88MB - ÇöÀç ¸Ş¸ğ¸®: 481.6MB - ÀÀ´ä Å©±â: 664B
-2025-08-25 03:19:13,974 - performance - WARNING - ´À¸° API ¿äÃ» °¨Áö - URL: /health - ¼Ò¿ä½Ã°£: 4.075s - ÃÖÀûÈ­ ÇÊ¿ä
-2025-08-25 03:19:13,984 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /api/test-endpoint - Client: testclient
-2025-08-25 03:19:13,985 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /api/test-endpoint - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.00MB - ÇöÀç ¸Ş¸ğ¸®: 481.7MB - ÀÀ´ä Å©±â: 57B
-2025-08-28 15:49:08,696 - performance - INFO - MongoDB ì„±ëŠ¥ ëª¨ë‹ˆí„°ë§ í™œì„±í™”
-2025-08-28 15:49:14,505 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: OPTIONS - URL: /api/kpi/query - Client: 172.18.0.1
-2025-08-28 15:49:14,507 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: OPTIONS - URL: /api/kpi/query - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.002s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 181.4MB - ì‘ë‹µ í¬ê¸°: 2B
-2025-08-28 15:49:14,510 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
-2025-08-28 15:49:14,540 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/kpi/query - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.030s - ë©”ëª¨ë¦¬ ë³€í™”: +0.93MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.3MB - ì‘ë‹µ í¬ê¸°: 305B
-2025-08-28 15:49:14,544 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
-2025-08-28 15:49:14,554 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/kpi/query - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.010s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.3MB - ì‘ë‹µ í¬ê¸°: 305B
-2025-08-28 15:49:16,581 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: OPTIONS - URL: /api/master/pegs - Client: 172.18.0.1
-2025-08-28 15:49:16,582 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: OPTIONS - URL: /api/master/hosts - Client: 172.18.0.1
-2025-08-28 15:49:16,584 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: OPTIONS - URL: /api/master/nes-by-host - Client: 172.18.0.1
-2025-08-28 15:49:16,586 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: OPTIONS - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
-2025-08-28 15:49:16,586 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: OPTIONS - URL: /api/master/pegs - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.006s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.3MB - ì‘ë‹µ í¬ê¸°: 2B
-2025-08-28 15:49:16,587 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: OPTIONS - URL: /api/master/hosts - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.005s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.3MB - ì‘ë‹µ í¬ê¸°: 2B
-2025-08-28 15:49:16,589 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: OPTIONS - URL: /api/master/nes-by-host - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.005s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.3MB - ì‘ë‹µ í¬ê¸°: 2B
-2025-08-28 15:49:16,591 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
-2025-08-28 15:49:16,592 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
-2025-08-28 15:49:16,592 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: OPTIONS - URL: /api/master/cells-by-host-ne - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.006s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.3MB - ì‘ë‹µ í¬ê¸°: 2B
-2025-08-28 15:49:16,593 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
-2025-08-28 15:49:16,595 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
-2025-08-28 15:49:16,623 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/hosts - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.032s - ë©”ëª¨ë¦¬ ë³€í™”: +0.43MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 180B
-2025-08-28 15:49:16,624 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/nes-by-host - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.033s - ë©”ëª¨ë¦¬ ë³€í™”: +0.43MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 176B
-2025-08-28 15:49:16,625 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/pegs - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.032s - ë©”ëª¨ë¦¬ ë³€í™”: +0.43MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 131B
-2025-08-28 15:49:16,627 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/cells-by-host-ne - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.031s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 184B
-2025-08-28 15:49:21,690 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: OPTIONS - URL: /api/master/test-connection - Client: 172.18.0.1
-2025-08-28 15:49:21,692 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: OPTIONS - URL: /api/master/test-connection - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.001s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 2B
-2025-08-28 15:49:21,694 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/test-connection - Client: 172.18.0.1
-2025-08-28 15:49:21,702 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/test-connection - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.008s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 71B
-2025-08-28 15:50:28,579 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: GET - URL: / - Client: 172.18.0.1
-2025-08-28 15:50:28,584 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: GET - URL: / - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.005s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 117B
-2025-08-28 15:50:28,676 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: GET - URL: /favicon.ico - Client: 172.18.0.1
-2025-08-28 15:50:28,678 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: GET - URL: /favicon.ico - ìƒíƒœ: 404 - ì†Œìš”ì‹œê°„: 0.002s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 22B
-2025-08-28 15:50:35,249 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
-2025-08-28 15:50:35,284 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/kpi/query - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.036s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 305B
-2025-08-28 15:50:35,288 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
-2025-08-28 15:50:35,299 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/kpi/query - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.011s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 305B
-2025-08-28 15:50:37,662 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
-2025-08-28 15:50:37,665 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
-2025-08-28 15:50:37,684 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
-2025-08-28 15:50:37,685 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
-2025-08-28 15:50:37,686 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/pegs - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.024s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 131B
-2025-08-28 15:50:37,706 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/hosts - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.041s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 180B
-2025-08-28 15:50:37,707 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/nes-by-host - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.023s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 176B
-2025-08-28 15:50:37,708 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/cells-by-host-ne - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.023s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 184B
-2025-08-28 15:53:35,519 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/test-connection - Client: 172.18.0.1
-2025-08-28 15:53:35,536 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/test-connection - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.017s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 71B
-2025-08-28 15:53:40,162 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
-2025-08-28 15:53:40,175 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/kpi/query - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.012s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 305B
-2025-08-28 15:53:40,179 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/kpi/query - Client: 172.18.0.1
-2025-08-28 15:53:40,189 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/kpi/query - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.010s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 305B
-2025-08-28 15:53:40,235 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: GET - URL: / - Client: 172.18.0.1
-2025-08-28 15:53:40,237 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: GET - URL: / - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.002s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 117B
-2025-08-28 15:53:40,838 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: GET - URL: / - Client: 172.18.0.1
-2025-08-28 15:53:40,840 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: GET - URL: / - ìƒíƒœ: 200 - ì†Œìš”ì‹œê°„: 0.001s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 117B
-2025-08-28 15:53:49,060 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
-2025-08-28 15:53:49,061 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
-2025-08-28 15:53:49,063 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
-2025-08-28 15:53:49,069 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
-2025-08-28 15:53:49,074 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/pegs - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.014s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 131B
-2025-08-28 15:53:49,076 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/hosts - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.015s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 180B
-2025-08-28 15:53:49,086 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/nes-by-host - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.022s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 176B
-2025-08-28 15:53:49,087 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/cells-by-host-ne - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.018s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 184B
-2025-08-28 15:54:59,406 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
-2025-08-28 15:54:59,414 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
-2025-08-28 15:54:59,415 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
-2025-08-28 15:54:59,416 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
-2025-08-28 15:54:59,416 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/pegs - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.010s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 131B
-2025-08-28 15:54:59,432 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/hosts - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.018s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 180B
-2025-08-28 15:54:59,433 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/nes-by-host - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.018s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 176B
-2025-08-28 15:54:59,434 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/cells-by-host-ne - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.018s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 184B
-2025-08-28 15:55:06,910 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/pegs - Client: 172.18.0.1
-2025-08-28 15:55:06,911 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/hosts - Client: 172.18.0.1
-2025-08-28 15:55:06,912 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/nes-by-host - Client: 172.18.0.1
-2025-08-28 15:55:06,913 - performance - INFO - ìš”ì²­ ì‹œì‘ - Method: POST - URL: /api/master/cells-by-host-ne - Client: 172.18.0.1
-2025-08-28 15:55:06,930 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/pegs - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.020s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 131B
-2025-08-28 15:55:06,936 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/hosts - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.025s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 180B
-2025-08-28 15:55:06,937 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/nes-by-host - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.025s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 176B
-2025-08-28 15:55:06,938 - performance - INFO - ìš”ì²­ ì™„ë£Œ - Method: POST - URL: /api/master/cells-by-host-ne - ìƒíƒœ: 400 - ì†Œìš”ì‹œê°„: 0.025s - ë©”ëª¨ë¦¬ ë³€í™”: +0.00MB - í˜„ì¬ ë©”ëª¨ë¦¬: 182.8MB - ì‘ë‹µ í¬ê¸°: 184B
-2025-08-28 15:55:14,736 - performance - INFO - MongoDB ì„±ëŠ¥ ëª¨ë‹ˆí„°ë§ í™œì„±í™”
-2025-08-31 11:07:27,375 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:07:48,480 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:08:03,793 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 11:08:03,795 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 171.5MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 11:14:09,647 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:14:42,937 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:15:41,112 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:15:41,900 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:15:51,822 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:16:08,226 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:16:09,060 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:16:09,171 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:19:26,573 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:19:26,577 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:19:26,707 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:19:36,221 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:20:16,209 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:20:16,224 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:20:16,290 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 11:20:16,879 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 12:27:14,236 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 12:27:14,245 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.010s - ¸Ş¸ğ¸® º¯È­: +3.12MB - ÇöÀç ¸Ş¸ğ¸®: 66.9MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 12:56:47,348 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 199.45.155.97
-2025-08-31 12:56:47,349 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.04MB - ÇöÀç ¸Ş¸ğ¸®: 65.8MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 12:56:47,824 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /favicon.ico - Client: 199.45.155.97
-2025-08-31 12:56:47,825 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /favicon.ico - »óÅÂ: 404 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.15MB - ÇöÀç ¸Ş¸ğ¸®: 65.9MB - ÀÀ´ä Å©±â: 22B
-2025-08-31 12:56:55,232 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 199.45.155.97
-2025-08-31 12:56:55,233 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 65.9MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 13:36:35,189 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 64.62.197.227
-2025-08-31 13:36:35,191 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 66.0MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 13:36:50,779 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 13:36:50,780 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 66.0MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 13:36:53,701 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /favicon.ico - Client: 64.62.197.228
-2025-08-31 13:36:53,703 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /favicon.ico - »óÅÂ: 404 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 66.0MB - ÀÀ´ä Å©±â: 22B
-2025-08-31 13:36:56,698 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 64.62.197.230
-2025-08-31 13:36:56,700 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 66.0MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 14:23:53,563 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:23:53,574 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:23:53,577 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:24:24,457 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:24:24,472 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:24:24,487 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:29:17,514 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:29:51,273 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:29:51,421 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:29:51,593 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:29:51,628 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:29:51,676 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:31:40,897 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:32:02,451 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:32:02,486 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:32:02,641 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:32:02,720 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:32:02,721 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:32:02,827 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:33:44,072 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:34:04,962 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:34:05,153 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:34:05,181 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:34:05,314 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:34:05,316 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:34:05,487 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:34:05,707 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:23,316 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:23,320 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:23,521 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:23,522 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:23,679 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:23,838 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:24,298 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:32,458 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:32,468 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:32,511 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:32,590 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:32,818 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:32,921 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:32,998 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:44,659 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:44,888 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:45,037 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:45,038 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:45,394 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:45,465 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:35:45,493 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:50,513 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:50,660 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:50,699 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:50,757 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:50,917 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:51,055 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:51,285 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:55,302 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:55,353 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:55,436 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:55,574 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:55,949 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:56,181 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:37:56,182 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:39:56,761 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:39:57,091 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:39:57,123 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:39:57,306 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:39:57,477 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:39:57,523 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:39:57,557 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:07,305 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:55,064 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:55,484 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:55,698 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:55,884 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:55,984 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:56,011 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:56,027 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:40:56,115 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:41:09,284 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:36,984 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:36,992 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:37,039 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:37,105 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:37,111 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:37,282 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:37,424 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:37,477 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:37,651 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 14:43:39,408 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,258 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,307 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,358 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,411 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,434 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,551 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,551 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,588 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,711 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:06:33,713 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,127 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,367 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,371 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,384 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,577 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,577 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,586 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,658 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,663 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:08:52,864 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:41,982 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:41,992 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:42,039 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:42,112 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:42,417 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:42,493 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:42,609 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:43,035 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:43,040 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:10:43,072 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:23:55,930 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 15:23:55,932 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 171.5MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 15:36:16,506 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:39:10,974 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:39:57,010 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:40:48,148 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:41:30,764 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 15:42:34,622 - performance - INFO - MongoDB ¼º´É ¸ğ´ÏÅÍ¸µ È°¼ºÈ­
-2025-08-31 16:06:59,654 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 93.123.109.26
-2025-08-31 16:06:59,656 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.09MB - ÇöÀç ¸Ş¸ğ¸®: 171.7MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 16:07:00,274 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /favicon.ico - Client: 93.123.109.26
-2025-08-31 16:07:00,276 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /favicon.ico - »óÅÂ: 404 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 171.8MB - ÀÀ´ä Å©±â: 22B
-2025-08-31 16:55:04,408 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 16:55:04,411 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.003s - ¸Ş¸ğ¸® º¯È­: +2.90MB - ÇöÀç ¸Ş¸ğ¸®: 64.7MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 18:22:55,285 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /.well-known/security.txt - Client: 147.185.132.240
-2025-08-31 18:22:55,287 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /.well-known/security.txt - »óÅÂ: 404 - ¼Ò¿ä½Ã°£: 0.003s - ¸Ş¸ğ¸® º¯È­: +2.81MB - ÇöÀç ¸Ş¸ğ¸®: 57.2MB - ÀÀ´ä Å©±â: 22B
-2025-08-31 18:31:37,390 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 18:31:37,392 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.38MB - ÇöÀç ¸Ş¸ğ¸®: 58.0MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 20:37:20,388 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 20:37:20,392 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.005s - ¸Ş¸ğ¸® º¯È­: +3.02MB - ÇöÀç ¸Ş¸ğ¸®: 57.3MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 21:44:31,128 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 21:44:31,133 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.005s - ¸Ş¸ğ¸® º¯È­: +2.99MB - ÇöÀç ¸Ş¸ğ¸®: 57.2MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 23:35:32,679 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-08-31 23:35:32,692 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.015s - ¸Ş¸ğ¸® º¯È­: +3.38MB - ÇöÀç ¸Ş¸ğ¸®: 20.0MB - ÀÀ´ä Å©±â: 117B
-2025-08-31 23:48:59,322 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 20.163.15.178
-2025-08-31 23:48:59,333 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.011s - ¸Ş¸ğ¸® º¯È­: +0.06MB - ÇöÀç ¸Ş¸ğ¸®: 20.5MB - ÀÀ´ä Å©±â: 117B
-2025-09-01 00:54:59,741 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 162.142.125.123
-2025-09-01 00:54:59,749 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.009s - ¸Ş¸ğ¸® º¯È­: +3.84MB - ÇöÀç ¸Ş¸ğ¸®: 20.9MB - ÀÀ´ä Å©±â: 117B
-2025-09-01 00:55:10,007 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 162.142.125.123
-2025-09-01 00:55:10,008 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 21.3MB - ÀÀ´ä Å©±â: 117B
-2025-09-01 00:55:11,199 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /favicon.ico - Client: 162.142.125.123
-2025-09-01 00:55:11,201 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /favicon.ico - »óÅÂ: 404 - ¼Ò¿ä½Ã°£: 0.003s - ¸Ş¸ğ¸® º¯È­: +0.22MB - ÇöÀç ¸Ş¸ğ¸®: 21.6MB - ÀÀ´ä Å©±â: 22B
-2025-09-01 00:55:15,187 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 162.142.125.123
-2025-09-01 00:55:15,189 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.00MB - ÇöÀç ¸Ş¸ğ¸®: 21.8MB - ÀÀ´ä Å©±â: 117B
-2025-09-01 01:09:11,504 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: / - Client: 149.86.227.49
-2025-09-01 01:09:11,505 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: / - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 22.0MB - ÀÀ´ä Å©±â: 117B
+2025-09-20 22:17:34,476 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /api/kpi/info - Client: testclient
+2025-09-20 22:17:34,477 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /api/kpi/info - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.002s - ¸Ş¸ğ¸® º¯È­: +0.06MB - ÇöÀç ¸Ş¸ğ¸®: 175.6MB - ÀÀ´ä Å©±â: 1136B
+2025-09-20 22:17:34,480 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,554 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.074s - ¸Ş¸ğ¸® º¯È­: +3.57MB - ÇöÀç ¸Ş¸ğ¸®: 179.2MB - ÀÀ´ä Å©±â: 2326B
+2025-09-20 22:17:34,556 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,565 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.009s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 179.1MB - ÀÀ´ä Å©±â: 1585B
+2025-09-20 22:17:34,568 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,575 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.007s - ¸Ş¸ğ¸® º¯È­: +0.03MB - ÇöÀç ¸Ş¸ğ¸®: 179.1MB - ÀÀ´ä Å©±â: 2349B
+2025-09-20 22:17:34,577 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,578 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 400 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 179.1MB - ÀÀ´ä Å©±â: 53B
+2025-09-20 22:17:34,580 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,581 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 400 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 179.1MB - ÀÀ´ä Å©±â: 107B
+2025-09-20 22:17:34,584 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,600 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.017s - ¸Ş¸ğ¸® º¯È­: +0.38MB - ÇöÀç ¸Ş¸ğ¸®: 179.5MB - ÀÀ´ä Å©±â: 13766B
+2025-09-20 22:17:34,603 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,610 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.007s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 179.5MB - ÀÀ´ä Å©±â: 2322B
+2025-09-20 22:17:34,612 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:17:34,619 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.007s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 179.5MB - ÀÀ´ä Å©±â: 1731B
+2025-09-20 22:48:37,395 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /api/kpi/info - Client: testclient
+2025-09-20 22:48:37,396 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /api/kpi/info - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.03MB - ÇöÀç ¸Ş¸ğ¸®: 188.9MB - ÀÀ´ä Å©±â: 1136B
+2025-09-20 22:48:37,401 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,421 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.020s - ¸Ş¸ğ¸® º¯È­: +0.26MB - ÇöÀç ¸Ş¸ğ¸®: 189.1MB - ÀÀ´ä Å©±â: 2328B
+2025-09-20 22:48:37,425 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,429 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.003s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 189.1MB - ÀÀ´ä Å©±â: 1588B
+2025-09-20 22:48:37,432 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,438 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.005s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 189.1MB - ÀÀ´ä Å©±â: 2346B
+2025-09-20 22:48:37,441 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,443 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 400 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 189.1MB - ÀÀ´ä Å©±â: 53B
+2025-09-20 22:48:37,444 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,445 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 400 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.00MB - ÇöÀç ¸Ş¸ğ¸®: 189.1MB - ÀÀ´ä Å©±â: 107B
+2025-09-20 22:48:37,450 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,455 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.006s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 189.2MB - ÀÀ´ä Å©±â: 4232B
+2025-09-20 22:48:37,459 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,463 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.004s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 189.2MB - ÀÀ´ä Å©±â: 1596B
+2025-09-20 22:48:37,468 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,470 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,470 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,472 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,474 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,494 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.026s - ¸Ş¸ğ¸® º¯È­: +0.12MB - ÇöÀç ¸Ş¸ğ¸®: 189.5MB - ÀÀ´ä Å©±â: 1575B
+2025-09-20 22:48:37,497 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.027s - ¸Ş¸ğ¸® º¯È­: +0.08MB - ÇöÀç ¸Ş¸ğ¸®: 189.5MB - ÀÀ´ä Å©±â: 1690B
+2025-09-20 22:48:37,497 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.027s - ¸Ş¸ğ¸® º¯È­: +0.08MB - ÇöÀç ¸Ş¸ğ¸®: 189.5MB - ÀÀ´ä Å©±â: 1690B
+2025-09-20 22:48:37,500 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.028s - ¸Ş¸ğ¸® º¯È­: +0.05MB - ÇöÀç ¸Ş¸ğ¸®: 189.4MB - ÀÀ´ä Å©±â: 1693B
+2025-09-20 22:48:37,500 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.026s - ¸Ş¸ğ¸® º¯È­: +0.04MB - ÇöÀç ¸Ş¸ğ¸®: 189.4MB - ÀÀ´ä Å©±â: 1689B
+2025-09-20 22:48:37,505 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,519 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.014s - ¸Ş¸ğ¸® º¯È­: +0.22MB - ÇöÀç ¸Ş¸ğ¸®: 189.4MB - ÀÀ´ä Å©±â: 13773B
+2025-09-20 22:48:37,523 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,527 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.004s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 189.5MB - ÀÀ´ä Å©±â: 2160B
+2025-09-20 22:48:37,531 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:37,534 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.004s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 189.5MB - ÀÀ´ä Å©±â: 1742B
+2025-09-20 22:48:54,365 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: GET - URL: /api/kpi/info - Client: testclient
+2025-09-20 22:48:54,366 - performance - INFO - ¿äÃ» ¿Ï·á - Method: GET - URL: /api/kpi/info - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.04MB - ÇöÀç ¸Ş¸ğ¸®: 183.2MB - ÀÀ´ä Å©±â: 1136B
+2025-09-20 22:48:54,370 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,375 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.005s - ¸Ş¸ğ¸® º¯È­: +0.12MB - ÇöÀç ¸Ş¸ğ¸®: 183.3MB - ÀÀ´ä Å©±â: 2326B
+2025-09-20 22:48:54,378 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,382 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.004s - ¸Ş¸ğ¸® º¯È­: +0.04MB - ÇöÀç ¸Ş¸ğ¸®: 183.4MB - ÀÀ´ä Å©±â: 1691B
+2025-09-20 22:48:54,385 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,390 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.004s - ¸Ş¸ğ¸® º¯È­: +0.05MB - ÇöÀç ¸Ş¸ğ¸®: 183.4MB - ÀÀ´ä Å©±â: 2356B
+2025-09-20 22:48:54,393 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,394 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 400 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.03MB - ÇöÀç ¸Ş¸ğ¸®: 183.4MB - ÀÀ´ä Å©±â: 53B
+2025-09-20 22:48:54,396 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,398 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 400 - ¼Ò¿ä½Ã°£: 0.001s - ¸Ş¸ğ¸® º¯È­: +0.02MB - ÇöÀç ¸Ş¸ğ¸®: 183.5MB - ÀÀ´ä Å©±â: 107B
+2025-09-20 22:48:54,401 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,407 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.006s - ¸Ş¸ğ¸® º¯È­: +0.04MB - ÇöÀç ¸Ş¸ğ¸®: 183.5MB - ÀÀ´ä Å©±â: 4233B
+2025-09-20 22:48:54,410 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,415 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.004s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 183.5MB - ÀÀ´ä Å©±â: 1713B
+2025-09-20 22:48:54,420 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,421 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,423 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,425 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,425 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,448 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.028s - ¸Ş¸ğ¸® º¯È­: +0.42MB - ÇöÀç ¸Ş¸ğ¸®: 184.6MB - ÀÀ´ä Å©±â: 1704B
+2025-09-20 22:48:54,450 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.029s - ¸Ş¸ğ¸® º¯È­: +0.38MB - ÇöÀç ¸Ş¸ğ¸®: 184.5MB - ÀÀ´ä Å©±â: 1693B
+2025-09-20 22:48:54,451 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.028s - ¸Ş¸ğ¸® º¯È­: +0.36MB - ÇöÀç ¸Ş¸ğ¸®: 184.5MB - ÀÀ´ä Å©±â: 1701B
+2025-09-20 22:48:54,454 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.029s - ¸Ş¸ğ¸® º¯È­: +0.28MB - ÇöÀç ¸Ş¸ğ¸®: 184.5MB - ÀÀ´ä Å©±â: 1691B
+2025-09-20 22:48:54,454 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.029s - ¸Ş¸ğ¸® º¯È­: +0.28MB - ÇöÀç ¸Ş¸ğ¸®: 184.5MB - ÀÀ´ä Å©±â: 1689B
+2025-09-20 22:48:54,459 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,474 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.014s - ¸Ş¸ğ¸® º¯È­: +0.20MB - ÇöÀç ¸Ş¸ğ¸®: 184.5MB - ÀÀ´ä Å©±â: 13772B
+2025-09-20 22:48:54,477 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,482 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.005s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 184.5MB - ÀÀ´ä Å©±â: 2327B
+2025-09-20 22:48:54,485 - performance - INFO - ¿äÃ» ½ÃÀÛ - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
+2025-09-20 22:48:54,489 - performance - INFO - ¿äÃ» ¿Ï·á - Method: POST - URL: /api/kpi/choi-analysis - »óÅÂ: 200 - ¼Ò¿ä½Ã°£: 0.004s - ¸Ş¸ğ¸® º¯È­: +0.01MB - ÇöÀç ¸Ş¸ğ¸®: 184.5MB - ÀÀ´ä Å©±â: 1731B

@@ -1,0 +1,55 @@
+{
+  "scenario_name": "beta_threshold_boundaries",
+  "description": "β 임계값들의 정확한 경계선 테스트",
+  "test_purpose": "β1, β2, β3, β4, β5 임계값의 경계 조건에서 정확한 판정 검증",
+  "input_data": {
+    "ems_ip": "192.168.100.4",
+    "ne_list": ["NVGNB#100004"]
+  },
+  "cell_ids": ["cell_boundary_001", "cell_boundary_002"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_boundary_001": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_boundary_001",
+        "pre_samples": [
+          1200.0, 1200.0, 1200.0, 1200.0, 1200.0, 1200.0, 1200.0, 1200.0,
+          1200.0, 1200.0
+        ],
+        "post_samples": [
+          1260.0, 1260.0, 1260.0, 1260.0, 1260.0, 1260.0, 1260.0, 1260.0,
+          1260.0, 1260.0
+        ],
+        "unit": "Kbps",
+        "comment": "고트래픽, δ=5.0% (정확히 β1=5) - Similar vs Low Delta 경계"
+      }
+    ],
+    "cell_boundary_002": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_boundary_002",
+        "pre_samples": [
+          800.0, 800.0, 800.0, 800.0, 800.0, 800.0, 800.0, 800.0, 800.0, 800.0
+        ],
+        "post_samples": [
+          880.0, 880.0, 880.0, 880.0, 880.0, 880.0, 880.0, 880.0, 880.0, 880.0
+        ],
+        "unit": "Kbps",
+        "comment": "저트래픽 (< β0=1000), δ=10.0% (정확히 β2=10) - Similar vs Low Delta 경계"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": true,
+    "expected_filter_ratio_range": [0.8, 1.0],
+    "expected_anomalies": [],
+    "expected_kpi_judgements": ["Similar", "Low Delta"],
+    "performance_max_ms": 100
+  }
+}

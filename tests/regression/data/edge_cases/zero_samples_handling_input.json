@@ -1,0 +1,39 @@
+{
+  "scenario_name": "zero_samples_handling",
+  "description": "Zero 값 샘플 처리 및 Zero 이상 탐지 시나리오",
+  "test_purpose": "Zero 값이 포함된 데이터의 전처리와 Zero 이상 탐지 로직 검증",
+  "input_data": {
+    "ems_ip": "192.168.100.7",
+    "ne_list": ["NVGNB#100007"]
+  },
+  "cell_ids": ["cell_zero_001"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_zero_001": [
+      {
+        "peg_name": "AirMacULThruAvg",
+        "cell_id": "cell_zero_001",
+        "pre_samples": [
+          500.0, 520.0, 0.0, 540.0, 510.0, 0.0, 530.0, 525.0, 515.0, 535.0
+        ],
+        "post_samples": [
+          520.0, 540.0, 560.0, 550.0, 530.0, 545.0, 555.0, 535.0, 525.0, 545.0
+        ],
+        "unit": "Kbps",
+        "comment": "Pre 기간에 20% Zero 포함, Post는 정상 - Zero 이상 탐지 예상"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": true,
+    "expected_filter_ratio_range": [0.5, 0.9],
+    "expected_anomalies": ["Zero"],
+    "expected_kpi_judgements": ["Can't Judge"],
+    "performance_max_ms": 50
+  }
+}

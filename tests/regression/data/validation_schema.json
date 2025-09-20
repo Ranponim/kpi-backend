@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Choi 알고리즘 회귀 테스트 입력 스키마",
+  "description": "회귀 테스트 입력 데이터의 구조와 유효성을 검증하는 JSON 스키마",
+  "type": "object",
+  "required": [
+    "scenario_name",
+    "description",
+    "test_purpose",
+    "input_data",
+    "cell_ids",
+    "time_range",
+    "peg_data",
+    "expected_behavior"
+  ],
+  "properties": {
+    "scenario_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "시나리오 고유 이름 (소문자, 숫자, 언더스코어만)"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "description": "시나리오에 대한 간단한 설명"
+    },
+    "test_purpose": {
+      "type": "string",
+      "description": "이 테스트의 목적과 검증하려는 기능"
+    },
+    "input_data": {
+      "type": "object",
+      "required": ["ems_ip"],
+      "properties": {
+        "ems_ip": {
+          "type": "string",
+          "pattern": "^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$"
+        },
+        "ne_list": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "cell_ids": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "string",
+        "pattern": "^cell_[a-zA-Z0-9_]+$"
+      }
+    },
+    "time_range": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "start": { "type": "string", "format": "date-time" },
+        "pre_start": { "type": "string", "format": "date-time" },
+        "pre_end": { "type": "string", "format": "date-time" },
+        "post_start": { "type": "string", "format": "date-time" },
+        "post_end": { "type": "string", "format": "date-time" }
+      }
+    },
+    "peg_data": {
+      "type": "object",
+      "patternProperties": {
+        "^cell_[a-zA-Z0-9_]+$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "peg_name",
+              "cell_id",
+              "pre_samples",
+              "post_samples",
+              "unit"
+            ],
+            "properties": {
+              "peg_name": { "type": "string" },
+              "cell_id": { "type": "string" },
+              "pre_samples": {
+                "type": "array",
+                "items": { "type": ["number", "null"] },
+                "minItems": 1,
+                "maxItems": 1000
+              },
+              "post_samples": {
+                "type": "array",
+                "items": { "type": ["number", "null"] },
+                "minItems": 1,
+                "maxItems": 1000
+              },
+              "unit": { "type": "string" },
+              "comment": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "expected_behavior": {
+      "type": "object",
+      "required": ["filtering_should_pass"],
+      "properties": {
+        "filtering_should_pass": { "type": "boolean" },
+        "expected_filter_ratio_range": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "expected_anomalies": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Range", "ND", "Zero", "New", "High Delta"]
+          }
+        },
+        "expected_kpi_judgements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "POK",
+              "NOK",
+              "Can't Judge",
+              "Similar",
+              "Low Delta",
+              "Medium Delta",
+              "High Delta",
+              "Improve",
+              "Degrade",
+              "High Variation"
+            ]
+          }
+        },
+        "performance_max_ms": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 5000
+        }
+      }
+    }
+  }
+}

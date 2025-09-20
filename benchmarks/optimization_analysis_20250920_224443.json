@@ -1,0 +1,220 @@
+{
+  "timestamp": "2025-09-20T22:44:43.503946",
+  "baseline_performance": {
+    "micro": {
+      "cells": 1,
+      "avg_time_ms": 0.96,
+      "time_per_cell_ms": 0.96,
+      "pegs_analyzed": 3
+    },
+    "small": {
+      "cells": 5,
+      "avg_time_ms": 2.89,
+      "time_per_cell_ms": 0.578,
+      "pegs_analyzed": 15
+    },
+    "standard": {
+      "cells": 10,
+      "avg_time_ms": 4.999,
+      "time_per_cell_ms": 0.5,
+      "pegs_analyzed": 30
+    },
+    "large": {
+      "cells": 25,
+      "avg_time_ms": 12.585,
+      "time_per_cell_ms": 0.503,
+      "pegs_analyzed": 75
+    }
+  },
+  "optimization_analysis": {
+    "filtering": {
+      "current_avg_time_ms": 2.985,
+      "bottleneck_identified": "median calculation and normalization",
+      "optimization_opportunities": [
+        {
+          "area": "numpy_vectorization",
+          "description": "중앙값 계산을 numpy.median()으로 벡터화",
+          "estimated_improvement": "10-20%",
+          "complexity": "low"
+        },
+        {
+          "area": "early_termination",
+          "description": "임계값 필터링에서 조기 종료 조건 추가",
+          "estimated_improvement": "5-15%",
+          "complexity": "medium"
+        },
+        {
+          "area": "memory_layout",
+          "description": "데이터 구조 최적화로 캐시 효율성 개선",
+          "estimated_improvement": "5-10%",
+          "complexity": "high"
+        }
+      ],
+      "current_performance_assessment": "EXCELLENT - 이미 목표 대비 100배 빠름"
+    },
+    "memory": {
+      "memory_measurements": [
+        {
+          "cells": 5,
+          "peak_memory_mb": 0.097,
+          "memory_per_cell_kb": 19.86
+        },
+        {
+          "cells": 10,
+          "peak_memory_mb": 0.197,
+          "memory_per_cell_kb": 20.15
+        },
+        {
+          "cells": 20,
+          "peak_memory_mb": 0.408,
+          "memory_per_cell_kb": 20.91
+        }
+      ],
+      "memory_efficiency": "EXCELLENT",
+      "optimization_opportunities": [
+        {
+          "area": "numpy_array_reuse",
+          "description": "numpy 배열 재사용으로 메모리 할당 최소화",
+          "estimated_improvement": "10-20% 메모리 감소",
+          "complexity": "medium"
+        },
+        {
+          "area": "lazy_evaluation",
+          "description": "지연 평가로 불필요한 중간 계산 결과 제거",
+          "estimated_improvement": "5-15% 메모리 감소",
+          "complexity": "high"
+        }
+      ],
+      "current_status": "메모리 사용량이 이미 매우 효율적 (셀당 < 1MB)"
+    },
+    "algorithmic": {
+      "filtering_complexity": "O(n*m) - n=cells, m=samples",
+      "abnormal_detection_complexity": "O(n*k) - n=cells, k=detectors",
+      "kpi_analysis_complexity": "O(n*j) - n=cells, j=analyzers",
+      "overall_complexity": "O(n*(m+k+j)) - 선형 확장성",
+      "optimization_opportunities": [
+        {
+          "area": "filtering_early_exit",
+          "description": "50% 규칙 체크를 더 일찍 수행하여 불필요한 계산 방지",
+          "current_behavior": "모든 계산 후 50% 규칙 적용",
+          "optimized_behavior": "중간 단계에서 50% 확률 예측",
+          "estimated_improvement": "특정 케이스에서 20-40% 개선",
+          "complexity": "medium"
+        },
+        {
+          "area": "vectorized_operations",
+          "description": "반복문을 numpy 벡터 연산으로 교체",
+          "current_behavior": "Python for loops",
+          "optimized_behavior": "numpy.vectorize() 또는 broadcasting",
+          "estimated_improvement": "10-30% 개선",
+          "complexity": "low"
+        },
+        {
+          "area": "detector_short_circuit",
+          "description": "이상 탐지에서 α0 규칙 조기 적용",
+          "current_behavior": "모든 탐지기 실행 후 α0 적용",
+          "optimized_behavior": "충분한 이상 탐지 시 조기 종료",
+          "estimated_improvement": "특정 케이스에서 15-25% 개선",
+          "complexity": "medium"
+        }
+      ],
+      "current_assessment": "이미 매우 우수한 성능 - 최적화는 선택사항"
+    },
+    "caching": {
+      "current_caching": {
+        "strategy_factory": "lru_cache 적용됨",
+        "config_loader": "싱글톤 패턴으로 설정 캐싱",
+        "detector_factory": "인스턴스 재사용"
+      },
+      "additional_opportunities": [
+        {
+          "area": "median_calculation",
+          "description": "동일한 데이터셋의 중앙값 계산 결과 캐싱",
+          "benefit": "반복 계산 시 성능 향상",
+          "estimated_improvement": "재계산 시 80-90% 개선",
+          "complexity": "low"
+        },
+        {
+          "area": "normalization_cache",
+          "description": "정규화 계수 캐싱",
+          "benefit": "동일한 중앙값에 대한 정규화 재사용",
+          "estimated_improvement": "5-15% 개선",
+          "complexity": "medium"
+        },
+        {
+          "area": "dims_range_cache",
+          "description": "DIMS Range 정보 캐싱",
+          "benefit": "동일한 PEG에 대한 Range 조회 최적화",
+          "estimated_improvement": "DIMS 의존성 감소",
+          "complexity": "low"
+        }
+      ],
+      "implementation_status": "기본 캐싱은 이미 적용됨 - 추가 캐싱은 선택사항"
+    },
+    "parallelization": {
+      "current_architecture": "순차 처리",
+      "parallelizable_operations": [
+        {
+          "operation": "cell_level_filtering",
+          "description": "각 셀별 필터링을 병렬로 처리",
+          "independence": "완전 독립적",
+          "estimated_improvement": "멀티코어에서 2-4배 개선",
+          "complexity": "medium",
+          "implementation": "concurrent.futures.ThreadPoolExecutor"
+        },
+        {
+          "operation": "anomaly_detection_per_cell",
+          "description": "셀별 이상 탐지 병렬 실행",
+          "independence": "셀 간 독립적",
+          "estimated_improvement": "멀티코어에서 2-3배 개선",
+          "complexity": "medium",
+          "implementation": "multiprocessing.Pool"
+        },
+        {
+          "operation": "kpi_analysis_parallel",
+          "description": "KPI 분석기들을 병렬로 실행",
+          "independence": "분석기 간 독립적",
+          "estimated_improvement": "1.5-2배 개선",
+          "complexity": "high",
+          "implementation": "asyncio 또는 threading"
+        }
+      ],
+      "parallelization_assessment": {
+        "current_performance": "이미 충분히 빠름 (< 10ms)",
+        "parallelization_benefit": "대용량 데이터 (100+ 셀)에서 유용",
+        "recommendation": "현재 성능으로는 불필요, 향후 확장 시 고려",
+        "complexity_vs_benefit": "복잡도 대비 현재 이익 낮음"
+      }
+    }
+  },
+  "current_performance_status": "EXCELLENT",
+  "optimization_priority": "LOW",
+  "recommendations": [
+    {
+      "phase": "immediate",
+      "priority": "low",
+      "items": [
+        "현재 성능이 목표 대비 100-1000배 빠르므로 최적화 불필요",
+        "코드 품질과 유지보수성에 집중"
+      ]
+    },
+    {
+      "phase": "future_scaling",
+      "priority": "medium",
+      "items": [
+        "100+ 셀 처리 시 병렬화 고려",
+        "대용량 데이터셋 대응 시 메모리 최적화",
+        "실시간 처리 요구 시 캐싱 강화"
+      ]
+    },
+    {
+      "phase": "advanced_optimization",
+      "priority": "low",
+      "items": [
+        "numpy 벡터화 적용",
+        "알고리즘 조기 종료 조건",
+        "메모리 레이아웃 최적화"
+      ]
+    }
+  ]
+}

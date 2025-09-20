@@ -1,0 +1,289 @@
+# Choi Algorithm Configuration
+# 3GPP KPI PEGs 판정 알고리즘 설정 파일
+# 이 파일은 PRD 섹션 2.1.3, 2.2.4, 2.3.4, 2.4를 기반으로 생성됨
+
+# =============================================================================
+# 6장: Filtering Algorithm 설정
+# =============================================================================
+filtering:
+  # 정규화 임계값 (PRD 6.3)
+  min_threshold: 0.87 # Min_Threshold
+  max_threshold: 1.13 # Max_Threshold
+
+  # 필터링 비율 임계값 (PRD 6.1)
+  filter_ratio: 0.50 # Filter_Ratio (50%)
+
+  # 필터링 실패 시 메시지
+  warning_message: "TES can't filter the valid samples because test results are unstable"
+
+  # 참조 KPI 목록 (PRD 6.2)
+  reference_pegs:
+    nr:
+      - name: "AirMacULThruAvg"
+        unit: "Kbps"
+        index: "CellIdentity"
+      - name: "AirMacDLThruAvg"
+        unit: "Kbps"
+        index: "CellIdentity"
+      - name: "DLUeThruVol"
+        unit: "Kbytes"
+        index: "CellIdentity"
+        description: "Sum of QCI 6 to 9"
+      - name: "DLUeThruTime"
+        unit: "us"
+        index: "CellIdentity"
+        description: "Sum of QCI 6 to 9"
+      - name: "DLUeThruVol_SA"
+        unit: "Kbytes"
+        index: "CellIdentity"
+        description: "Sum of 5QI 6 to 9"
+      - name: "DLUeThruTime_SA"
+        unit: "us"
+        index: "CellIdentity"
+        description: "Sum of 5QI 6 to 9"
+      - name: "ULUeThruVol"
+        unit: "Kbytes"
+        index: "CellIdentity"
+      - name: "ULUeThruTime"
+        unit: "slots"
+        index: "CellIdentity"
+
+    lte:
+      - name: "AirMacULThruAvg"
+        unit: "Kbps"
+        index: "cNum"
+      - name: "AirMacDLThruAvg"
+        unit: "Kbps"
+        index: "cNum"
+      - name: "IpThruThpVoDLByte"
+        unit: "Kbytes"
+        index: "cNum"
+        description: "Sum of QCI 6 to 9"
+      - name: "IpThruThpDLTime"
+        unit: "ms"
+        index: "cNum"
+        description: "Sum of QCI 6 to 9"
+      - name: "ULIpThruVol"
+        unit: "Kbytes"
+        index: "cNum"
+      - name: "ULIpThruTime"
+        unit: "TTI"
+        index: "cNum"
+
+# =============================================================================
+# 4장: Abnormal Stats Detecting Algorithm 설정
+# =============================================================================
+abnormal_detection:
+  # 이상 탐지 임계값 (PRD 4.2)
+  alpha_0: 2 # α0: 최소 셀 수 임계값
+  alpha_1: 10 # α1: 표에 정의됨 (현재 미사용)
+  beta_3: 500 # β3: High Delta 임계값
+
+  # Range 검사 활성화 플래그 (DIMS 데이터 의존성 대응)
+  enable_range_check: true
+
+  # 이상 탐지 유형별 활성화
+  detection_types:
+    range: true # DIMS [min,max] 범위 검사
+    new: true # 신규 통계 검사
+    nd: true # ND (No Data) 검사
+    zero: true # Zero 값 검사
+    high_delta: true # High Delta 검사
+
+# =============================================================================
+# 5장: Stats Analyzing Algorithm 설정
+# =============================================================================
+stats_analyzing:
+  # 통계 분석 임계값 (PRD 5.3)
+  beta_0: 1000 # β0: 트래픽량 임계값
+  beta_1: 5 # β1: 고트래픽 Similar 임계값
+  beta_2: 10 # β2: 저트래픽 Similar 임계값
+  beta_3: 500 # β3: High Delta 임계값
+  beta_4: 10 # β4: High Variation CV 임계값
+  beta_5: 3 # β5: Similar 절대값 임계값
+
+  # 판정 규칙 우선순위 (높은 숫자가 높은 우선순위)
+  rule_priorities:
+    cant_judge: 100 # Can't judge (최고 우선순위)
+    high_variation: 90 # High Variation
+    improve: 80 # Improve
+    degrade: 80 # Degrade (Improve와 동일 우선순위)
+    high_delta: 70 # High Delta
+    medium_delta: 60 # Medium Delta
+    low_delta: 50 # Low Delta
+    similar: 40 # Similar (최저 우선순위)
+
+# =============================================================================
+# KPI 토픽 정의 (PRD 2.4)
+# =============================================================================
+kpi_definitions:
+  # LTE Main KPI 토픽
+  lte_topics:
+    air_mac_dl_thru:
+      main_kpi:
+        name: "AirMacDLThruAvg"
+        unit: "Kbps"
+        positivity: "positive"
+      sub_kpis:
+        - name: "ConnNoAvg"
+          unit: "count"
+          positivity: "positive"
+        - name: "DLReceivedCQIAvg"
+          unit: "CQI"
+          positivity: "positive"
+        - name: "DLReceivedRIAvg"
+          unit: "RI"
+          positivity: "positive"
+        - name: "DLResidualBlerRetransNak"
+          unit: "%"
+          positivity: "negative"
+        - name: "DLTransmittedMcs_Avg"
+          unit: "MCS"
+          positivity: "positive"
+
+    air_mac_ul_thru:
+      main_kpi:
+        name: "AirMacULThruAvg"
+        unit: "Kbps"
+        positivity: "positive"
+      sub_kpis:
+        - name: "ConnNoAvg"
+          unit: "count"
+          positivity: "positive"
+        - name: "InterferencePowerAvg"
+          unit: "dBm"
+          positivity: "negative"
+        - name: "RssiOverPathAvg"
+          unit: "dBm"
+          positivity: "positive"
+        - name: "ULResidualBlerRetransNak"
+          unit: "%"
+          positivity: "negative"
+        - name: "ULReceivedMcs_Avg"
+          unit: "MCS"
+          positivity: "positive"
+
+    volte_dl_quality_defect_rate:
+      main_kpi:
+        name: "VoLTEDLQualityDefectRate"
+        unit: "%"
+        positivity: "negative"
+      sub_kpis:
+        - name: "VoLTEDLPacketLoss"
+          unit: "%"
+          positivity: "negative"
+        - name: "VoLTEDLJitter"
+          unit: "ms"
+          positivity: "negative"
+
+    volte_ul_quality_defect_rate:
+      main_kpi:
+        name: "VoLTEULQualityDefectRate"
+        unit: "%"
+        positivity: "negative"
+      sub_kpis:
+        - name: "VoLTEULPacketLoss"
+          unit: "%"
+          positivity: "negative"
+        - name: "VoLTEULJitter"
+          unit: "ms"
+          positivity: "negative"
+
+    eutran_mobility_ho:
+      main_kpi:
+        name: "EutranMobilityHo"
+        unit: "%"
+        positivity: "positive"
+      sub_kpis:
+        - name: "HandoverSuccessRate"
+          unit: "%"
+          positivity: "positive"
+        - name: "HandoverFailureRate"
+          unit: "%"
+          positivity: "negative"
+
+    rrc_setup_success_rate:
+      main_kpi:
+        name: "RRCSetupSuccessRate"
+        unit: "%"
+        positivity: "positive"
+      sub_kpis:
+        - name: "RRCSetupAttempts"
+          unit: "count"
+          positivity: "positive"
+        - name: "RRCSetupFailures"
+          unit: "count"
+          positivity: "negative"
+
+  # NR Main KPI 토픽
+  nr_topics:
+    air_mac_dl_thru:
+      main_kpi:
+        name: "AirMacDLThruAvg"
+        unit: "Kbps"
+        positivity: "positive"
+      sub_kpis:
+        - name: "ConnNoAvg"
+          unit: "count"
+          positivity: "positive"
+        - name: "DLReceivedCQIAvg"
+          unit: "CQI"
+          positivity: "positive"
+        - name: "DLMcs_Avg"
+          unit: "MCS"
+          positivity: "positive"
+
+    air_mac_ul_thru:
+      main_kpi:
+        name: "AirMacULThruAvg"
+        unit: "Kbps"
+        positivity: "positive"
+      sub_kpis:
+        - name: "ConnNoAvg"
+          unit: "count"
+          positivity: "positive"
+        - name: "ULMcs_Avg"
+          unit: "MCS"
+          positivity: "positive"
+        - name: "ULSinrAvg"
+          unit: "dB"
+          positivity: "positive"
+
+    success_rate_cfra_cbra:
+      main_kpi:
+        name: "SuccessRateCFRACBRA"
+        unit: "%"
+        positivity: "positive"
+      sub_kpis:
+        - name: "CFRAAttempts"
+          unit: "count"
+          positivity: "positive"
+        - name: "CFRASuccesses"
+          unit: "count"
+          positivity: "positive"
+        - name: "CBRAAttempts"
+          unit: "count"
+          positivity: "positive"
+        - name: "CBRASuccesses"
+          unit: "count"
+          positivity: "positive"
+
+# =============================================================================
+# 일반 설정
+# =============================================================================
+general:
+  # 로깅 설정
+  logging:
+    level: "INFO"
+    detailed_reasoning: true # 판정 근거 상세 로깅 여부
+
+  # 성능 설정
+  performance:
+    max_processing_time: 5.0 # 최대 처리 시간 (초)
+    enable_caching: true # 결과 캐싱 활성화
+
+  # 데이터 품질 설정
+  data_quality:
+    min_sample_size: 10 # 최소 샘플 크기
+    max_nd_ratio: 0.5 # 최대 ND 비율 (50%)
+    max_zero_ratio: 0.3 # 최대 Zero 비율 (30%)

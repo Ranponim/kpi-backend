@@ -1,0 +1,41 @@
+{
+  "scenario_name": "exactly_50_percent_filter",
+  "description": "정확히 50% 필터링 비율로 경계선 테스트",
+  "test_purpose": "50% 규칙의 정확한 경계 조건 검증 (≤ vs >)",
+  "input_data": {
+    "ems_ip": "192.168.100.3",
+    "ne_list": ["NVGNB#100003"]
+  },
+  "cell_ids": ["cell_regression_003"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_regression_003": [
+      {
+        "peg_name": "AirMacDLThruAvg",
+        "cell_id": "cell_regression_003",
+        "pre_samples": [
+          1000.0, 2000.0, 1000.0, 2000.0, 1000.0, 2000.0, 1000.0, 2000.0,
+          1000.0, 2000.0
+        ],
+        "post_samples": [
+          1100.0, 2100.0, 1100.0, 2100.0, 1100.0, 2100.0, 1100.0, 2100.0,
+          1100.0, 2100.0
+        ],
+        "unit": "Kbps",
+        "comment": "극심한 변동으로 정확히 50% 필터링 비율 달성하도록 설계"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": false,
+    "expected_filter_ratio_range": [0.45, 0.55],
+    "expected_anomalies": [],
+    "expected_kpi_judgements": ["High Variation"],
+    "performance_max_ms": 50
+  }
+}

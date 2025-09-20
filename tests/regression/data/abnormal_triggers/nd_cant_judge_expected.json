@@ -1,0 +1,103 @@
+{
+  "timestamp": "2025-09-20 22:23:58.033435",
+  "processing_time_ms": null,
+  "algorithm_version": "1.0.0",
+  "filtering": {
+    "valid_time_slots": {
+      "cell_regression_002": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    "filter_ratio": 0.85,
+    "warning_message": null,
+    "preprocessing_stats": {
+      "total_samples_before": 20,
+      "total_samples_after": 20,
+      "removed_by_neighbor_zero": 0,
+      "removed_by_dl_ul_zero": 0,
+      "removal_ratio": 0.0
+    },
+    "median_values": {
+      "cell_regression_002": {
+        "AirMacDLThruAvg": {
+          "pre_median": 1050.0,
+          "post_median": 1075.0,
+          "overall_median": 1070.0,
+          "pre_sample_count": 7,
+          "post_sample_count": 10
+        }
+      }
+    }
+  },
+  "abnormal_detection": {
+    "range_violations": {
+      "Range": []
+    },
+    "new_statistics": {
+      "New": []
+    },
+    "nd_anomalies": {
+      "ND": []
+    },
+    "zero_anomalies": {
+      "Zero": []
+    },
+    "high_delta_anomalies": {
+      "High Delta": []
+    },
+    "display_results": {
+      "Range": true,
+      "ND": true,
+      "Zero": true,
+      "New": true,
+      "High Delta": true
+    }
+  },
+  "kpi_judgement": {},
+  "ui_summary": {},
+  "overall_summary": {
+    "processing_completed": true,
+    "algorithm_version": "1.0.0",
+    "total_warnings": 0
+  },
+  "config_used": {
+    "filtering_thresholds": {
+      "min": 0.87,
+      "max": 1.13
+    },
+    "alpha_0": 2,
+    "beta_values": {
+      "beta_0": 1000.0,
+      "beta_1": 5.0,
+      "beta_2": 10.0,
+      "beta_3": 500.0
+    },
+    "config_version": "1.0.0"
+  },
+  "total_cells_analyzed": 0,
+  "total_pegs_analyzed": 0,
+  "processing_warnings": [],
+  "regression_metadata": {
+    "generated_at": "2025-09-20T22:23:58.033748",
+    "algorithm_version": "1.0.0",
+    "input_file": "nd_cant_judge_input.json",
+    "scenario_category": "abnormal_triggers",
+    "test_purpose": "ND 데이터 포함 시 Can't Judge 판정 로직 검증"
+  }
+}

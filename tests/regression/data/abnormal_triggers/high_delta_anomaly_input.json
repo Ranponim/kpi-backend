@@ -1,0 +1,39 @@
+{
+  "scenario_name": "high_delta_anomaly",
+  "description": "High Delta 이상 탐지 및 KPI 분석 시나리오",
+  "test_purpose": "δ > β3 조건에서 이상 탐지와 KPI 분석이 모두 트리거되는지 검증",
+  "input_data": {
+    "ems_ip": "192.168.100.6",
+    "ne_list": ["NVGNB#100006"]
+  },
+  "cell_ids": ["cell_high_delta_001"],
+  "time_range": {
+    "pre_start": "2025-09-20T10:00:00",
+    "pre_end": "2025-09-20T11:00:00",
+    "post_start": "2025-09-20T14:00:00",
+    "post_end": "2025-09-20T15:00:00"
+  },
+  "peg_data": {
+    "cell_high_delta_001": [
+      {
+        "peg_name": "ConnNoAvg",
+        "cell_id": "cell_high_delta_001",
+        "pre_samples": [
+          10.0, 12.0, 11.0, 13.0, 9.0, 11.5, 12.5, 10.5, 11.8, 9.5
+        ],
+        "post_samples": [
+          70.0, 84.0, 77.0, 91.0, 63.0, 80.5, 87.5, 73.5, 82.6, 66.5
+        ],
+        "unit": "count",
+        "comment": "δ=600% (> β3=500) - High Delta 이상 탐지 + KPI 분석 모두 트리거"
+      }
+    ]
+  },
+  "expected_behavior": {
+    "filtering_should_pass": true,
+    "expected_filter_ratio_range": [0.6, 1.0],
+    "expected_anomalies": ["High Delta"],
+    "expected_kpi_judgements": ["High Delta"],
+    "performance_max_ms": 50
+  }
+}

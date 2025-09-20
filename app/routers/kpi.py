@@ -322,6 +322,125 @@ async def kpi_timeseries(payload: dict = Body(...)):
         raise HTTPException(status_code=500, detail=f"KPI 시계열 쿼리 오류: {e}")
 
 
+@router.post("/choi-analysis", summary="Choi 알고리즘 KPI 판정", tags=["Choi Algorithm"])
+async def choi_algorithm_analysis(payload: dict = Body(...)):
+    """
+    Choi 알고리즘을 사용한 3GPP KPI Pegs 판정 엔드포인트
+    
+    TES.web_Choi.md 3-6장에 정의된 알고리즘을 사용하여
+    KPI 성능 변화를 분석하고 OK/POK/NOK/Can't Judge로 판정합니다.
+    
+    Request Body:
+    ```json
+    {
+        "input_data": {
+            "ems_ip": "192.168.1.100",
+            "ne_list": ["NE001", "NE002"]
+        },
+        "cell_ids": ["cell_001", "cell_002"],
+        "time_range": {
+            "pre_start": "2025-09-20T10:00:00",
+            "pre_end": "2025-09-20T11:00:00",
+            "post_start": "2025-09-20T14:00:00", 
+            "post_end": "2025-09-20T15:00:00"
+        },
+        "compare_mode": true
+    }
+    ```
+    
+    Response:
+    ```json
+    {
+        "timestamp": "2025-09-20T21:00:00",
+        "processing_time_ms": 15.5,
+        "algorithm_version": "1.0.0",
+        "filtering": {
+            "filter_ratio": 0.75,
+            "valid_time_slots": {...},
+            "warning_message": null
+        },
+        "abnormal_detection": {
+            "nd_anomalies": {...},
+            "zero_anomalies": {...},
+            "display_results": {...}
+        },
+        "kpi_judgement": {
+            "air_mac_dl_thru": {...}
+        },
+        "ui_summary": {...},
+        "total_cells_analyzed": 2,
+        "total_pegs_analyzed": 6,
+        "processing_warnings": [],
+        "config_used": {...}
+    }
+    ```
+    """
+    try:
+        # 입력 데이터 검증
+        input_data = payload.get("input_data", {})
+        cell_ids = payload.get("cell_ids", [])
+        time_range_raw = payload.get("time_range", {})
+        compare_mode = payload.get("compare_mode", True)
+        
+        if not cell_ids:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="cell_ids는 필수 매개변수입니다"
+            )
+        
+        # 시간 범위 변환
+        time_range = {}
+        for key, value in time_range_raw.items():
+            if isinstance(value, str):
+                try:
+                    time_range[key] = datetime.fromisoformat(value)
+                except ValueError:
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"잘못된 시간 형식: {key}={value}. ISO 형식 사용: YYYY-MM-DDTHH:MM:SS"
+                    )
+            else:
+                time_range[key] = value
+        
+        logger.info(f"Choi 알고리즘 분석 요청: {len(cell_ids)} cells, compare_mode={compare_mode}")
+        
+        # PEGProcessingService를 통한 Choi 알고리즘 실행
+        from ..services.peg_processing_service import PEGProcessingService
+        
+        # Strategy Factory를 통한 완전한 의존성 주입으로 서비스 생성
+        processing_service = PEGProcessingService()
+        
+        # 전체 Choi 알고리즘 워크플로우 실행
+        start_time = datetime.now()
+        
+        response = processing_service.process_peg_data(
+            input_data=input_data,
+            cell_ids=cell_ids,
+            time_range=time_range,
+            compare_mode=compare_mode
+        )
+        
+        processing_time = (datetime.now() - start_time).total_seconds() * 1000
+        
+        # 응답 시간 업데이트
+        response.processing_time_ms = processing_time
+        
+        logger.info(f"Choi 알고리즘 분석 완료: {processing_time:.2f}ms, "
+                   f"{response.total_cells_analyzed} cells, {response.total_pegs_analyzed} PEGs")
+        
+        # Pydantic 모델을 JSON으로 직렬화
+        return response.model_dump()
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Choi 알고리즘 분석 중 오류: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Choi 알고리즘 처리 중 오류가 발생했습니다: {str(e)}"
+        )
+
+
 @router.get("/info", summary="KPI API 정보", tags=["KPI Query"])
 async def kpi_info():
     """
@@ -330,11 +449,12 @@ async def kpi_info():
     return {
         "api": "KPI Query API",
         "version": "1.0.0",
-        "description": "3GPP KPI 데이터 쿼리 API",
+        "description": "3GPP KPI 데이터 쿼리 및 Choi 알고리즘 판정 API",
         "endpoints": {
             "query": "/api/kpi/query",
-            "info": "/api/kpi/info",
-            "timeseries": "/api/kpi/timeseries"
+            "timeseries": "/api/kpi/timeseries",
+            "choi_analysis": "/api/kpi/choi-analysis",
+            "info": "/api/kpi/info"
         },
         "supported_kpi_types": [
             "availability",
@@ -344,12 +464,31 @@ async def kpi_info():
             "integrity",
             "mobility"
         ],
+        "choi_algorithm": {
+            "version": "1.0.0",
+            "description": "3GPP KPI Pegs 판정 알고리즘 (TES.web_Choi.md 3-6장)",
+            "features": [
+                "6장: 필터링 알고리즘 (6단계)",
+                "4장: 이상 탐지 알고리즘 (5개 탐지기)",
+                "5장: KPI 분석 알고리즘 (8개 분석기)",
+                "완전한 의존성 주입",
+                "SOLID 원칙 준수",
+                "견고한 오류 처리"
+            ],
+            "judgement_types": ["OK", "POK", "NOK", "Can't Judge"],
+            "supported_anomalies": ["Range", "ND", "Zero", "New", "High Delta"],
+            "supported_kpi_analysis": [
+                "Can't Judge", "High Variation", "Improve", "Degrade", 
+                "High Delta", "Medium Delta", "Low Delta", "Similar"
+            ]
+        },
         "features": [
             "Mock 데이터 생성",
             "날짜 범위 필터링",
             "Entity ID 필터링", 
             "NE/Cell ID 필터링",
             "PEG 이름/패턴 필터링",
+            "Choi 알고리즘 KPI 판정",
             "확장 가능한 DB 연동 구조"
         ]
     }
