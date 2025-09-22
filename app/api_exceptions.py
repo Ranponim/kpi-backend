@@ -1,8 +1,7 @@
 """
-커스텀 예외 클래스 정의
+API 및 애플리케이션 전역 예외 클래스/핸들러 정의
 
-이 모듈은 애플리케이션에서 사용되는 커스텀 예외들과
-중앙 집중식 예외 처리를 위한 클래스들을 정의합니다.
+기존 app/exceptions.py의 내용을 분리하여 순환 import를 방지합니다.
 """
 
 import logging
@@ -130,6 +129,7 @@ class PreferenceImportException(BaseAPIException):
 
 
 # ===== Host 필터링 관련 새로운 예외 클래스들 =====
+
 
 class TargetValidationException(BaseAPIException):
     """
@@ -466,6 +466,7 @@ async def general_exception_handler(request: Request, exc: Exception) -> JSONRes
 
 # ===== Host 필터링 관련 새로운 예외 핸들러들 =====
 
+
 async def target_validation_exception_handler(request: Request, exc: TargetValidationException) -> JSONResponse:
     """타겟 검증 실패 예외 핸들러"""
     logger.warning(f"Target validation error: {exc.message} | Path: {request.url.path}")
@@ -580,6 +581,7 @@ async def llm_analysis_exception_handler(request: Request, exc: LLMAnalysisExcep
 
 # 편의 함수들
 
+
 def raise_host_validation_error(
     invalid_hosts: list, 
     validation_errors: Dict[str, str],
@@ -635,3 +637,5 @@ def raise_filter_combination_error(
         message=message,
         conflicting_filters=conflicting_filters
     )
+
+
