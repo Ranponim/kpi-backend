@@ -32,8 +32,60 @@ from .choi_exceptions import (
     EXCEPTION_MAPPING
 )
 
+# app/exceptions.py의 예외 클래스들도 import
+from ..exceptions import (
+    # 기본 API 예외
+    BaseAPIException,
+    
+    # 분석 결과 관련 예외
+    AnalysisResultNotFoundException,
+    InvalidAnalysisDataException,
+    DatabaseConnectionException,
+    DuplicateAnalysisResultException,
+    
+    # 사용자 설정 관련 예외
+    UserPreferenceNotFoundException,
+    InvalidPreferenceDataException,
+    PreferenceImportException,
+    
+    # 필터 관련 예외
+    InvalidFilterException,
+    TargetValidationException,
+    HostValidationException,
+    RelationshipValidationException,
+    FilterCombinationException,
+    
+    # 데이터베이스 관련 예외
+    MongoDBIndexException,
+    
+    # LLM 분석 관련 예외
+    LLMAnalysisException,
+    
+    # 예외 핸들러 함수들
+    base_api_exception_handler,
+    analysis_result_not_found_handler,
+    invalid_analysis_data_handler,
+    database_connection_handler,
+    duplicate_analysis_result_handler,
+    user_preference_not_found_handler,
+    invalid_preference_data_handler,
+    preference_import_handler,
+    general_exception_handler,
+    target_validation_exception_handler,
+    host_validation_exception_handler,
+    relationship_validation_exception_handler,
+    filter_combination_exception_handler,
+    mongodb_index_exception_handler,
+    llm_analysis_exception_handler,
+    
+    # 편의 함수들
+    raise_host_validation_error,
+    raise_relationship_validation_error,
+    raise_filter_combination_error
+)
+
 __all__ = [
-    # 예외 클래스들
+    # Choi 알고리즘 예외 클래스들
     "ChoiAlgorithmError",
     "InsufficientDataError",
     "DataValidationError",
@@ -45,7 +97,46 @@ __all__ = [
     "StrategyExecutionError",
     "PerformanceError",
     
-    # 유틸리티
+    # API 예외 클래스들
+    "BaseAPIException",
+    "AnalysisResultNotFoundException",
+    "InvalidAnalysisDataException",
+    "DatabaseConnectionException",
+    "DuplicateAnalysisResultException",
+    "UserPreferenceNotFoundException",
+    "InvalidPreferenceDataException",
+    "PreferenceImportException",
+    "InvalidFilterException",
+    "TargetValidationException",
+    "HostValidationException",
+    "RelationshipValidationException",
+    "FilterCombinationException",
+    "MongoDBIndexException",
+    "LLMAnalysisException",
+    
+    # 예외 핸들러 함수들
+    "base_api_exception_handler",
+    "analysis_result_not_found_handler",
+    "invalid_analysis_data_handler",
+    "database_connection_handler",
+    "duplicate_analysis_result_handler",
+    "user_preference_not_found_handler",
+    "invalid_preference_data_handler",
+    "preference_import_handler",
+    "general_exception_handler",
+    "target_validation_exception_handler",
+    "host_validation_exception_handler",
+    "relationship_validation_exception_handler",
+    "filter_combination_exception_handler",
+    "mongodb_index_exception_handler",
+    "llm_analysis_exception_handler",
+    
+    # 편의 함수들
+    "raise_host_validation_error",
+    "raise_relationship_validation_error",
+    "raise_filter_combination_error",
+    
+    # Choi 알고리즘 유틸리티
     "create_exception",
     "handle_exception",
     "EXCEPTION_MAPPING"
