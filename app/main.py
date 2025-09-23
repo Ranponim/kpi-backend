@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse
 
 # 내부 모듈 임포트
 from .db import connect_to_mongo, close_mongo_connection, get_db_stats
-from .routers import analysis, preference, kpi, statistics, master, llm_analysis
+from .routers import analysis, preference, kpi, statistics, master, llm_analysis, peg_comparison
 from .middleware.performance import performance_middleware, setup_mongo_monitoring, get_performance_stats
 from .exceptions import (
     BaseAPIException,
@@ -24,6 +24,20 @@ from .exceptions import (
     UserPreferenceNotFoundException,
     InvalidPreferenceDataException,
     PreferenceImportException,
+    # PEG 비교분석 예외들
+    PEGComparisonException,
+    MCPConnectionError,
+    MCPTimeoutError,
+    DataValidationError as PEGDataValidationError,
+    AnalysisDataNotFoundError,
+    CacheError,
+    AsyncTaskError,
+    AsyncTaskNotFoundError,
+    RateLimitExceededError,
+    PermissionDeniedError,
+    AlgorithmVersionError,
+    ProcessingTimeoutError,
+    # 예외 핸들러들
     base_api_exception_handler,
     analysis_result_not_found_handler,
     invalid_analysis_data_handler,
@@ -33,6 +47,20 @@ from .exceptions import (
     invalid_preference_data_handler,
     preference_import_handler,
     general_exception_handler
+)
+from .exceptions.peg_comparison_handlers import (
+    peg_comparison_exception_handler,
+    mcp_connection_error_handler,
+    mcp_timeout_error_handler,
+    data_validation_error_handler,
+    analysis_data_not_found_error_handler,
+    cache_error_handler,
+    async_task_error_handler,
+    async_task_not_found_error_handler,
+    rate_limit_exceeded_error_handler,
+    permission_denied_error_handler,
+    algorithm_version_error_handler,
+    processing_timeout_error_handler
 )
 
 # 고급 로깅 설정 임포트 및 초기화
@@ -111,6 +139,14 @@ async def lifespan(app: FastAPI):
         logger.info("캐시 관리자 정리 완료")
     except Exception as e:
         logger.warning(f"캐시 관리자 정리 실패: {e}")
+    
+    # MCP 클라이언트 정리
+    try:
+        from .services.mcp_client_service import close_mcp_client
+        await close_mcp_client()
+        logger.info("MCP 클라이언트 정리 완료")
+    except Exception as e:
+        logger.warning(f"MCP 클라이언트 정리 실패: {e}")
     
     await close_mongo_connection()
     logger.info("애플리케이스 종료 완료")
@@ -191,6 +227,21 @@ app.add_exception_handler(DuplicateAnalysisResultException, duplicate_analysis_r
 app.add_exception_handler(UserPreferenceNotFoundException, user_preference_not_found_handler)
 app.add_exception_handler(InvalidPreferenceDataException, invalid_preference_data_handler)
 app.add_exception_handler(PreferenceImportException, preference_import_handler)
+
+# PEG 비교분석 예외 핸들러 등록
+app.add_exception_handler(PEGComparisonException, peg_comparison_exception_handler)
+app.add_exception_handler(MCPConnectionError, mcp_connection_error_handler)
+app.add_exception_handler(MCPTimeoutError, mcp_timeout_error_handler)
+app.add_exception_handler(PEGDataValidationError, data_validation_error_handler)
+app.add_exception_handler(AnalysisDataNotFoundError, analysis_data_not_found_error_handler)
+app.add_exception_handler(CacheError, cache_error_handler)
+app.add_exception_handler(AsyncTaskError, async_task_error_handler)
+app.add_exception_handler(AsyncTaskNotFoundError, async_task_not_found_error_handler)
+app.add_exception_handler(RateLimitExceededError, rate_limit_exceeded_error_handler)
+app.add_exception_handler(PermissionDeniedError, permission_denied_error_handler)
+app.add_exception_handler(AlgorithmVersionError, algorithm_version_error_handler)
+app.add_exception_handler(ProcessingTimeoutError, processing_timeout_error_handler)
+
 app.add_exception_handler(Exception, general_exception_handler)
 
 # 라우터 등록
@@ -200,6 +251,7 @@ app.include_router(kpi.router)
 app.include_router(statistics.router)   # Task 46 - Statistics 비교 분석 API
 app.include_router(master.router)       # Master 데이터 API (PEG, Cell 목록)
 app.include_router(llm_analysis.router) # LLM 분석 API
+app.include_router(peg_comparison.router) # PEG 비교분석 API
 
 # 모니터링 라우터 추가
 from .routers import monitoring
@@ -378,6 +430,7 @@ async def api_info():
             "statistics_compare": "/api/statistics/compare",
             "master_pegs": "/api/master/pegs",
             "master_cells": "/api/master/cells",
+            "peg_comparison": "/api/analysis/results/{id}/peg-comparison",
             "health_check": "/health",
             "documentation": {
                 "swagger": "/docs",
@@ -390,10 +443,12 @@ async def api_info():
             "사용자 설정 관리", 
             "설정 Import/Export",
             "Statistics 비교 분석",
+            "PEG 비교분석",
             "페이지네이션",
             "필터링",
             "통계 요약",
             "비동기 처리",
+            "캐싱 시스템",
             "자동 문서화"
         ],
         "database": {

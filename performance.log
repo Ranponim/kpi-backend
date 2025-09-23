@@ -80,3 +80,533 @@
 2025-09-20 22:48:54,482 - performance - INFO - 요청 완료 - Method: POST - URL: /api/kpi/choi-analysis - 상태: 200 - 소요시간: 0.005s - 메모리 변화: +0.01MB - 현재 메모리: 184.5MB - 응답 크기: 2327B
 2025-09-20 22:48:54,485 - performance - INFO - 요청 시작 - Method: POST - URL: /api/kpi/choi-analysis - Client: testclient
 2025-09-20 22:48:54,489 - performance - INFO - 요청 완료 - Method: POST - URL: /api/kpi/choi-analysis - 상태: 200 - 소요시간: 0.004s - 메모리 변화: +0.01MB - 현재 메모리: 184.5MB - 응답 크기: 1731B
+2025-09-24 00:25:39,622 - performance - INFO - 요청 시작 - Method: GET - URL: /api/peg-comparison/analysis/test_analysis_123 - Client: testclient
+2025-09-24 00:25:39,623 - performance - INFO - 요청 완료 - Method: GET - URL: /api/peg-comparison/analysis/test_analysis_123 - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.05MB - 현재 메모리: 184.5MB - 응답 크기: 22B
+2025-09-24 00:27:20,845 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:27:20,848 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 200 - 소요시간: 0.003s - 메모리 변화: +0.16MB - 현재 메모리: 184.5MB - 응답 크기: 1186B
+2025-09-24 00:27:39,267 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:27:39,269 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 200 - 소요시간: 0.002s - 메모리 변화: +0.13MB - 현재 메모리: 177.8MB - 응답 크기: 1186B
+2025-09-24 00:27:55,875 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:27:55,878 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 200 - 소요시간: 0.002s - 메모리 변화: +0.16MB - 현재 메모리: 184.6MB - 응답 크기: 1186B
+2025-09-24 00:28:05,223 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:28:05,235 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 200 - 소요시간: 0.011s - 메모리 변화: +0.17MB - 현재 메모리: 184.3MB - 응답 크기: 1186B
+2025-09-24 00:28:05,243 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:28:05,305 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 소요시간: 0.063s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:28:05,639 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:28:05,643 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 소요시간: 0.005s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:28:05,654 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison/status - Client: testclient
+2025-09-24 00:28:05,659 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison/status - 소요시간: 0.005s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:28:05,685 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison/result - Client: testclient
+2025-09-24 00:28:05,686 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 189.1MB - 응답 크기: 22B
+2025-09-24 00:28:05,697 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/test_analysis_123/peg-comparison/cancel - Client: testclient
+2025-09-24 00:28:05,702 - performance - ERROR - 요청 오류 - Method: POST - URL: /api/analysis/results/test_analysis_123/peg-comparison/cancel - 소요시간: 0.005s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:28:05,728 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/peg-comparison/active-tasks - Client: testclient
+2025-09-24 00:28:05,899 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/peg-comparison/active-tasks - 소요시간: 0.172s - 오류: maximum recursion depth exceeded
+2025-09-24 00:28:05,922 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/peg-comparison/active-tasks - Client: testclient
+2025-09-24 00:28:06,071 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/peg-comparison/active-tasks - 소요시간: 0.150s - 오류: maximum recursion depth exceeded
+2025-09-24 00:28:06,082 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/peg-comparison/cache/stats - Client: testclient
+2025-09-24 00:28:06,083 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/peg-comparison/cache/stats - 상태: 200 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 199.5MB - 응답 크기: 273B
+2025-09-24 00:28:06,094 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/peg-comparison/cleanup - Client: testclient
+2025-09-24 00:28:06,095 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/peg-comparison/cleanup - 상태: 200 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 199.5MB - 응답 크기: 121B
+2025-09-24 00:28:06,105 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id_format/peg-comparison - Client: testclient
+2025-09-24 00:28:06,110 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/invalid_id_format/peg-comparison - 소요시간: 0.006s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:28:06,120 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_analysis_id/peg-comparison/status - Client: testclient
+2025-09-24 00:28:06,124 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/invalid_analysis_id/peg-comparison/status - 소요시간: 0.004s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:28:06,135 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/peg-comparison/active-tasks - Client: testclient
+2025-09-24 00:28:06,296 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/peg-comparison/active-tasks - 소요시간: 0.161s - 오류: maximum recursion depth exceeded
+2025-09-24 00:30:37,530 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:30:37,541 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 소요시간: 0.010s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:30:37,871 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:30:37,876 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 소요시간: 0.005s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:30:37,880 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/32ba70eb-f131-4103-b61b-067a5d027ba9/status - Client: testclient
+2025-09-24 00:30:37,880 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/32ba70eb-f131-4103-b61b-067a5d027ba9/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 186.3MB - 응답 크기: 22B
+2025-09-24 00:30:37,884 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/99bbb174-57f4-4226-86a9-6a61ddefc7df/status - Client: testclient
+2025-09-24 00:30:37,885 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/99bbb174-57f4-4226-86a9-6a61ddefc7df/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 186.3MB - 응답 크기: 22B
+2025-09-24 00:30:37,888 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/9496bf96-3b8b-4d6d-8812-a2deef501e13/result - Client: testclient
+2025-09-24 00:30:37,889 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/9496bf96-3b8b-4d6d-8812-a2deef501e13/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 186.3MB - 응답 크기: 22B
+2025-09-24 00:30:37,892 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/1f3e6a80-6dbe-403e-ae7a-22938059beab/cancel - Client: testclient
+2025-09-24 00:30:37,893 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/1f3e6a80-6dbe-403e-ae7a-22938059beab/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 186.4MB - 응답 크기: 22B
+2025-09-24 00:30:37,897 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/b9b7d048-f5ad-4ef1-b2d8-e262f096a100/cancel - Client: testclient
+2025-09-24 00:30:37,898 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/b9b7d048-f5ad-4ef1-b2d8-e262f096a100/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 186.4MB - 응답 크기: 22B
+2025-09-24 00:30:37,901 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:30:37,902 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.09MB - 현재 메모리: 186.5MB - 응답 크기: 368B
+2025-09-24 00:30:37,909 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:30:37,910 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 186.9MB - 응답 크기: 368B
+2025-09-24 00:30:37,917 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:30:37,917 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 186.9MB - 응답 크기: 22B
+2025-09-24 00:30:37,925 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:30:37,926 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 186.9MB - 응답 크기: 22B
+2025-09-24 00:30:37,932 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:30:37,938 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 소요시간: 0.006s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:30:37,941 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:30:37,942 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 187.0MB - 응답 크기: 22B
+2025-09-24 00:30:37,950 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:30:37,955 - performance - ERROR - 요청 오류 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 소요시간: 0.005s - 오류: 'int' object has no attribute 'update'
+2025-09-24 00:30:37,957 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:30:37,958 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 187.1MB - 응답 크기: 22B
+2025-09-24 00:31:29,805 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:31:29,810 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.004s - 메모리 변화: +0.25MB - 현재 메모리: 184.3MB - 응답 크기: 424B
+2025-09-24 00:32:45,047 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:32:45,051 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.004s - 메모리 변화: +0.32MB - 현재 메모리: 184.8MB - 응답 크기: 424B
+2025-09-24 00:32:45,056 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:32:45,058 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.11MB - 현재 메모리: 185.1MB - 응답 크기: 424B
+2025-09-24 00:32:45,062 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/20e81792-44ab-44b1-b52c-f4b231640de6/status - Client: testclient
+2025-09-24 00:32:45,063 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/20e81792-44ab-44b1-b52c-f4b231640de6/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.1MB - 응답 크기: 22B
+2025-09-24 00:32:45,066 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/602959de-348d-47d1-806e-2d6741bc6d9c/status - Client: testclient
+2025-09-24 00:32:45,067 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/602959de-348d-47d1-806e-2d6741bc6d9c/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:32:45,070 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/c2b88297-248f-4725-9ecd-3228c4f2d332/result - Client: testclient
+2025-09-24 00:32:45,071 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/c2b88297-248f-4725-9ecd-3228c4f2d332/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:32:45,075 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/05dc8c45-cf4e-4380-87c7-a536b42c8e2d/cancel - Client: testclient
+2025-09-24 00:32:45,076 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/05dc8c45-cf4e-4380-87c7-a536b42c8e2d/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:32:45,079 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/a20c77ac-7bf2-4e86-8927-8b51d0bfe552/cancel - Client: testclient
+2025-09-24 00:32:45,080 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/a20c77ac-7bf2-4e86-8927-8b51d0bfe552/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:32:45,084 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:32:45,085 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.07MB - 현재 메모리: 185.3MB - 응답 크기: 368B
+2025-09-24 00:32:45,088 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:32:45,089 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.3MB - 응답 크기: 368B
+2025-09-24 00:32:45,092 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:32:45,093 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:32:45,096 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:32:45,097 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:32:45,101 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:32:45,103 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.08MB - 현재 메모리: 185.5MB - 응답 크기: 417B
+2025-09-24 00:32:45,431 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:32:45,431 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 186.7MB - 응답 크기: 22B
+2025-09-24 00:32:45,435 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:32:45,437 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 186.8MB - 응답 크기: 427B
+2025-09-24 00:32:45,440 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:32:45,440 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 186.7MB - 응답 크기: 22B
+2025-09-24 00:32:45,442 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:32:45,443 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 186.7MB - 응답 크기: 368B
+2025-09-24 00:33:03,740 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:33:03,752 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.012s - 메모리 변화: +0.30MB - 현재 메모리: 184.4MB - 응답 크기: 424B
+2025-09-24 00:33:03,757 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:33:03,759 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.11MB - 현재 메모리: 184.7MB - 응답 크기: 424B
+2025-09-24 00:33:03,763 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/a705eaf8-1f40-4669-8fe6-9a2709c88a0a/status - Client: testclient
+2025-09-24 00:33:03,763 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/a705eaf8-1f40-4669-8fe6-9a2709c88a0a/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.7MB - 응답 크기: 22B
+2025-09-24 00:33:03,767 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/d185d943-d34a-4564-983e-e11598aace65/status - Client: testclient
+2025-09-24 00:33:03,768 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/d185d943-d34a-4564-983e-e11598aace65/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.7MB - 응답 크기: 22B
+2025-09-24 00:33:03,771 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/0991b12f-4107-4a5f-a6a5-5f05f6e90691/result - Client: testclient
+2025-09-24 00:33:03,772 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/0991b12f-4107-4a5f-a6a5-5f05f6e90691/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.7MB - 응답 크기: 22B
+2025-09-24 00:33:03,776 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/5d577dc1-1c37-4103-8f6a-0829513e142e/cancel - Client: testclient
+2025-09-24 00:33:03,777 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/5d577dc1-1c37-4103-8f6a-0829513e142e/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 184.8MB - 응답 크기: 22B
+2025-09-24 00:33:03,781 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/1e1031d8-149b-4195-b851-98f51f398827/cancel - Client: testclient
+2025-09-24 00:33:03,782 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/1e1031d8-149b-4195-b851-98f51f398827/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.8MB - 응답 크기: 22B
+2025-09-24 00:33:03,785 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:33:03,786 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.07MB - 현재 메모리: 184.9MB - 응답 크기: 368B
+2025-09-24 00:33:03,790 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:33:03,790 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 184.9MB - 응답 크기: 368B
+2025-09-24 00:33:03,794 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:33:03,795 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 184.9MB - 응답 크기: 22B
+2025-09-24 00:33:03,798 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:33:03,799 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.0MB - 응답 크기: 22B
+2025-09-24 00:33:03,803 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:33:03,805 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.11MB - 현재 메모리: 185.1MB - 응답 크기: 417B
+2025-09-24 00:33:03,809 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:33:03,809 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.1MB - 응답 크기: 22B
+2025-09-24 00:33:03,813 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:33:03,815 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 185.1MB - 응답 크기: 427B
+2025-09-24 00:33:03,817 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:33:03,818 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.1MB - 응답 크기: 22B
+2025-09-24 00:33:03,820 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:33:03,821 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.1MB - 응답 크기: 368B
+2025-09-24 00:33:33,649 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:33:33,653 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.004s - 메모리 변화: +0.22MB - 현재 메모리: 185.0MB - 응답 크기: 424B
+2025-09-24 00:33:33,659 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:33:33,661 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 185.2MB - 응답 크기: 424B
+2025-09-24 00:33:33,665 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/5c7d4780-d99a-471e-b220-c188440a089b/status - Client: testclient
+2025-09-24 00:33:33,665 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/5c7d4780-d99a-471e-b220-c188440a089b/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:33:33,669 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/eee367c2-9fd2-4292-aac5-b9d17e7bfa0d/status - Client: testclient
+2025-09-24 00:33:33,669 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/eee367c2-9fd2-4292-aac5-b9d17e7bfa0d/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:33:33,673 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/787928ba-3c11-4e35-a39d-66eefeff23ab/result - Client: testclient
+2025-09-24 00:33:33,674 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/787928ba-3c11-4e35-a39d-66eefeff23ab/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.3MB - 응답 크기: 22B
+2025-09-24 00:33:33,677 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/bdcadff5-7de8-4fd6-9239-a5051a478bb9/cancel - Client: testclient
+2025-09-24 00:33:33,678 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/bdcadff5-7de8-4fd6-9239-a5051a478bb9/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:33:33,682 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/6eac7705-31b1-4253-b939-25d9b489fc78/cancel - Client: testclient
+2025-09-24 00:33:33,683 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/6eac7705-31b1-4253-b939-25d9b489fc78/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:33:33,686 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:33:33,687 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.08MB - 현재 메모리: 185.5MB - 응답 크기: 368B
+2025-09-24 00:33:33,691 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:33:33,692 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.5MB - 응답 크기: 368B
+2025-09-24 00:33:33,695 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:33:33,696 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:33:33,699 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:33:33,700 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.6MB - 응답 크기: 22B
+2025-09-24 00:33:33,704 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:33:33,707 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.003s - 메모리 변화: +0.24MB - 현재 메모리: 185.8MB - 응답 크기: 417B
+2025-09-24 00:33:33,710 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:33:33,711 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.8MB - 응답 크기: 22B
+2025-09-24 00:33:33,715 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:33:33,717 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.06MB - 현재 메모리: 185.9MB - 응답 크기: 427B
+2025-09-24 00:33:33,719 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:33:33,720 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.8MB - 응답 크기: 22B
+2025-09-24 00:33:33,722 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:33:33,723 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.8MB - 응답 크기: 368B
+2025-09-24 00:37:49,608 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:37:49,621 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.013s - 메모리 변화: +0.21MB - 현재 메모리: 184.9MB - 응답 크기: 424B
+2025-09-24 00:37:49,625 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:37:49,627 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.06MB - 현재 메모리: 185.1MB - 응답 크기: 424B
+2025-09-24 00:37:49,631 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/39962e01-aa48-424a-bdae-867b1cfd2d98/status - Client: testclient
+2025-09-24 00:37:49,632 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/39962e01-aa48-424a-bdae-867b1cfd2d98/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.1MB - 응답 크기: 22B
+2025-09-24 00:37:49,635 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/efeb67d8-035d-4d3f-bfe5-01c0c56d5705/status - Client: testclient
+2025-09-24 00:37:49,636 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/efeb67d8-035d-4d3f-bfe5-01c0c56d5705/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.1MB - 응답 크기: 22B
+2025-09-24 00:37:49,639 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/91e7b579-354e-43a9-9d40-16f29b5d3590/result - Client: testclient
+2025-09-24 00:37:49,640 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/91e7b579-354e-43a9-9d40-16f29b5d3590/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:37:49,644 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/fc86eb5a-fd49-4209-940d-98f8c9aa296f/cancel - Client: testclient
+2025-09-24 00:37:49,645 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/fc86eb5a-fd49-4209-940d-98f8c9aa296f/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.06MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:37:49,648 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/cb2daea4-a31a-49ca-8b07-70dd9108a25f/cancel - Client: testclient
+2025-09-24 00:37:49,649 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/cb2daea4-a31a-49ca-8b07-70dd9108a25f/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:37:49,653 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:37:49,654 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.07MB - 현재 메모리: 185.3MB - 응답 크기: 368B
+2025-09-24 00:37:49,657 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:37:49,658 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.3MB - 응답 크기: 368B
+2025-09-24 00:37:49,661 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:37:49,662 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:37:49,665 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:37:49,666 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:37:49,670 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:37:49,672 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 185.5MB - 응답 크기: 417B
+2025-09-24 00:37:49,676 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:37:49,676 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:37:49,680 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:37:49,682 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 185.5MB - 응답 크기: 427B
+2025-09-24 00:37:49,684 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:37:49,684 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:37:49,687 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:37:49,690 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.003s - 메모리 변화: +0.01MB - 현재 메모리: 185.5MB - 응답 크기: 368B
+2025-09-24 00:39:31,441 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:39:31,457 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.016s - 메모리 변화: +0.34MB - 현재 메모리: 185.1MB - 응답 크기: 424B
+2025-09-24 00:39:31,462 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:39:31,465 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.08MB - 현재 메모리: 185.4MB - 응답 크기: 424B
+2025-09-24 00:39:31,469 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/6cdfff3b-38a0-49aa-94df-900baf254b24/status - Client: testclient
+2025-09-24 00:39:31,470 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/6cdfff3b-38a0-49aa-94df-900baf254b24/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.3MB - 응답 크기: 22B
+2025-09-24 00:39:31,473 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/765e7bc6-a2a6-4af9-9874-22e8fc076ede/status - Client: testclient
+2025-09-24 00:39:31,474 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/765e7bc6-a2a6-4af9-9874-22e8fc076ede/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:39:31,478 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/5ae3e2d8-bf9a-4846-92d2-22b7046aacef/result - Client: testclient
+2025-09-24 00:39:31,479 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/5ae3e2d8-bf9a-4846-92d2-22b7046aacef/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:39:31,482 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/3e29bb3c-55fb-4b16-ba6c-e68f179c35ef/cancel - Client: testclient
+2025-09-24 00:39:31,483 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/3e29bb3c-55fb-4b16-ba6c-e68f179c35ef/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:39:31,487 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/0eaff403-85ad-44f7-8827-6f80f2fed2bc/cancel - Client: testclient
+2025-09-24 00:39:31,488 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/0eaff403-85ad-44f7-8827-6f80f2fed2bc/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:39:31,492 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:39:31,493 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.10MB - 현재 메모리: 185.6MB - 응답 크기: 368B
+2025-09-24 00:39:31,497 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:39:31,498 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.05MB - 현재 메모리: 185.6MB - 응답 크기: 368B
+2025-09-24 00:39:31,501 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:39:31,502 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.6MB - 응답 크기: 22B
+2025-09-24 00:39:31,506 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:39:31,507 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.6MB - 응답 크기: 22B
+2025-09-24 00:39:31,510 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:39:31,512 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.08MB - 현재 메모리: 185.7MB - 응답 크기: 417B
+2025-09-24 00:39:31,516 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:39:31,516 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.7MB - 응답 크기: 22B
+2025-09-24 00:39:31,520 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:39:31,522 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.05MB - 현재 메모리: 185.7MB - 응답 크기: 427B
+2025-09-24 00:39:31,524 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:39:31,524 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.7MB - 응답 크기: 22B
+2025-09-24 00:39:31,526 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:39:31,527 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.7MB - 응답 크기: 368B
+2025-09-24 00:40:52,704 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,706 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.03MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,715 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,716 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,725 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,726 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,735 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,736 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,745 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/mahalanobis/info - Client: testclient
+2025-09-24 00:40:52,746 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/mahalanobis/info - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,754 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/mahalanobis/health - Client: testclient
+2025-09-24 00:40:52,755 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/mahalanobis/health - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,764 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:40:52,765 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,774 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/kolmogorov-smirnov - Client: testclient
+2025-09-24 00:40:52,775 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/kolmogorov-smirnov - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,783 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/batch/mann-whitney-u - Client: testclient
+2025-09-24 00:40:52,784 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/batch/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,794 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/compare-tests - Client: testclient
+2025-09-24 00:40:52,795 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/compare-tests - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,803 - performance - INFO - 요청 시작 - Method: GET - URL: /api/statistical-tests/info - Client: testclient
+2025-09-24 00:40:52,804 - performance - INFO - 요청 완료 - Method: GET - URL: /api/statistical-tests/info - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,813 - performance - INFO - 요청 시작 - Method: GET - URL: /api/statistical-tests/health - Client: testclient
+2025-09-24 00:40:52,814 - performance - INFO - 요청 완료 - Method: GET - URL: /api/statistical-tests/health - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,822 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:40:52,823 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,832 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:40:52,833 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,842 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,843 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,852 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,861 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.009s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,870 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,871 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,892 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:40:52,894 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,902 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:40:52,903 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:52,905 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:40:52,906 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 215.9MB - 응답 크기: 22B
+2025-09-24 00:40:59,074 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:40:59,077 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.003s - 메모리 변화: +0.05MB - 현재 메모리: 234.8MB - 응답 크기: 424B
+2025-09-24 00:40:59,080 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:40:59,082 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.03MB - 현재 메모리: 234.8MB - 응답 크기: 424B
+2025-09-24 00:40:59,086 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/b0c23feb-505d-4f58-a7d4-83d2ba06f87f/status - Client: testclient
+2025-09-24 00:40:59,087 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/b0c23feb-505d-4f58-a7d4-83d2ba06f87f/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,092 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/8fef5184-14a0-43f8-a558-c38c7a4b85ef/status - Client: testclient
+2025-09-24 00:40:59,093 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/8fef5184-14a0-43f8-a558-c38c7a4b85ef/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,097 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/2616a42e-1455-433e-b86b-cfa4d6f5ad0e/result - Client: testclient
+2025-09-24 00:40:59,098 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/2616a42e-1455-433e-b86b-cfa4d6f5ad0e/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,101 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/444af25e-ca37-4272-b956-694c47068858/cancel - Client: testclient
+2025-09-24 00:40:59,102 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/444af25e-ca37-4272-b956-694c47068858/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,106 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/d343bec5-42c3-43a9-8a27-c7cde5cdaeed/cancel - Client: testclient
+2025-09-24 00:40:59,107 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/d343bec5-42c3-43a9-8a27-c7cde5cdaeed/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,112 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:40:59,113 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 234.8MB - 응답 크기: 368B
+2025-09-24 00:40:59,117 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:40:59,118 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.002s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 368B
+2025-09-24 00:40:59,122 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:40:59,123 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,126 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:40:59,128 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,132 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:40:59,134 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.003s - 메모리 변화: +0.03MB - 현재 메모리: 234.9MB - 응답 크기: 417B
+2025-09-24 00:40:59,138 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:40:59,138 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,142 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:40:59,144 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.03MB - 현재 메모리: 234.9MB - 응답 크기: 427B
+2025-09-24 00:40:59,146 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:40:59,147 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 22B
+2025-09-24 00:40:59,149 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:40:59,149 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.8MB - 응답 크기: 368B
+2025-09-24 00:41:08,757 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:41:08,760 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.004s - 메모리 변화: +0.23MB - 현재 메모리: 185.1MB - 응답 크기: 424B
+2025-09-24 00:41:08,765 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:41:08,767 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.11MB - 현재 메모리: 185.3MB - 응답 크기: 424B
+2025-09-24 00:41:08,771 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/f8f65623-d58e-4a00-aeab-65d98375101c/status - Client: testclient
+2025-09-24 00:41:08,771 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/f8f65623-d58e-4a00-aeab-65d98375101c/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.3MB - 응답 크기: 22B
+2025-09-24 00:41:08,775 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/484b1100-07a8-4047-b619-ed34138e4a36/status - Client: testclient
+2025-09-24 00:41:08,775 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/484b1100-07a8-4047-b619-ed34138e4a36/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:41:08,779 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/b9c6bafa-4731-43f4-aee4-ab8bd46661da/result - Client: testclient
+2025-09-24 00:41:08,779 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/b9c6bafa-4731-43f4-aee4-ab8bd46661da/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:41:08,783 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/4c792ebf-fc5e-4662-8fbc-a57ceeb24cfe/cancel - Client: testclient
+2025-09-24 00:41:08,784 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/4c792ebf-fc5e-4662-8fbc-a57ceeb24cfe/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:41:08,787 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/9c58b0ad-39b5-4d63-894b-0efcaa0a0f0a/cancel - Client: testclient
+2025-09-24 00:41:08,788 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/9c58b0ad-39b5-4d63-894b-0efcaa0a0f0a/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.4MB - 응답 크기: 22B
+2025-09-24 00:41:08,792 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:41:08,792 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.08MB - 현재 메모리: 185.5MB - 응답 크기: 368B
+2025-09-24 00:41:08,796 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:41:08,797 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.5MB - 응답 크기: 368B
+2025-09-24 00:41:08,800 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:41:08,801 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.6MB - 응답 크기: 22B
+2025-09-24 00:41:08,804 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:41:08,805 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.6MB - 응답 크기: 22B
+2025-09-24 00:41:08,808 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:41:08,810 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 185.7MB - 응답 크기: 417B
+2025-09-24 00:41:08,814 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:41:08,814 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.7MB - 응답 크기: 22B
+2025-09-24 00:41:08,818 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:41:08,820 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.06MB - 현재 메모리: 185.7MB - 응답 크기: 427B
+2025-09-24 00:41:08,822 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:41:08,823 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.7MB - 응답 크기: 22B
+2025-09-24 00:41:08,825 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:41:08,826 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.7MB - 응답 크기: 368B
+2025-09-24 00:43:14,588 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:43:14,594 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.006s - 메모리 변화: +0.32MB - 현재 메모리: 184.3MB - 응답 크기: 424B
+2025-09-24 00:43:14,599 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:43:14,602 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 184.6MB - 응답 크기: 424B
+2025-09-24 00:43:14,605 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/409072b1-549f-4eb9-bf9e-8933dc6148eb/status - Client: testclient
+2025-09-24 00:43:14,606 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/409072b1-549f-4eb9-bf9e-8933dc6148eb/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.6MB - 응답 크기: 22B
+2025-09-24 00:43:14,609 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/784eee0f-60f8-4c4a-9409-c557f0c4e0ce/status - Client: testclient
+2025-09-24 00:43:14,610 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/784eee0f-60f8-4c4a-9409-c557f0c4e0ce/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.6MB - 응답 크기: 22B
+2025-09-24 00:43:14,613 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/a82fbd72-8bcb-4afa-a644-b377aee9cb81/result - Client: testclient
+2025-09-24 00:43:14,614 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/a82fbd72-8bcb-4afa-a644-b377aee9cb81/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 184.6MB - 응답 크기: 22B
+2025-09-24 00:43:14,617 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/0fea5df0-a035-43f4-9884-b5576a2847ac/cancel - Client: testclient
+2025-09-24 00:43:14,619 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/0fea5df0-a035-43f4-9884-b5576a2847ac/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.05MB - 현재 메모리: 184.6MB - 응답 크기: 22B
+2025-09-24 00:43:14,622 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/7b13bae2-6319-40b7-af64-93b94c9168d8/cancel - Client: testclient
+2025-09-24 00:43:14,623 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/7b13bae2-6319-40b7-af64-93b94c9168d8/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 184.7MB - 응답 크기: 22B
+2025-09-24 00:43:14,626 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:43:14,627 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.11MB - 현재 메모리: 184.8MB - 응답 크기: 368B
+2025-09-24 00:43:14,631 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:43:14,632 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 184.8MB - 응답 크기: 368B
+2025-09-24 00:43:14,635 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:43:14,636 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 184.8MB - 응답 크기: 22B
+2025-09-24 00:43:14,640 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:43:14,641 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 184.8MB - 응답 크기: 22B
+2025-09-24 00:43:14,644 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:43:14,646 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 184.9MB - 응답 크기: 417B
+2025-09-24 00:43:14,649 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:43:14,650 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 184.9MB - 응답 크기: 22B
+2025-09-24 00:43:14,654 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:43:14,656 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.05MB - 현재 메모리: 184.9MB - 응답 크기: 427B
+2025-09-24 00:43:14,657 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:43:14,658 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 184.9MB - 응답 크기: 22B
+2025-09-24 00:43:14,660 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:43:14,661 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.9MB - 응답 크기: 368B
+2025-09-24 00:44:42,166 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:44:42,181 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.015s - 메모리 변화: +0.25MB - 현재 메모리: 185.2MB - 응답 크기: 424B
+2025-09-24 00:44:42,188 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:44:42,190 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.11MB - 현재 메모리: 185.5MB - 응답 크기: 424B
+2025-09-24 00:44:42,194 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/74e94a0b-9df6-479b-ab7a-cc55621330ea/status - Client: testclient
+2025-09-24 00:44:42,195 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/74e94a0b-9df6-479b-ab7a-cc55621330ea/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:44:42,198 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/b9ca89af-35d3-4df3-bfbf-c00bccf5c523/status - Client: testclient
+2025-09-24 00:44:42,199 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/b9ca89af-35d3-4df3-bfbf-c00bccf5c523/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:44:42,203 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/ce325c88-e0e1-4d72-9913-ef03aeed62f5/result - Client: testclient
+2025-09-24 00:44:42,203 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/ce325c88-e0e1-4d72-9913-ef03aeed62f5/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:44:42,207 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/98201e92-1afd-4961-bf9b-a8d713421a0e/cancel - Client: testclient
+2025-09-24 00:44:42,208 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/98201e92-1afd-4961-bf9b-a8d713421a0e/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.6MB - 응답 크기: 22B
+2025-09-24 00:44:42,212 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/87cbaae7-7101-4ce8-92d2-0cf1ef8d4b1f/cancel - Client: testclient
+2025-09-24 00:44:42,213 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/87cbaae7-7101-4ce8-92d2-0cf1ef8d4b1f/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.6MB - 응답 크기: 22B
+2025-09-24 00:44:42,216 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:44:42,217 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.10MB - 현재 메모리: 185.7MB - 응답 크기: 368B
+2025-09-24 00:44:42,221 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:44:42,222 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.7MB - 응답 크기: 368B
+2025-09-24 00:44:42,226 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:44:42,227 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.7MB - 응답 크기: 22B
+2025-09-24 00:44:42,230 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:44:42,231 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.7MB - 응답 크기: 22B
+2025-09-24 00:44:42,234 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:44:42,236 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.04MB - 현재 메모리: 185.8MB - 응답 크기: 417B
+2025-09-24 00:44:42,240 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:44:42,241 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.8MB - 응답 크기: 22B
+2025-09-24 00:44:42,244 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:44:42,247 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.05MB - 현재 메모리: 185.8MB - 응답 크기: 427B
+2025-09-24 00:44:42,249 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:44:42,249 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.8MB - 응답 크기: 22B
+2025-09-24 00:44:42,251 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:44:42,252 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.8MB - 응답 크기: 368B
+2025-09-24 00:44:55,484 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:44:55,500 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.015s - 메모리 변화: +0.32MB - 현재 메모리: 184.9MB - 응답 크기: 424B
+2025-09-24 00:44:55,504 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:44:55,506 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 185.2MB - 응답 크기: 424B
+2025-09-24 00:44:55,510 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/cc4b6967-f362-4c0b-909b-c0b2583d76e5/status - Client: testclient
+2025-09-24 00:44:55,510 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/cc4b6967-f362-4c0b-909b-c0b2583d76e5/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:44:55,514 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/d2461682-9061-4d1f-a170-0a80a40e2a98/status - Client: testclient
+2025-09-24 00:44:55,515 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/d2461682-9061-4d1f-a170-0a80a40e2a98/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:44:55,518 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/bae33593-7dd4-4b03-b100-6e1675bb1423/result - Client: testclient
+2025-09-24 00:44:55,519 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/bae33593-7dd4-4b03-b100-6e1675bb1423/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:44:55,522 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/c94c7b5c-d742-4194-89b1-4f30c23d837a/cancel - Client: testclient
+2025-09-24 00:44:55,523 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/c94c7b5c-d742-4194-89b1-4f30c23d837a/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.06MB - 현재 메모리: 185.3MB - 응답 크기: 22B
+2025-09-24 00:44:55,527 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/f5842723-fc0f-49d8-b064-03153348c4f3/cancel - Client: testclient
+2025-09-24 00:44:55,528 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/f5842723-fc0f-49d8-b064-03153348c4f3/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.3MB - 응답 크기: 22B
+2025-09-24 00:44:55,531 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:44:55,532 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.11MB - 현재 메모리: 185.4MB - 응답 크기: 368B
+2025-09-24 00:44:55,535 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:44:55,536 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.5MB - 응답 크기: 368B
+2025-09-24 00:44:55,540 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:44:55,540 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:44:55,544 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:44:55,545 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:44:55,548 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:44:55,550 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.08MB - 현재 메모리: 185.5MB - 응답 크기: 417B
+2025-09-24 00:44:55,554 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:44:55,554 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:44:55,558 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:44:55,560 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.05MB - 현재 메모리: 185.6MB - 응답 크기: 427B
+2025-09-24 00:44:55,562 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:44:55,562 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 185.5MB - 응답 크기: 22B
+2025-09-24 00:44:55,564 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:44:55,565 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.6MB - 응답 크기: 368B
+2025-09-24 00:45:07,708 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,710 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.04MB - 현재 메모리: 213.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,720 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,721 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.3MB - 응답 크기: 22B
+2025-09-24 00:45:07,730 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,731 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,740 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,741 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,750 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/mahalanobis/info - Client: testclient
+2025-09-24 00:45:07,750 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/mahalanobis/info - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,759 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/mahalanobis/health - Client: testclient
+2025-09-24 00:45:07,760 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/mahalanobis/health - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,769 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:45:07,776 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.006s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,785 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/kolmogorov-smirnov - Client: testclient
+2025-09-24 00:45:07,786 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/kolmogorov-smirnov - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,795 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/batch/mann-whitney-u - Client: testclient
+2025-09-24 00:45:07,796 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/batch/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,806 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/compare-tests - Client: testclient
+2025-09-24 00:45:07,807 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/compare-tests - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,815 - performance - INFO - 요청 시작 - Method: GET - URL: /api/statistical-tests/info - Client: testclient
+2025-09-24 00:45:07,816 - performance - INFO - 요청 완료 - Method: GET - URL: /api/statistical-tests/info - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,825 - performance - INFO - 요청 시작 - Method: GET - URL: /api/statistical-tests/health - Client: testclient
+2025-09-24 00:45:07,826 - performance - INFO - 요청 완료 - Method: GET - URL: /api/statistical-tests/health - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,837 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:45:07,838 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,847 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:45:07,848 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,857 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,858 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,867 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,868 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,878 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,879 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,889 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/mahalanobis - Client: testclient
+2025-09-24 00:45:07,890 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/mahalanobis - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,900 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:45:07,901 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:07,904 - performance - INFO - 요청 시작 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - Client: testclient
+2025-09-24 00:45:07,905 - performance - INFO - 요청 완료 - Method: POST - URL: /api/statistical-tests/mann-whitney-u - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 214.5MB - 응답 크기: 22B
+2025-09-24 00:45:14,117 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:45:14,120 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.003s - 메모리 변화: +0.04MB - 현재 메모리: 234.9MB - 응답 크기: 424B
+2025-09-24 00:45:14,124 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:45:14,126 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.03MB - 현재 메모리: 234.9MB - 응답 크기: 424B
+2025-09-24 00:45:14,129 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/f95cfca5-b105-4212-987a-c8fb7120c598/status - Client: testclient
+2025-09-24 00:45:14,130 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/f95cfca5-b105-4212-987a-c8fb7120c598/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,133 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/615f6961-f380-453b-8dc4-0208c4bd0a7b/status - Client: testclient
+2025-09-24 00:45:14,134 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/615f6961-f380-453b-8dc4-0208c4bd0a7b/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,137 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/7130d723-18b1-453c-bbe5-528813a874a0/result - Client: testclient
+2025-09-24 00:45:14,138 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/7130d723-18b1-453c-bbe5-528813a874a0/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,141 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/41234c2f-fcd4-4a77-892e-bf556f566f29/cancel - Client: testclient
+2025-09-24 00:45:14,142 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/41234c2f-fcd4-4a77-892e-bf556f566f29/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,146 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/8270689b-6540-4b13-ad3f-c84086e02af2/cancel - Client: testclient
+2025-09-24 00:45:14,147 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/8270689b-6540-4b13-ad3f-c84086e02af2/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,151 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:45:14,152 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 234.9MB - 응답 크기: 368B
+2025-09-24 00:45:14,155 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:45:14,156 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 368B
+2025-09-24 00:45:14,160 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:45:14,161 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,164 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:45:14,165 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,169 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:45:14,171 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.03MB - 현재 메모리: 234.9MB - 응답 크기: 417B
+2025-09-24 00:45:14,174 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:45:14,175 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,179 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:45:14,181 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.03MB - 현재 메모리: 234.9MB - 응답 크기: 427B
+2025-09-24 00:45:14,183 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:45:14,183 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 22B
+2025-09-24 00:45:14,185 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:45:14,186 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 234.9MB - 응답 크기: 368B
+2025-09-24 00:52:21,508 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:52:21,513 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.005s - 메모리 변화: +0.23MB - 현재 메모리: 184.8MB - 응답 크기: 424B
+2025-09-24 00:52:21,519 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - Client: testclient
+2025-09-24 00:52:21,521 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/test_analysis_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.07MB - 현재 메모리: 184.9MB - 응답 크기: 424B
+2025-09-24 00:52:21,526 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/e8496813-700f-4b3f-bcb1-fb1111c9d632/status - Client: testclient
+2025-09-24 00:52:21,527 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/e8496813-700f-4b3f-bcb1-fb1111c9d632/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.01MB - 현재 메모리: 184.9MB - 응답 크기: 22B
+2025-09-24 00:52:21,532 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/56aabd9d-ad5b-4528-82fe-c677ad1739ea/status - Client: testclient
+2025-09-24 00:52:21,533 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/56aabd9d-ad5b-4528-82fe-c677ad1739ea/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 184.9MB - 응답 크기: 22B
+2025-09-24 00:52:21,538 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/17fbd2c4-7c86-4a01-a036-c511c022d38e/result - Client: testclient
+2025-09-24 00:52:21,538 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/17fbd2c4-7c86-4a01-a036-c511c022d38e/result - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.0MB - 응답 크기: 22B
+2025-09-24 00:52:21,543 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/216b45da-331a-4378-a483-0edb8c29318b/cancel - Client: testclient
+2025-09-24 00:52:21,544 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/216b45da-331a-4378-a483-0edb8c29318b/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.0MB - 응답 크기: 22B
+2025-09-24 00:52:21,549 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/async-tasks/79fbd570-5754-4efb-87bc-dad963d5e010/cancel - Client: testclient
+2025-09-24 00:52:21,551 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/async-tasks/79fbd570-5754-4efb-87bc-dad963d5e010/cancel - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.0MB - 응답 크기: 22B
+2025-09-24 00:52:21,555 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:52:21,558 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.003s - 메모리 변화: +0.08MB - 현재 메모리: 185.1MB - 응답 크기: 368B
+2025-09-24 00:52:21,564 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:52:21,564 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.04MB - 현재 메모리: 185.1MB - 응답 크기: 368B
+2025-09-24 00:52:21,569 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:52:21,570 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:52:21,574 - performance - INFO - 요청 시작 - Method: POST - URL: /api/analysis/results/cache/cleanup - Client: testclient
+2025-09-24 00:52:21,575 - performance - INFO - 요청 완료 - Method: POST - URL: /api/analysis/results/cache/cleanup - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.03MB - 현재 메모리: 185.2MB - 응답 크기: 22B
+2025-09-24 00:52:21,580 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - Client: testclient
+2025-09-24 00:52:21,582 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/invalid_id/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.12MB - 현재 메모리: 185.3MB - 응답 크기: 417B
+2025-09-24 00:52:21,586 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - Client: testclient
+2025-09-24 00:52:21,587 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks/invalid_id/status - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.02MB - 현재 메모리: 185.3MB - 응답 크기: 22B
+2025-09-24 00:52:21,591 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - Client: testclient
+2025-09-24 00:52:21,594 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/integration_test_123/peg-comparison - 상태: 404 - 소요시간: 0.002s - 메모리 변화: +0.05MB - 현재 메모리: 185.3MB - 응답 크기: 427B
+2025-09-24 00:52:21,596 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/cache/statistics - Client: testclient
+2025-09-24 00:52:21,597 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/cache/statistics - 상태: 404 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.3MB - 응답 크기: 22B
+2025-09-24 00:52:21,599 - performance - INFO - 요청 시작 - Method: GET - URL: /api/analysis/results/async-tasks - Client: testclient
+2025-09-24 00:52:21,600 - performance - INFO - 요청 완료 - Method: GET - URL: /api/analysis/results/async-tasks - 상태: 422 - 소요시간: 0.001s - 메모리 변화: +0.00MB - 현재 메모리: 185.3MB - 응답 크기: 368B

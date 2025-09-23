@@ -131,6 +131,9 @@ dmypy.json
 # Task Master
 .taskmaster/
 
+# Test directories
+tests/
+
 # IDE
 .vscode/
 .idea/

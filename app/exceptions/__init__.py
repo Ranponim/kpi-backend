@@ -90,6 +90,22 @@ except Exception:
     # 실제 실행 환경에서는 반드시 존재해야 함
     pass
 
+# PEG 비교분석 예외들
+from .peg_comparison_exceptions import (
+    PEGComparisonException,
+    MCPConnectionError,
+    MCPTimeoutError,
+    DataValidationError as PEGDataValidationError,
+    AnalysisDataNotFoundError,
+    CacheError,
+    AsyncTaskError,
+    AsyncTaskNotFoundError,
+    RateLimitExceededError,
+    PermissionDeniedError,
+    AlgorithmVersionError,
+    ProcessingTimeoutError
+)
+
 __all__ = [
     # Choi 알고리즘 예외 클래스들
     "ChoiAlgorithmError",
@@ -119,6 +135,20 @@ __all__ = [
     "FilterCombinationException",
     "MongoDBIndexException",
     "LLMAnalysisException",
+    
+    # PEG 비교분석 예외 클래스들
+    "PEGComparisonException",
+    "MCPConnectionError",
+    "MCPTimeoutError",
+    "PEGDataValidationError",
+    "AnalysisDataNotFoundError",
+    "CacheError",
+    "AsyncTaskError",
+    "AsyncTaskNotFoundError",
+    "RateLimitExceededError",
+    "PermissionDeniedError",
+    "AlgorithmVersionError",
+    "ProcessingTimeoutError",
     
     # 예외 핸들러 함수들
     "base_api_exception_handler",

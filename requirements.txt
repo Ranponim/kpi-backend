@@ -21,6 +21,7 @@ matplotlib
 # HTTP 요청
 requests
 httpx
+aiohttp
 
 # 성능 모니터링
 psutil
@@ -33,6 +34,9 @@ dnspython
 # 캐싱
 redis
 cachetools
+
+# 암호화
+cryptography
 
 # 테스트 (개발용)
 pytest
