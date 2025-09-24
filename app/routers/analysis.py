@@ -139,13 +139,11 @@ async def create_analysis_result(
     try:
         collection = get_analysis_collection()
         
-        # 데이터 준비: DB에는 snake_case 필드명으로 저장 (v2 표준 키)
-        # by_alias=False로 덤프하여 camelCase alias가 아닌 원 필드명으로 저장한다
-        result_dict = result.model_dump(by_alias=False, exclude_unset=True)
+        payload = result.model_dump(by_alias=False, exclude_unset=True)
 
         # MongoDB 문서 크기(16MB) 체크
         try:
-            encoded = BSON.encode(result_dict)
+            encoded = BSON.encode(payload)
             doc_size = len(encoded)
             max_size = 16 * 1024 * 1024
             warn_size = 12 * 1024 * 1024
@@ -160,9 +158,8 @@ async def create_analysis_result(
             logger.warning(f"문서 크기 체크 실패(계속 진행): {e}")
         
         # metadata 업데이트
-        if "metadata" in result_dict:
-            result_dict["metadata"]["created_at"] = datetime.utcnow()
-            result_dict["metadata"]["updated_at"] = datetime.utcnow()
+        if "metadata" in payload:
+            payload["metadata"]["processing_timestamp"] = datetime.utcnow()
         
         # 요청 컨텍스트 로거 생성
         req_logger = create_request_context_logger("app.analysis.create")
@@ -183,11 +180,13 @@ async def create_analysis_result(
         })
         
         # 중복 검사 (같은 NE, Cell, 날짜에 대한 분석 결과가 이미 있는지 확인)
-        existing = await collection.find_one({
-            "ne_id": result.ne_id,
-            "cell_id": result.cell_id,
-            "analysis_date": result.analysis_date
-        })
+        unique_query = {}
+        metadata = payload.get("metadata", {})
+        if metadata.get("analysis_id"):
+            unique_query["metadata.analysis_id"] = metadata["analysis_id"]
+        if metadata.get("request_id"):
+            unique_query["metadata.request_id"] = metadata["request_id"]
+        existing = await collection.find_one(unique_query) if metadata.get("analysis_id") or metadata.get("request_id") else None
         
         if existing:
             raise DuplicateAnalysisResultException(
@@ -205,7 +204,7 @@ async def create_analysis_result(
             })
             
             try:
-                optimized_dict = await optimize_analysis_result(result_dict)
+                optimized_dict = await optimize_analysis_result(payload)
                 optimized_size = len(bson.BSON.encode(optimized_dict))
                 
                 req_logger.info("문서 최적화 완료", extra={
@@ -215,7 +214,7 @@ async def create_analysis_result(
                     "space_saved": doc_size - optimized_size
                 })
                 
-                result_dict = optimized_dict
+                payload = optimized_dict
                 
             except Exception as e:
                 req_logger.warning(f"문서 최적화 실패, 원본으로 저장: {e}", extra={
@@ -223,7 +222,7 @@ async def create_analysis_result(
                 })
         
         # 문서 삽입
-        insert_result = await collection.insert_one(result_dict)
+        insert_result = await collection.insert_one(payload)
         
         # 생성된 문서 조회
         created_result = await collection.find_one({"_id": insert_result.inserted_id})

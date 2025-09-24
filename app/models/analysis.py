@@ -152,71 +152,85 @@ class FilterMetadata(BaseModel):
     )
 
 
+class LLMAnalysisSummary(BaseModel):
+    """LLM 분석 요약 DTO"""
+
+    summary: Optional[str] = Field(None, description="요약")
+    issues: Optional[List[Any]] = Field(None, description="발견된 이슈 목록")
+    recommended_actions: Optional[List[Any]] = Field(None, description="권장 조치")
+    peg_insights: Dict[str, Any] = Field(default_factory=dict, description="PEG별 통찰")
+    confidence: Optional[float] = Field(None, description="LLM 신뢰도")
+    model: Optional[str] = Field(None, description="LLM 모델")
+
+
+class PegMetricItem(BaseModel):
+    """PEG 지표 항목"""
+
+    peg_name: str
+    n_minus_1_value: Optional[float]
+    n_value: Optional[float]
+    absolute_change: Optional[float]
+    percentage_change: Optional[float]
+    llm_analysis_summary: Optional[str] = None
+
+
+class PegMetricSummary(BaseModel):
+    """PEG 지표 요약 통계"""
+
+    total_pegs: int = 0
+    complete_data_pegs: int = 0
+    incomplete_data_pegs: int = 0
+    positive_changes: int = 0
+    negative_changes: int = 0
+    no_change: int = 0
+    avg_percentage_change: Optional[float] = None
+
+
+class PegMetricsPayload(BaseModel):
+    """PEG 지표 응답 페이로드"""
+
+    items: List[PegMetricItem] = Field(default_factory=list)
+    statistics: PegMetricSummary = Field(default_factory=PegMetricSummary)
+
+
+class AnalysisMetadataPayload(BaseModel):
+    """분석 메타데이터"""
+
+    workflow_version: str = "4.0"
+    processing_timestamp: datetime = Field(default_factory=datetime.utcnow)
+    request_id: str = "unknown"
+    analysis_id: Optional[str] = None
+    analysis_type: str = "enhanced"
+    selected_pegs: List[str] = Field(default_factory=list)
+    filters: Dict[str, Any] = Field(default_factory=dict)
+    total_pegs: Optional[int] = None
+    complete_data_pegs: Optional[int] = None
+    source: str = "backend.analysis"
+    output_dir: Optional[str] = None
+
+
 class AnalysisResultBase(BaseModel):
-    """
-    분석 결과 기본 모델
-    
-    생성과 응답에서 공통으로 사용되는 필드들을 정의합니다.
-    """
-    analysis_date: datetime = Field(
-        default_factory=datetime.utcnow,
-        description="분석 기준 날짜",
-        alias="analysisDate"
-    )
-    # 하위 호환성을 위해 기존 필드들 유지 (Optional)
-    ne_id: Optional[str] = Field(None, description="Network Element ID (하위 호환성용)", alias="neId")
-    cell_id: Optional[str] = Field(None, description="Cell ID (하위 호환성용)", alias="cellId")
-    
-    # 새로운 다중 타겟 지원 필드들
-    target_scope: Optional[TargetScope] = Field(None, description="분석 타겟 범위")
-    filter_metadata: Optional[FilterMetadata] = Field(None, description="필터링 메타데이터")
-    results: List[AnalysisDetail] = Field(
-        default_factory=list,
-        description="KPI별 분석 결과 목록"
-    )
-    stats: List[StatDetail] = Field(
-        default_factory=list,
-        description="통계 분석 결과 목록"
-    )
+    """분석 결과 기본 모델"""
+
     status: str = Field(default="success", description="분석 상태")
-    report_path: Optional[str] = Field(None, description="보고서 파일 경로")
-    # 운영 요약 및 압축 원본(하이브리드 전략용)
-    results_overview: Optional[Dict[str, Any]] = Field(
-        None,
-        description="요약 결과(핵심 소견/경보/권장사항)",
-        alias="resultsOverview"
-    )
-    analysis_raw_compact: Optional[Dict[str, Any]] = Field(
-        None,
-        description="압축된 원본 분석 데이터(상세 Raw의 경량 버전)",
-        alias="analysisRawCompact"
-    )
-    metadata: AnalysisMetadata = Field(
-        default_factory=AnalysisMetadata,
-        description="분석 메타데이터"
+    time_ranges: Dict[str, Any] = Field(default_factory=dict, description="분석 시간 범위")
+    peg_metrics: PegMetricsPayload = Field(default_factory=PegMetricsPayload)
+    llm_analysis: LLMAnalysisSummary = Field(default_factory=LLMAnalysisSummary)
+    metadata: AnalysisMetadataPayload = Field(default_factory=AnalysisMetadataPayload)
+    legacy_payload: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="레거시 호환을 위한 원본 데이터",
+        alias="legacyPayload"
     )
     
-    # LLM 분석 관련 필드 추가
-    analysis_id: Optional[str] = Field(None, description="분석 고유 ID")
-    analysis_type: str = Field(default="standard", description="분석 유형 (standard, llm_analysis)")
-    request_params: Optional[Dict[str, Any]] = Field(None, description="요청 파라미터")
-    completed_at: Optional[datetime] = Field(None, description="완료 시간")
-    error_message: Optional[str] = Field(None, description="오류 메시지")
-    
-    # 기존 필드와의 호환성을 위해 유지 - 기본값 제공으로 ResponseValidationError 방지
-    analysis: Dict[str, Any] = Field(
-        default_factory=dict,
-        description="레거시 분석 데이터 (호환성 유지용)"
-    )
-    
-    # 프론트엔드 호환성을 위한 data 필드 추가
-    data: Dict[str, Any] = Field(
-        default_factory=dict,
-        description="분석 결과 데이터 (프론트엔드 호환성용)"
-    )
-    
+    # MongoDB 저장을 위한 필수 필드들
+    ne_id: str = Field(..., description="NE ID")
+    cell_id: str = Field(..., description="Cell ID") 
+    analysis_date: datetime = Field(default_factory=datetime.utcnow, description="분석 날짜")
+    analysis_type: str = Field(default="enhanced", description="분석 유형")
+
     model_config = ConfigDict(
-        populate_by_name=True,  # alias와 원본 필드명 모두 허용
+        populate_by_name=True,
         json_encoders={
             datetime: lambda v: v.isoformat(),
             PyObjectId: lambda v: str(v)
@@ -234,120 +248,66 @@ class AnalysisResultCreate(AnalysisResultBase):
 
 
 class AnalysisResultUpdate(BaseModel):
-    """
-    분석 결과 업데이트 요청 모델
-    
-    기존 분석 결과를 수정할 때 사용됩니다.
-    """
-    analysis_date: Optional[datetime] = Field(None, alias="analysisDate")
-    ne_id: Optional[str] = Field(None, alias="neId") 
-    cell_id: Optional[str] = Field(None, alias="cellId")
-    results: Optional[List[AnalysisDetail]] = None
-    stats: Optional[List[StatDetail]] = None
+    """분석 결과 업데이트 모델"""
+
     status: Optional[str] = None
-    report_path: Optional[str] = None
-    analysis: Optional[Dict[str, Any]] = None
-    
-    model_config = ConfigDict(populate_by_name=True)
+    peg_metrics: Optional[PegMetricsPayload] = None
+    llm_analysis: Optional[LLMAnalysisSummary] = None
+    metadata: Optional[AnalysisMetadataPayload] = None
 
 
 class AnalysisResultModel(AnalysisResultBase):
-    """
-    분석 결과 응답 모델
-    
-    데이터베이스에서 조회된 분석 결과를 반환할 때 사용됩니다.
-    """
+    """MongoDB 저장/조회용 분석 결과 모델"""
+
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    
+
     @classmethod
     def from_mongo(cls, data: dict):
-        """
-        MongoDB 문서를 AnalysisResultModel로 변환
+        """Mongo 문서를 최신 DTO에 맞게 변환"""
 
-        Args:
-            data: MongoDB에서 조회된 문서
-
-        Returns:
-            AnalysisResultModel: 변환된 모델 인스턴스
-        """
         if not data:
             return None
 
-        try:
-            # _id를 id로 변환
-            if "_id" in data:
-                data["id"] = data["_id"]
+        doc = data.copy()
 
-            # metadata 처리 - 없으면 기본값 생성
-            if "metadata" not in data:
-                data["metadata"] = AnalysisMetadata().model_dump()
+        if "_id" in doc:
+            doc["id"] = doc["_id"]
 
-            # metadata.analysis_type이 있으면 최상위 analysis_type을 덮어쓰기
-            metadata = data.get("metadata", {})
-            metadata_analysis_type = metadata.get("analysis_type") if metadata else None
-            
-            logger.info(f"from_mongo 메타데이터 분석", extra={
-                "has_metadata": bool(metadata),
-                "metadata_analysis_type": metadata_analysis_type,
-                "current_analysis_type": data.get("analysis_type"),
-                "metadata_keys": list(metadata.keys()) if metadata else []
-            })
-            
-            # metadata.analysis_type이 존재하고 유효한 값인 경우에만 복사
-            if (metadata and 
-                metadata_analysis_type and 
-                metadata_analysis_type != "standard" and
-                metadata_analysis_type != ""):
-                data["analysis_type"] = metadata_analysis_type
-                logger.info(f"metadata.analysis_type을 최상위 analysis_type으로 복사: {metadata_analysis_type}")
-            else:
-                logger.warning(f"metadata.analysis_type 복사 조건 불만족", extra={
-                    "metadata_exists": bool(metadata),
-                    "metadata_analysis_type": metadata_analysis_type,
-                    "is_standard": metadata_analysis_type == "standard",
-                    "is_empty": metadata_analysis_type == ""
-                })
+        legacy_payload = {
+            "results": doc.pop("results", None),
+            "stats": doc.pop("stats", None),
+            "results_overview": doc.pop("results_overview", None),
+            "analysis_raw_compact": doc.pop("analysis_raw_compact", None),
+            "analysis": doc.pop("analysis", None),
+            "data": doc.pop("data", None),
+        }
 
-            # 분석 결과가 없는 경우 빈 객체로 초기화
-            if "analysis_result" not in data:
-                data["analysis_result"] = None
+        llm_analysis = doc.get("llm_analysis") or {}
+        
+        # DTO 구조에서 peg_metrics 추출 (우선순위)
+        peg_metrics_data = doc.get("peg_metrics", {})
+        peg_items = peg_metrics_data.get("items", [])
+        peg_statistics = peg_metrics_data.get("statistics", {})
+        
+        # 레거시 구조 fallback
+        if not peg_items:
+            peg_items = doc.get("peg_analysis", {}).get("results", [])
+        if not peg_statistics:
+            peg_statistics = doc.get("peg_analysis", {}).get("statistics", {})
 
-            # 권장사항이 없는 경우 빈 리스트로 초기화
-            if "recommendations" not in data:
-                data["recommendations"] = []
+        normalized = {
+            "status": doc.get("status", "success"),
+            "time_ranges": doc.get("time_ranges") or {},
+            "peg_metrics": {
+                "items": peg_items,
+                "statistics": peg_statistics,
+            },
+            "llm_analysis": llm_analysis,
+            "metadata": doc.get("metadata") or {},
+            "legacy_payload": legacy_payload,
+        }
 
-            # 상태 필드가 없는 경우 기본값 설정
-            if "status" not in data:
-                data["status"] = "pending"
-
-            # 실제 분석 데이터를 우선순위에 따라 가져옴
-            actual_data = (
-                data.get("results") or                    # LLM 분석 결과
-                data.get("results_overview") or           # 요약 결과
-                data.get("analysis_raw_compact") or       # 압축된 원본
-                {}                                        # 기본값
-            )
-
-            # analysis 필드가 None인 경우 실제 분석 결과로 초기화
-            if "analysis" not in data or data["analysis"] is None:
-                data["analysis"] = actual_data  # 빈 객체 대신 실제 데이터 사용
-
-            # data 필드가 None인 경우 실제 분석 결과로 초기화
-            if "data" not in data or data["data"] is None:
-                data["data"] = actual_data
-
-            # Pydantic 모델 생성 시 명시적으로 analysis_type 전달하여 기본값 우선순위 문제 해결
-            # data에서 analysis_type을 제거하고 명시적으로 전달하여 중복 전달 오류 방지
-            data_copy = data.copy()
-            analysis_type_value = data_copy.pop("analysis_type", "standard")
-            return cls(analysis_type=analysis_type_value, **data_copy)
-
-        except Exception as e:
-            logger.error(f"AnalysisResultModel 변환 중 오류: {e}", extra={
-                "error_type": type(e).__name__,
-                "data_keys": list(data.keys()) if isinstance(data, dict) else "not_dict"
-            })
-            raise
+        return cls(**{**doc, **normalized})
 
 
 class AnalysisResultSummary(BaseModel):
