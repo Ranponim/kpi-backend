@@ -313,3 +313,5 @@ async def health_check():
             "error": str(e),
             "timestamp": datetime.utcnow().isoformat()
         }
+
+

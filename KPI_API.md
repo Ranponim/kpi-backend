@@ -92,3 +92,6 @@ await apiClient.post("/api/kpi/query", {
 ## 변경 이력
 
 - 2025-08-14: 단일 요청(`kpi_types`) 사용 및 응답 객체 스펙 문서화. 프론트 방어 로직 추가.
+
+
+

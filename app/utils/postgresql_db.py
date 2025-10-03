@@ -51,42 +51,67 @@ def query_kpi_data(
     """
     logger.info(f"PostgreSQL KPI 데이터 조회 시작: {len(kpi_types)}개 KPI")
 
-    # entity_id 대신 ne, cellid를 사용하고, kpi_type 대신 peg_name을 사용합니다.
-    # 테이블 스키마는 analysis_llm.py를 참조하여 가정합니다.
-    # 테이블: summary, 컬럼: datetime, peg_name, value, ne, cellid
+    # 새 스키마 지원: summary(datetime, family_id, family_name, ne_key, rel_ver, name, values(jsonb), version)
+    # values 형태 2가지 지원
+    # 1) 평면: { "peg": "value", ..., "index_name":"..." }
+    # 2) 중첩: { "<cellid>": { "peg": "value" }, ..., "index_name":"CellIdentity" }
 
+    # 평면/중첩을 모두 행으로 펼친 뒤 공통 WHERE 절을 적용
     query = """
-        SELECT
-            datetime as timestamp,
-            ne || '#' || cellid as entity_id,
-            peg_name as kpi_type,
-            peg_name,
-            value,
-            ne,
-            cellid as cell_id,
-            to_char(datetime, 'YYYY-MM-DD') as date,
-            extract(hour from datetime) as hour
-        FROM
-            summary
-        WHERE
-            datetime BETWEEN %s AND %s
-            AND peg_name = ANY(%s)
+        WITH flat AS (
+            SELECT
+                s.datetime AS timestamp,
+                s.ne_key AS ne,
+                NULL::int AS cell_id,
+                s.ne_key AS entity_id,
+                jt.key AS peg_name,
+                NULLIF(jt.value, '')::numeric AS value,
+                to_char(s.datetime, 'YYYY-MM-DD') AS date,
+                extract(hour from s.datetime) AS hour
+            FROM summary s
+            CROSS JOIN LATERAL jsonb_each_text(s.values) AS jt(key, value)
+            WHERE s.datetime BETWEEN %s AND %s
+              AND jt.key <> 'index_name'
+        ),
+        nested AS (
+            SELECT
+                s.datetime AS timestamp,
+                s.ne_key AS ne,
+                NULLIF(l1.key, '')::int AS cell_id,
+                s.ne_key || '#' || l1.key AS entity_id,
+                jt.key AS peg_name,
+                NULLIF(jt.value, '')::numeric AS value,
+                to_char(s.datetime, 'YYYY-MM-DD') AS date,
+                extract(hour from s.datetime) AS hour
+            FROM summary s
+            CROSS JOIN LATERAL jsonb_each(s.values) AS l1(key, value)
+            JOIN LATERAL jsonb_each_text(l1.value) AS jt(key, value)
+                 ON jsonb_typeof(l1.value) = 'object'
+            WHERE s.datetime BETWEEN %s AND %s
+        )
+        SELECT *
+        FROM (
+            SELECT * FROM flat
+            UNION ALL
+            SELECT * FROM nested
+        ) x
+        WHERE x.peg_name = ANY(%s)
     """
 
-    params = [start_date, end_date, kpi_types]
+    params = [start_date, end_date, start_date, end_date, kpi_types]
 
     if ne_filters:
-        query += " AND ne = ANY(%s)"
+        query += " AND x.ne = ANY(%s)"
         params.append(ne_filters)
 
     if cellid_filters:
-        # cellid_filters를 정수 배열로 변환
+        # cellid_filters를 정수 배열로 변환 (중첩 구조에서만 의미 있음)
         cellid_ints = [int(cellid) for cellid in cellid_filters if str(cellid).isdigit()]
         if cellid_ints:
-            query += " AND cellid = ANY(%s)"
+            query += " AND x.cell_id = ANY(%s)"
             params.append(cellid_ints)
 
-    query += " ORDER BY datetime ASC;"
+    query += " ORDER BY x.timestamp ASC;"
 
     logger.info(f"PostgreSQL 쿼리: {query}")
     logger.info(f"PostgreSQL 파라미터: {params}")
@@ -148,60 +173,116 @@ def query_kpi_time_series(
     try:
         with get_db_connection() as conn:
             with conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
-                params = [start_date, end_date, kpi_types]
-
-                where_clauses = [
-                    "datetime BETWEEN %s AND %s",
-                    "peg_name = ANY(%s)",
-                ]
-
-                if ne_filters:
-                    where_clauses.append("ne = ANY(%s)")
-                    params.append(ne_filters)
-
                 aggregate_mode = aggregate_cells_if_missing and not cellid_filters
 
+                base_params: List[Any] = [start_date, end_date, start_date, end_date, kpi_types]
+
+                ne_clause = ""
+                ne_params: List[Any] = []
+                if ne_filters:
+                    ne_clause = " AND x.ne = ANY(%s)"
+                    ne_params.append(ne_filters)
+
+                cell_clause = ""
+                cell_params: List[Any] = []
                 if not aggregate_mode and cellid_filters:
-                    # cellid_filters를 정수 배열로 변환
                     cellid_ints = [int(cellid) for cellid in cellid_filters if str(cellid).isdigit()]
                     if cellid_ints:
-                        where_clauses.append("cellid = ANY(%s)")
-                        params.append(cellid_ints)
-
-                where_sql = " AND ".join(where_clauses)
+                        cell_clause = " AND x.cell_id = ANY(%s)"
+                        cell_params.append(cellid_ints)
 
                 if aggregate_mode:
-                    # NE 단위 집계 (Cell 전체 평균)
-                    sql = f"""
+                    # 평면/중첩을 펼친 뒤 NE 기준 평균 집계
+                    sql = """
+                        WITH flat AS (
+                            SELECT
+                                s.datetime AS timestamp,
+                                s.ne_key AS ne,
+                                NULL::int AS cell_id,
+                                s.ne_key AS entity_id,
+                                jt.key AS peg_name,
+                                NULLIF(jt.value, '')::numeric AS value
+                            FROM summary s
+                            CROSS JOIN LATERAL jsonb_each_text(s.values) AS jt(key, value)
+                            WHERE s.datetime BETWEEN %s AND %s
+                              AND jt.key <> 'index_name'
+                        ),
+                        nested AS (
+                            SELECT
+                                s.datetime AS timestamp,
+                                s.ne_key AS ne,
+                                NULLIF(l1.key, '')::int AS cell_id,
+                                s.ne_key || '#' || l1.key AS entity_id,
+                                jt.key AS peg_name,
+                                NULLIF(jt.value, '')::numeric AS value
+                            FROM summary s
+                            CROSS JOIN LATERAL jsonb_each(s.values) AS l1(key, value)
+                            JOIN LATERAL jsonb_each_text(l1.value) AS jt(key, value)
+                                 ON jsonb_typeof(l1.value) = 'object'
+                            WHERE s.datetime BETWEEN %s AND %s
+                        )
                         SELECT
-                            datetime as timestamp,
-                            peg_name,
-                            AVG(value) as value,
-                            ne,
-                            NULL::int as cell_id,
-                            ne as entity_id
-                        FROM {get_db_connection_details().get('table', 'summary')}
-                        WHERE {where_sql}
-                        GROUP BY timestamp, peg_name, ne
-                        ORDER BY timestamp ASC
-                    """
-                else:
-                    # 개별 Cell 시계열
-                    sql = f"""
-                        SELECT
-                            datetime as timestamp,
-                            peg_name,
-                            value,
-                            ne,
-                            cellid as cell_id,
-                            ne || '#' || cellid as entity_id
-                        FROM {get_db_connection_details().get('table', 'summary')}
-                        WHERE {where_sql}
-                        ORDER BY datetime ASC
-                    """
+                            x.timestamp,
+                            x.peg_name,
+                            AVG(x.value) AS value,
+                            x.ne,
+                            NULL::int AS cell_id,
+                            x.ne AS entity_id
+                        FROM (
+                            SELECT * FROM flat
+                            UNION ALL
+                            SELECT * FROM nested
+                        ) x
+                        WHERE x.peg_name = ANY(%s)
+                    """ + ne_clause + "\n                        GROUP BY x.timestamp, x.peg_name, x.ne\n                        ORDER BY x.timestamp ASC\n                    "
 
-                # 안전하게 summary 테이블 고정 (환경 변수 미사용 시)
-                sql = sql.replace(get_db_connection_details().get('table', 'summary'), 'summary')
+                    params = base_params + ne_params
+                else:
+                    # 개별 Cell 시계열 (중첩 구조 우선, 평면 구조는 cell_id NULL)
+                    sql = """
+                        WITH flat AS (
+                            SELECT
+                                s.datetime AS timestamp,
+                                s.ne_key AS ne,
+                                NULL::int AS cell_id,
+                                s.ne_key AS entity_id,
+                                jt.key AS peg_name,
+                                NULLIF(jt.value, '')::numeric AS value
+                            FROM summary s
+                            CROSS JOIN LATERAL jsonb_each_text(s.values) AS jt(key, value)
+                            WHERE s.datetime BETWEEN %s AND %s
+                              AND jt.key <> 'index_name'
+                        ),
+                        nested AS (
+                            SELECT
+                                s.datetime AS timestamp,
+                                s.ne_key AS ne,
+                                NULLIF(l1.key, '')::int AS cell_id,
+                                s.ne_key || '#' || l1.key AS entity_id,
+                                jt.key AS peg_name,
+                                NULLIF(jt.value, '')::numeric AS value
+                            FROM summary s
+                            CROSS JOIN LATERAL jsonb_each(s.values) AS l1(key, value)
+                            JOIN LATERAL jsonb_each_text(l1.value) AS jt(key, value)
+                                 ON jsonb_typeof(l1.value) = 'object'
+                            WHERE s.datetime BETWEEN %s AND %s
+                        )
+                        SELECT
+                            x.timestamp,
+                            x.peg_name,
+                            x.value,
+                            x.ne,
+                            x.cell_id,
+                            CASE WHEN x.cell_id IS NULL THEN x.ne ELSE x.ne || '#' || x.cell_id::text END AS entity_id
+                        FROM (
+                            SELECT * FROM flat
+                            UNION ALL
+                            SELECT * FROM nested
+                        ) x
+                        WHERE x.peg_name = ANY(%s)
+                    """ + ne_clause + cell_clause + "\n                        ORDER BY x.timestamp ASC\n                    "
+
+                    params = base_params + ne_params + cell_params
 
                 cur.execute(sql, tuple(params))
                 rows = cur.fetchall()

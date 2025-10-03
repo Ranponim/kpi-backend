@@ -316,3 +316,6 @@ docker exec kpi-backend python -m alembic upgrade head
 4. **리소스**: Docker 컨테이너가 충분한 메모리와 CPU를 할당받을 수 있도록 확인
 
 _문서 업데이트: 2025-01-14 (Docker Compose 및 환경 설정 반영)_
+
+
+

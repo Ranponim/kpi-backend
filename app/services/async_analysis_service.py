@@ -435,3 +435,5 @@ class AsyncAnalysisService:
 
 # 전역 서비스 인스턴스
 async_analysis_service = AsyncAnalysisService()
+
+

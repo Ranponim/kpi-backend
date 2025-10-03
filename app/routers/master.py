@@ -255,12 +255,29 @@ async def get_db_pegs(req: DbPegRequest) -> Dict[str, Any]:
             connect_timeout=5,
         )
         cur = conn.cursor()
+        # JSONB values에서 평면/중첩 키를 모두 추출하여 PEG 목록 생성
+        # - 평면: jsonb_object_keys(values)에서 'index_name' 제외
+        # - 중첩: jsonb_each(values)로 1차 키(셀/인덱스)를 펼친 뒤, 하위 object의 키를 추출
         cur.execute(
             f"""
-            SELECT DISTINCT peg_name
-            FROM {req.table}
-            WHERE peg_name IS NOT NULL
-            ORDER BY peg_name ASC
+            WITH flat_keys AS (
+                SELECT jsonb_object_keys(values) AS key
+                FROM {req.table}
+            ),
+            nested_keys AS (
+                SELECT jsonb_object_keys(l1.value) AS key
+                FROM {req.table}
+                CROSS JOIN LATERAL jsonb_each(values) AS l1(key, value)
+                WHERE jsonb_typeof(l1.value) = 'object'
+            )
+            SELECT key AS peg_name
+            FROM (
+                SELECT key FROM flat_keys WHERE key <> 'index_name'
+                UNION
+                SELECT key FROM nested_keys
+            ) t
+            GROUP BY key
+            ORDER BY key ASC
             LIMIT %s
             """,
             (int(req.limit),)
