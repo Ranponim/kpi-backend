@@ -141,6 +141,20 @@ async def create_analysis_result(
         
         payload = result.model_dump(by_alias=False, exclude_unset=True)
 
+        # 요청 컨텍스트 로거 생성
+        req_logger = create_request_context_logger("app.analysis.create")
+
+        # MCP 호환성: analysis_date가 문자열인 경우 datetime으로 변환
+        if "analysis_date" in payload and isinstance(payload["analysis_date"], str):
+            try:
+                # ISO 문자열을 datetime 객체로 변환
+                date_str = payload["analysis_date"].replace('Z', '+00:00')
+                payload["analysis_date"] = datetime.fromisoformat(date_str)
+                req_logger.info("analysis_date 문자열을 datetime으로 변환: %s", payload["analysis_date"])
+            except ValueError as e:
+                req_logger.warning("analysis_date 변환 실패, 현재 시간 사용: %s", e)
+                payload["analysis_date"] = datetime.utcnow()
+
         # MongoDB 문서 크기(16MB) 체크
         try:
             encoded = BSON.encode(payload)
@@ -160,9 +174,6 @@ async def create_analysis_result(
         # metadata 업데이트
         if "metadata" in payload:
             payload["metadata"]["processing_timestamp"] = datetime.utcnow()
-        
-        # 요청 컨텍스트 로거 생성
-        req_logger = create_request_context_logger("app.analysis.create")
         
         req_logger.info("새 분석 결과 생성 시도", extra={
             "ne_id": result.ne_id,
