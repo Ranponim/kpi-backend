@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse
 
 # 내부 모듈 임포트
 from .db import connect_to_mongo, close_mongo_connection, get_db_stats
-from .routers import analysis, preference, kpi, statistics, master, llm_analysis, peg_comparison
+from .routers import analysis, analysis_v2, preference, kpi, statistics, master, llm_analysis, peg_comparison
 from .middleware.performance import performance_middleware, setup_mongo_monitoring, get_performance_stats
 from .exceptions import (
     BaseAPIException,
@@ -109,6 +109,35 @@ async def lifespan(app: FastAPI):
     try:
         await connect_to_mongo()
         logger.info("데이터베이스 연결 완료")
+        
+        # V2 컬렉션 인덱스 생성
+        from .db import get_database
+        db = get_database()
+        
+        try:
+            # 복합 인덱스: ne_id + cell_id + swname (검색 최적화)
+            await db.analysis_results_v2.create_index(
+                [("ne_id", 1), ("cell_id", 1), ("swname", 1)],
+                name="idx_ne_cell_swname"
+            )
+            
+            # created_at 인덱스 (시간순 정렬)
+            await db.analysis_results_v2.create_index(
+                [("created_at", -1)],
+                name="idx_created_at_desc"
+            )
+            
+            # Choi 판정 상태 인덱스
+            await db.analysis_results_v2.create_index(
+                [("choi_result.status", 1)],
+                name="idx_choi_status",
+                sparse=True  # choi_result가 없는 문서 제외
+            )
+            
+            logger.info("MongoDB V2 인덱스 생성 완료")
+            
+        except Exception as idx_e:
+            logger.warning(f"인덱스 생성 중 경고 (계속 진행): {idx_e}")
         
         # MongoDB 성능 모니터링 설정
         setup_mongo_monitoring()
@@ -246,6 +275,7 @@ app.add_exception_handler(Exception, general_exception_handler)
 
 # 라우터 등록
 app.include_router(analysis.router)
+app.include_router(analysis_v2.router)  # 간소화된 분석 결과 API V2
 app.include_router(preference.router)
 app.include_router(kpi.router)
 app.include_router(statistics.router)   # Task 46 - Statistics 비교 분석 API

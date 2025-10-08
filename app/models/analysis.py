@@ -223,17 +223,10 @@ class AnalysisResultBase(BaseModel):
         alias="legacyPayload"
     )
     
-    # MCP 호환성을 위한 request_context 필드 추가
-    request_context: Optional[Dict[str, Any]] = Field(
-        default=None,
-        description="MCP에서 전송하는 요청 컨텍스트 정보"
-    )
-    
     # MongoDB 저장을 위한 필수 필드들
     ne_id: str = Field(..., description="NE ID")
     cell_id: str = Field(..., description="Cell ID") 
-    # MCP 호환성을 위해 analysis_date를 Union 타입으로 수정
-    analysis_date: Union[datetime, str] = Field(default_factory=datetime.utcnow, description="분석 날짜")
+    analysis_date: datetime = Field(default_factory=datetime.utcnow, description="분석 날짜")
     analysis_type: str = Field(default="enhanced", description="분석 유형")
 
     model_config = ConfigDict(
