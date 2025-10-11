@@ -54,39 +54,69 @@ router = APIRouter(
 async def create_analysis_result_v2(
     result: AnalysisResultSimplifiedCreate = Body(
         ...,
-        examples=[{
-            "ne_id": "nvgnb#10000",
-            "cell_id": "2010",
-            "swname": "host01",
-            "rel_ver": "R23A",
-            "analysis_period": {
-                "n_minus_1_start": "2025-01-19 00:00:00",
-                "n_minus_1_end": "2025-01-19 23:59:59",
-                "n_start": "2025-01-20 00:00:00",
-                "n_end": "2025-01-20 23:59:59"
+        examples=[
+            {
+                "ne_id": "nvgnb#10000",
+                "cell_id": "2010",
+                "swname": "host01",
+                "rel_ver": "R23A",
+                "analysis_period": {
+                    "n_minus_1_start": "2025-01-19 00:00:00",
+                    "n_minus_1_end": "2025-01-19 23:59:59",
+                    "n_start": "2025-01-20 00:00:00",
+                    "n_end": "2025-01-20 23:59:59"
+                },
+                "choi_result": {
+                    "enabled": True,
+                    "status": "normal",
+                    "score": 9.2
+                },
+                "llm_analysis": {
+                    "summary": "성능 개선 확인됨",
+                    "issues": [],
+                    "recommendations": ["지속 모니터링"],
+                    "confidence": 0.95,
+                    "model_name": "gemini-2.5-pro"
+                },
+                "peg_comparisons": [
+                    {
+                        "peg_name": "RACH_SUCCESS_RATE",
+                        "n_minus_1": {"avg": 97.5, "pct_95": 99.0},
+                        "n": {"avg": 98.2, "pct_95": 99.5},
+                        "change_absolute": 0.7,
+                        "change_percentage": 0.72
+                    }
+                ]
             },
-            "choi_result": {
-                "enabled": True,
-                "status": "normal",
-                "score": 9.2
-            },
-            "llm_analysis": {
-                "summary": "성능 개선 확인됨",
-                "issues": [],
-                "recommendations": ["지속 모니터링"],
-                "confidence": 0.95,
-                "model_name": "gemini-2.5-pro"
-            },
-            "peg_comparisons": [
-                {
-                    "peg_name": "RACH_SUCCESS_RATE",
-                    "n_minus_1": {"avg": 97.5, "pct_95": 99.0},
-                    "n": {"avg": 98.2, "pct_95": 99.5},
-                    "change_absolute": 0.7,
-                    "change_percentage": 0.72
-                }
-            ]
-        }]
+            {
+                "ne_id": "All NEs",
+                "cell_id": "All cells",
+                "swname": "All hosts",
+                "rel_ver": None,
+                "analysis_period": {
+                    "n_minus_1_start": "2025-01-19 00:00:00",
+                    "n_minus_1_end": "2025-01-19 23:59:59",
+                    "n_start": "2025-01-20 00:00:00",
+                    "n_end": "2025-01-20 23:59:59"
+                },
+                "llm_analysis": {
+                    "summary": "전체 네트워크 분석 - 모든 셀 집계",
+                    "issues": ["일부 셀에서 성능 저하 감지"],
+                    "recommendations": ["개별 셀 분석 권장"],
+                    "confidence": 0.85,
+                    "model_name": "gemini-2.5-pro"
+                },
+                "peg_comparisons": [
+                    {
+                        "peg_name": "RACH_SUCCESS_RATE",
+                        "n_minus_1": {"avg": 96.5, "pct_95": 98.5},
+                        "n": {"avg": 97.0, "pct_95": 99.0},
+                        "change_absolute": 0.5,
+                        "change_percentage": 0.52
+                    }
+                ]
+            }
+        ]
     )
 ):
     """
@@ -454,4 +484,7 @@ async def get_analysis_stats_v2():
 
 # 라우터 export
 __all__ = ["router"]
+
+
+
 

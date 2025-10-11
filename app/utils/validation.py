@@ -61,16 +61,36 @@ class ValidationRule:
 # === 기본 검증 규칙들 ===
 
 def is_valid_ne_id(value: str) -> bool:
-    """NE ID 형식 검증 (예: eNB001, gNB123)"""
+    """
+    NE ID 형식 검증 (예: eNB001, gNB123)
+    
+    특수 값:
+    - "All NEs": 모든 NE를 의미하는 집계 값
+    """
     if not isinstance(value, str):
         return False
+    
+    # 특수 값 허용
+    if value == "All NEs":
+        return True
+    
     pattern = r'^[egn]NB\d{3,6}$'
     return bool(re.match(pattern, value, re.IGNORECASE))
 
 def is_valid_cell_id(value: str) -> bool:
-    """Cell ID 형식 검증 (예: CELL001, Cell_123)"""
+    """
+    Cell ID 형식 검증 (예: CELL001, Cell_123)
+    
+    특수 값:
+    - "All cells": 모든 셀을 의미하는 집계 값
+    """
     if not isinstance(value, str):
         return False
+    
+    # 특수 값 허용
+    if value == "All cells":
+        return True
+    
     pattern = r'^CELL[_]?\d{3,6}$'
     return bool(re.match(pattern, value, re.IGNORECASE))
 

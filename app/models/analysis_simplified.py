@@ -106,9 +106,9 @@ class AnalysisResultSimplified(BaseModel):
     """
     
     # ========== 식별자 (복합 인덱스 대상) ==========
-    ne_id: str = Field(..., description="Network Element ID", examples=["nvgnb#10000", "420"])
-    cell_id: str = Field(..., description="Cell Identity", examples=["2010", "1100"])
-    swname: str = Field(..., description="Software Name (구 host)", examples=["host01", "192.168.1.10"])
+    ne_id: str = Field(..., description="Network Element ID", examples=["nvgnb#10000", "420", "All NEs"])
+    cell_id: str = Field(..., description="Cell Identity", examples=["2010", "1100", "All cells"])
+    swname: str = Field(..., description="Software Name (구 host)", examples=["host01", "192.168.1.10", "All hosts"])
     rel_ver: Optional[str] = Field(None, description="Release Version", examples=["R23A", "5.2.1"])
     
     # ========== 타임스탬프 ==========
@@ -295,4 +295,7 @@ __all__ = [
     "ChoiAlgorithmResult",
     "LLMAnalysis",
 ]
+
+
+
 
