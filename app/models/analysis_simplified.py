@@ -214,6 +214,9 @@ class AnalysisResultSimplifiedModel(AnalysisResultSimplified):
         doc = data.copy()
         if "_id" in doc:
             doc["id"] = doc["_id"]
+            # analysis_id가 없거나 None인 경우 _id 값을 analysis_id로 사용
+            if not doc.get("analysis_id"):
+                doc["analysis_id"] = str(doc["_id"])
         return cls(**doc)
 
 
