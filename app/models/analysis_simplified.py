@@ -64,16 +64,16 @@ class ChoiAlgorithmResult(BaseModel):
 
 class DiagnosticFinding(BaseModel):
     """진단 결과 (Enhanced 프롬프트 구조)"""
-    primary_hypothesis: str = Field(..., description="주요 가설")
-    supporting_evidence: str = Field(..., description="지지 증거")
-    confounding_factors_assessment: str = Field(..., description="교란 요인 평가")
+    primary_hypothesis: Optional[str] = Field(None, description="주요 가설")
+    supporting_evidence: Optional[str] = Field(None, description="지지 증거")
+    confounding_factors_assessment: Optional[str] = Field(None, description="교란 요인 평가")
 
 
 class RecommendedAction(BaseModel):
     """권장 조치 (Enhanced 프롬프트 구조)"""
-    priority: str = Field(..., description="우선순위 (P1/P2/P3)")
-    action: str = Field(..., description="조치 내용")
-    details: str = Field(..., description="상세 설명")
+    priority: Optional[str] = Field(None, description="우선순위 (P1/P2/P3)")
+    action: Optional[str] = Field(None, description="조치 내용")
+    details: Optional[str] = Field(None, description="상세 설명")
 
 
 class LLMAnalysis(BaseModel):
