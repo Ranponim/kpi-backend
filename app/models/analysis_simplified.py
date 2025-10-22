@@ -206,18 +206,67 @@ class AnalysisResultSimplifiedModel(AnalysisResultSimplified):
     """MongoDB 저장/조회용 모델"""
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     
+    model_config = ConfigDict(
+        populate_by_name=True,
+        # JSON 직렬화 시 alias 대신 필드명 사용 (id 필드 포함)
+        json_schema_extra={
+            "description": "MongoDB 문서 모델 - id와 _id 모두 포함"
+        }
+    )
+    
     @classmethod
     def from_mongo(cls, data: dict):
-        """MongoDB 문서를 Pydantic 모델로 변환"""
+        """
+        MongoDB 문서를 Pydantic 모델로 변환
+        
+        로깅:
+        - MongoDB 문서 변환 시작
+        - 변환 완료 후 id와 analysis_id 값 확인
+        """
+        logger.info("[AnalysisResultSimplifiedModel.from_mongo] MongoDB 문서 변환 시작")
+        
         if not data:
+            logger.warning("[AnalysisResultSimplifiedModel.from_mongo] 데이터가 비어있습니다")
             return None
+        
         doc = data.copy()
+        
         if "_id" in doc:
+            logger.info(f"[AnalysisResultSimplifiedModel.from_mongo] _id 발견: {doc['_id']}")
             doc["id"] = doc["_id"]
             # analysis_id가 없거나 None인 경우 _id 값을 analysis_id로 사용
             if not doc.get("analysis_id"):
                 doc["analysis_id"] = str(doc["_id"])
-        return cls(**doc)
+                logger.info(f"[AnalysisResultSimplifiedModel.from_mongo] analysis_id 자동 설정: {doc['analysis_id']}")
+        
+        model = cls(**doc)
+        logger.info(f"[AnalysisResultSimplifiedModel.from_mongo] 변환 완료 - id: {model.id}, analysis_id: {model.analysis_id}")
+        
+        return model
+    
+    def model_dump(self, **kwargs):
+        """
+        모델을 딕셔너리로 변환 시 id를 문자열로 포함
+        
+        프론트엔드는 result.id를 사용하므로 _id 외에 id도 반드시 포함
+        """
+        # by_alias 파라미터가 명시되지 않으면 False로 설정
+        if "by_alias" not in kwargs:
+            kwargs["by_alias"] = False
+        
+        data = super().model_dump(**kwargs)
+        
+        # id 필드를 문자열로 명시적으로 추가
+        if "id" in data:
+            data["id"] = str(data["id"])
+            logger.debug(f"[AnalysisResultSimplifiedModel.model_dump] id를 문자열로 변환: {data['id']}")
+        
+        # _id도 있으면 문자열로 변환
+        if "_id" in data:
+            data["_id"] = str(data["_id"])
+            logger.debug(f"[AnalysisResultSimplifiedModel.model_dump] _id를 문자열로 변환: {data['_id']}")
+        
+        return data
 
 
 # ========== 응답 모델 ==========
