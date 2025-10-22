@@ -73,10 +73,30 @@ async def create_analysis_result_v2(
                     "score": 9.2
                 },
                 "llm_analysis": {
-                    "summary": "성능 개선 확인됨",
-                    "issues": [],
-                    "recommendations": ["지속 모니터링"],
-                    "confidence": 0.95,
+                    "executive_summary": "AirMacDLThruAvg(Kbps)의 급격한 감소와 RandomlySelectedPreamblesLow(count)의 현저한 변동성을 확인했습니다.",
+                    "diagnostic_findings": [
+                        {
+                            "primary_hypothesis": "다운링크 자원 할당 실패 또는 접속 시도 실패로 인한 성능 저하",
+                            "supporting_evidence": "AirMacDLThruAvg(Kbps)의 극심한 감소는 다운링크 데이터 전송에 직접적인 영향을 미치므로...",
+                            "confounding_factors_assessment": "동일 환경 가정 하에서, 하드웨어 오류 가능성은 낮다고 판단됩니다..."
+                        }
+                    ],
+                    "recommended_actions": [
+                        {
+                            "priority": "P1",
+                            "action": "다운링크 자원 할당 관련 로그 분석 및 스케줄링 파라미터 확인",
+                            "details": "2025-09-04_12:30~2025-09-04_13:45 구간과 2025-09-05_12:45~2025-09-05_13:00 구간의 RRC connection setup failure 로그를 비교 분석..."
+                        }
+                    ],
+                    "technical_analysis": "DL Throughput 감소는 PRB 할당 실패와 직접 연관됩니다.",
+                    "cells_with_significant_change": ["cell_2010", "cell_2011"],
+                    "action_plan": "1단계: 로그 수집 → 2단계: RRC 실패 원인 분석 → 3단계: 파라미터 조정 → 4단계: 모니터링",
+                    "key_findings": [
+                        "DL Throughput 85% 급감",
+                        "RACH Preamble 변동성 200% 증가",
+                        "특정 시간대 집중 발생"
+                    ],
+                    "confidence": 0.92,
                     "model_name": "gemini-2.5-pro"
                 },
                 "peg_comparisons": [
@@ -137,6 +157,35 @@ async def create_analysis_result_v2(
     - analysis_id: 분석 고유 ID
     """
     try:
+        # 🔍 422 에러 디버깅: 수신된 데이터 구조 로깅
+        logger.debug("🔍 [422 디버깅] 수신된 요청 데이터:")
+        logger.debug("  - result type: %s", type(result).__name__)
+        logger.debug("  - result dict keys: %s", list(result.model_dump().keys()) if hasattr(result, 'model_dump') else "No model_dump method")
+        
+        # LLM 분석 데이터 상세 로깅
+        if hasattr(result, 'llm_analysis') and result.llm_analysis:
+            llm_data = result.llm_analysis
+            logger.debug("  - llm_analysis type: %s", type(llm_data).__name__)
+            logger.debug("  - llm_analysis keys: %s", list(llm_data.model_dump().keys()) if hasattr(llm_data, 'model_dump') else "No model_dump method")
+            
+            # diagnostic_findings 구조 확인
+            if hasattr(llm_data, 'diagnostic_findings'):
+                findings = llm_data.diagnostic_findings
+                logger.debug("  - diagnostic_findings: %d개", len(findings) if findings else 0)
+                if findings and len(findings) > 0:
+                    first_finding = findings[0]
+                    logger.debug("  - 첫 번째 finding type: %s", type(first_finding).__name__)
+                    logger.debug("  - 첫 번째 finding keys: %s", list(first_finding.model_dump().keys()) if hasattr(first_finding, 'model_dump') else "No model_dump method")
+            
+            # recommended_actions 구조 확인
+            if hasattr(llm_data, 'recommended_actions'):
+                actions = llm_data.recommended_actions
+                logger.debug("  - recommended_actions: %d개", len(actions) if actions else 0)
+                if actions and len(actions) > 0:
+                    first_action = actions[0]
+                    logger.debug("  - 첫 번째 action type: %s", type(first_action).__name__)
+                    logger.debug("  - 첫 번째 action keys: %s", list(first_action.model_dump().keys()) if hasattr(first_action, 'model_dump') else "No model_dump method")
+        
         db = get_database()
         collection = db.analysis_results_v2
         
