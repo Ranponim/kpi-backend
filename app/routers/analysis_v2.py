@@ -47,6 +47,7 @@ router = APIRouter(
 @router.post(
     "/",
     response_model=AnalysisResultSimplifiedResponse,
+    response_model_by_alias=False,  # ✅ alias 대신 필드명 사용 (id 포함)
     status_code=status.HTTP_201_CREATED,
     summary="분석 결과 생성 (간소화)",
     description="MCP에서 전송한 LLM 분석 결과를 저장합니다."
@@ -225,6 +226,7 @@ async def create_analysis_result_v2(
 @router.get(
     "/",
     response_model=AnalysisResultSimplifiedListResponse,
+    response_model_by_alias=False,  # ✅ alias 대신 필드명 사용 (id 포함)
     summary="분석 결과 목록 조회",
     description="필터링 및 페이지네이션을 지원하는 분석 결과 목록 조회"
 )
@@ -325,6 +327,7 @@ async def list_analysis_results_v2(
 @router.get(
     "/{result_id}",
     response_model=AnalysisResultSimplifiedResponse,
+    response_model_by_alias=False,  # ✅ alias 대신 필드명 사용 (id 포함)
     summary="분석 결과 상세 조회",
     description="특정 ID의 분석 결과 상세 정보 조회"
 )
