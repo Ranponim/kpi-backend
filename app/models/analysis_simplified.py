@@ -62,25 +62,80 @@ class ChoiAlgorithmResult(BaseModel):
     )
 
 
+class DiagnosticFinding(BaseModel):
+    """진단 결과 (Enhanced 프롬프트 구조)"""
+    primary_hypothesis: str = Field(..., description="주요 가설")
+    supporting_evidence: str = Field(..., description="지지 증거")
+    confounding_factors_assessment: str = Field(..., description="교란 요인 평가")
+
+
+class RecommendedAction(BaseModel):
+    """권장 조치 (Enhanced 프롬프트 구조)"""
+    priority: str = Field(..., description="우선순위 (P1/P2/P3)")
+    action: str = Field(..., description="조치 내용")
+    details: str = Field(..., description="상세 설명")
+
+
 class LLMAnalysis(BaseModel):
-    """LLM 종합 분석 결과"""
-    summary: Optional[str] = Field(None, description="종합 요약")
-    issues: List[str] = Field(default_factory=list, description="발견된 이슈 목록")
-    recommendations: List[str] = Field(default_factory=list, description="권장 조치 사항")
+    """LLM 종합 분석 결과 (Enhanced 프롬프트 구조 + 추가 분석 필드)"""
+    # === Enhanced 프롬프트 필수 필드 ===
+    executive_summary: Optional[str] = Field(None, description="전체 요약")
+    diagnostic_findings: List[DiagnosticFinding] = Field(
+        default_factory=list, 
+        description="진단 결과 목록"
+    )
+    recommended_actions: List[RecommendedAction] = Field(
+        default_factory=list, 
+        description="권장 조치 목록"
+    )
+    
+    # === 추가 분석 필드 (심도 있는 분석용, Optional) ===
+    technical_analysis: Optional[str] = Field(
+        None, 
+        description="기술적 상세 분석 (심층 분석 시 사용)"
+    )
+    cells_with_significant_change: List[str] = Field(
+        default_factory=list,
+        description="유의미한 변화가 있는 셀 목록"
+    )
+    action_plan: Optional[str] = Field(
+        None,
+        description="단계별 실행 계획 (상세 조치 절차)"
+    )
+    key_findings: List[str] = Field(
+        default_factory=list,
+        description="핵심 발견 사항 목록"
+    )
+    
+    # === 메타데이터 ===
     confidence: Optional[float] = Field(None, ge=0.0, le=1.0, description="분석 신뢰도 (0-1)")
     model_name: Optional[str] = Field(None, description="사용된 LLM 모델")
     
     model_config = ConfigDict(
         json_schema_extra={
             "example": {
-                "summary": "전반적으로 개선된 성능을 보이나 RACH 성공률 모니터링 필요",
-                "issues": [
-                    "RACH 성공률이 5% 감소",
-                    "UL Throughput 변동성 증가"
+                "executive_summary": "AirMacDLThruAvg(Kbps)의 급격한 감소와 RandomlySelectedPreamblesLow(count)의 현저한 변동성을 확인했습니다.",
+                "diagnostic_findings": [
+                    {
+                        "primary_hypothesis": "다운링크 자원 할당 실패 또는 접속 시도 실패로 인한 성능 저하",
+                        "supporting_evidence": "AirMacDLThruAvg(Kbps)의 극심한 감소는 다운링크 데이터 전송에 직접적인 영향을 미치므로...",
+                        "confounding_factors_assessment": "동일 환경 가정 하에서, 하드웨어 오류 가능성은 낮다고 판단됩니다..."
+                    }
                 ],
-                "recommendations": [
-                    "RACH 파라미터 재조정 검토",
-                    "간섭 분석 수행 권장"
+                "recommended_actions": [
+                    {
+                        "priority": "P1",
+                        "action": "다운링크 자원 할당 관련 로그 분석 및 스케줄링 파라미터 확인",
+                        "details": "2025-09-04_12:30~2025-09-04_13:45 구간과 2025-09-05_12:45~2025-09-05_13:00 구간의 RRC connection setup failure 로그를 비교 분석..."
+                    }
+                ],
+                "technical_analysis": "DL Throughput 감소는 PRB 할당 실패와 직접 연관됩니다. Preamble 변동성은 RACH 설정 이슈를 시사합니다.",
+                "cells_with_significant_change": ["cell_2010", "cell_2011"],
+                "action_plan": "1단계: 로그 수집 → 2단계: RRC 실패 원인 분석 → 3단계: 파라미터 조정 → 4단계: 모니터링",
+                "key_findings": [
+                    "DL Throughput 85% 급감",
+                    "RACH Preamble 변동성 200% 증가",
+                    "특정 시간대 집중 발생"
                 ],
                 "confidence": 0.92,
                 "model_name": "gemini-2.5-pro"
