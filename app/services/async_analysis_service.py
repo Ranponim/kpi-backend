@@ -18,6 +18,25 @@ from motor.motor_asyncio import AsyncIOMotorDatabase
 from ..db import get_database
 from ..models.analysis import AnalysisResultCreate, AnalysisResultModel
 
+
+def normalize_time_format(time_input):
+    """
+    다양한 시간 형식을 MCP 형식으로 변환
+    
+    입력 형식:
+    - 문자열: "2025-01-01_12:00~2025-01-01_13:00"
+    - 객체: {"start": "2025-01-01 12:00:00", "end": "2025-01-01 13:00:00"}
+    """
+    if isinstance(time_input, str):
+        return time_input  # 이미 올바른 형식
+    elif isinstance(time_input, dict):
+        # 객체 → 문자열 변환
+        start = time_input['start'].replace(' ', '_')[:16]
+        end = time_input['end'].replace(' ', '_')[:16]
+        return f"{start}~{end}"
+    else:
+        raise ValueError(f"Unsupported time format: {type(time_input)}")
+
 logger = logging.getLogger(__name__)
 
 
@@ -255,14 +274,20 @@ class AsyncAnalysisService:
         if not mcp_url:
             raise RuntimeError("MCP_ANALYZER_URL이 설정되지 않았습니다")
             
+        # ✅ 시간 형식 자동 변환
+        n_minus_1 = normalize_time_format(request_params.get("n_minus_1", ""))
+        n = normalize_time_format(request_params.get("n", ""))
+        
         # 요청 페이로드 구성
         payload = {
             "db": request_params.get("db_config", {}),
-            "n_minus_1": request_params.get("n_minus_1", ""),
-            "n": request_params.get("n", ""),
+            "n_minus_1": n_minus_1,
+            "n": n,
             "ne_id": request_params.get("ne_id", ""),
             "cell_id": request_params.get("cell_id", "")
         }
+        
+        logger.info(f"MCP API 호출 페이로드: n_minus_1={n_minus_1}, n={n}")
         
         headers = {"Content-Type": "application/json"}
         if mcp_api_key:

@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse
 
 # 내부 모듈 임포트
 from .db import connect_to_mongo, close_mongo_connection, get_db_stats
-from .routers import analysis, analysis_v2, preference, kpi, statistics, master, llm_analysis, peg_comparison
+from .routers import analysis, analysis_v2, preference, kpi, statistics, master, llm_analysis, peg_comparison, async_analysis
 from .middleware.performance import performance_middleware, setup_mongo_monitoring, get_performance_stats
 from .exceptions import (
     BaseAPIException,
@@ -282,6 +282,7 @@ app.include_router(statistics.router)   # Task 46 - Statistics 비교 분석 API
 app.include_router(master.router)       # Master 데이터 API (PEG, Cell 목록)
 app.include_router(llm_analysis.router) # LLM 분석 API
 app.include_router(peg_comparison.router) # PEG 비교분석 API
+app.include_router(async_analysis.router) # 비동기 분석 API
 
 # 모니터링 라우터 추가
 from .routers import monitoring
